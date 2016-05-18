@@ -107,10 +107,9 @@ namespace Point_Of_Sales
             MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             adapter.Fill(ds, tbl);
-            MessageBox.Show(ds.Tables[0].Rows.Count.ToString());
 
             int idgenerate = 0;
-            if (ds.Tables[tbl].Rows.Count > 1)
+            if (ds.Tables[tbl].Rows[0].ItemArray.GetValue(0).ToString() != "")
                 idgenerate = int.Parse(ds.Tables[tbl].Rows[0].ItemArray.GetValue(0).ToString());
             else
                 idgenerate = 0;

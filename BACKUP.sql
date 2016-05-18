@@ -1,7 +1,7 @@
 -- MySqlBackup.NET 2.0.9.3
--- Dump Time: 2016-05-18 16:19:59
+-- Dump Time: 2016-05-19 01.25.39
 -- --------------------------------------
--- Server version 5.5.27 MySQL Community Server (GPL)
+-- Server version 5.6.21 MySQL Community Server (GPL)
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -13,6 +13,62 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+
+-- 
+-- Definition of tblcategory
+-- 
+
+DROP TABLE IF EXISTS `tblcategory`;
+CREATE TABLE IF NOT EXISTS `tblcategory` (
+  `autoid` int(50) NOT NULL AUTO_INCREMENT,
+  `categorycode` varchar(50) NOT NULL,
+  `categoryname` varchar(50) NOT NULL,
+  `description` text NOT NULL,
+  `dateadded` date NOT NULL,
+  `addedby` int(50) NOT NULL,
+  PRIMARY KEY (`autoid`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+-- 
+-- Dumping data for table tblcategory
+-- 
+
+/*!40000 ALTER TABLE `tblcategory` DISABLE KEYS */;
+INSERT INTO `tblcategory`(`autoid`,`categorycode`,`categoryname`,`description`,`dateadded`,`addedby`) VALUES
+(1,'CAT-0000','Makanan','Makanan Ringan','2016-05-19 00:00:00',1),
+(2,'CAT-0001','Minuman','Minuman Dingin','2016-05-19 00:00:00',1);
+/*!40000 ALTER TABLE `tblcategory` ENABLE KEYS */;
+
+-- 
+-- Definition of tblsupplier
+-- 
+
+DROP TABLE IF EXISTS `tblsupplier`;
+CREATE TABLE IF NOT EXISTS `tblsupplier` (
+  `autoid` int(50) NOT NULL AUTO_INCREMENT,
+  `suppliercode` varchar(50) NOT NULL,
+  `suppliername` varchar(50) NOT NULL,
+  `discription` text NOT NULL,
+  `contactperson` varchar(50) NOT NULL,
+  `bussinessno` varchar(50) NOT NULL,
+  `telefaxno` varchar(50) NOT NULL,
+  `mobileno` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `address` text NOT NULL,
+  `status` varchar(50) NOT NULL,
+  `dateadded` date NOT NULL,
+  PRIMARY KEY (`autoid`),
+  KEY `suppliercode` (`suppliercode`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+-- 
+-- Dumping data for table tblsupplier
+-- 
+
+/*!40000 ALTER TABLE `tblsupplier` DISABLE KEYS */;
+INSERT INTO `tblsupplier`(`autoid`,`suppliercode`,`suppliername`,`discription`,`contactperson`,`bussinessno`,`telefaxno`,`mobileno`,`email`,`address`,`status`,`dateadded`) VALUES
+(2,'SUPP-0000','Toko Maju Mundur','Ini Keterangan Supplier','Joni Widianto','1234567890','','','asdfg@gmail.com','Ini Alamat Supplier','ACTIVE','2016-05-19 00:00:00');
+/*!40000 ALTER TABLE `tblsupplier` ENABLE KEYS */;
 
 -- 
 -- Definition of tblusers
@@ -82,5 +138,5 @@ INSERT INTO `tblusertype`(`autoid`,`typename`) VALUES
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 
--- Dump completed on 2016-05-18 16:19:59
--- Total time: 0:0:0:0:57 (d:h:m:s:ms)
+-- Dump completed on 2016-05-19 01.25.39
+-- Total time: 0:0:0:0:78 (d:h:m:s:ms)

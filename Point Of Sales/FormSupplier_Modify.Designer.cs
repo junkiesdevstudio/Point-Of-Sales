@@ -296,11 +296,14 @@
             this.bttnCancel.Size = new System.Drawing.Size(88, 26);
             this.bttnCancel.TabIndex = 214;
             this.bttnCancel.Text = "&Batal";
+            this.bttnCancel.Click += new System.EventHandler(this.bttnCancel_Click);
             // 
             // FormSupplier_Modify
             // 
+            this.AcceptButton = this.bttnUpdate;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.bttnCancel;
             this.ClientSize = new System.Drawing.Size(615, 376);
             this.Controls.Add(this.bttnUpdate);
             this.Controls.Add(this.bttnReset);

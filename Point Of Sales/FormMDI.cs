@@ -128,5 +128,18 @@ namespace Point_Of_Sales
             sForm.Show();
             sForm.Activate();
         }
+
+        private void itemCategoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form sForm = FormCategory.Instance();
+            sForm.MdiParent = this;
+            sForm.Show();
+            sForm.Activate();
+        }
+
+        private void toolBtnCategory_Click(object sender, EventArgs e)
+        {
+            itemCategoryToolStripMenuItem.PerformClick();
+        }
     }
 }
