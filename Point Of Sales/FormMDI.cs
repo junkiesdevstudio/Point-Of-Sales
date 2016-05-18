@@ -36,7 +36,6 @@ namespace Point_Of_Sales
             isAdmin = clsFunctions.recordExist("SELECT tblusers.usercode, tblusers.usertype FROM tblusers WHERE (tblusers.usertype=1 && tblusers.usercode='" + clsVariables.sUsercode + "') ORDER BY tblusers.autoid ASC", "tblusers");
 
             usersToolStripMenuItem.Enabled = isAdmin;
-            userTypeToolStripMenuItem.Enabled = isAdmin;
             supplierToolStripMenuItem.Enabled = isAdmin;
         }
 
