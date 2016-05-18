@@ -115,5 +115,18 @@ namespace Point_Of_Sales
         {
             usersToolStripMenuItem.PerformClick();
         }
+
+        private void toolBtnSupplier_Click(object sender, EventArgs e)
+        {
+            supplierToolStripMenuItem.PerformClick();
+        }
+
+        private void supplierToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form sForm = FormSupplier.Instance();
+            sForm.MdiParent = this;
+            sForm.Show();
+            sForm.Activate();
+        }
     }
 }

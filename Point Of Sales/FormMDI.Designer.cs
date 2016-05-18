@@ -162,6 +162,7 @@
             this.supplierToolStripMenuItem.Name = "supplierToolStripMenuItem";
             this.supplierToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
             this.supplierToolStripMenuItem.Text = "Supplier";
+            this.supplierToolStripMenuItem.Click += new System.EventHandler(this.supplierToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -210,13 +211,13 @@
             this.pointOfSalesToolStripMenuItem,
             this.inventoryToolStripMenuItem});
             this.transactionToolStripMenuItem.Name = "transactionToolStripMenuItem";
-            this.transactionToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
+            this.transactionToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
             this.transactionToolStripMenuItem.Text = "&Transaction";
             // 
             // pointOfSalesToolStripMenuItem
             // 
             this.pointOfSalesToolStripMenuItem.Name = "pointOfSalesToolStripMenuItem";
-            this.pointOfSalesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pointOfSalesToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.pointOfSalesToolStripMenuItem.Text = "Point Of Sales";
             // 
             // inventoryToolStripMenuItem
@@ -224,7 +225,7 @@
             this.inventoryToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.inventoryAdjustmentToolStripMenuItem});
             this.inventoryToolStripMenuItem.Name = "inventoryToolStripMenuItem";
-            this.inventoryToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.inventoryToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.inventoryToolStripMenuItem.Text = "Inventory";
             // 
             // inventoryAdjustmentToolStripMenuItem
@@ -246,7 +247,7 @@
             this.masterToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.productToolStripMenuItem});
             this.masterToolStripMenuItem1.Name = "masterToolStripMenuItem1";
-            this.masterToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.masterToolStripMenuItem1.Size = new System.Drawing.Size(110, 22);
             this.masterToolStripMenuItem1.Text = "Master";
             // 
             // productToolStripMenuItem
@@ -295,14 +296,14 @@
             // calculatorToolStripMenuItem
             // 
             this.calculatorToolStripMenuItem.Name = "calculatorToolStripMenuItem";
-            this.calculatorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.calculatorToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.calculatorToolStripMenuItem.Text = "Calculator";
             this.calculatorToolStripMenuItem.Click += new System.EventHandler(this.calculatorToolStripMenuItem_Click);
             // 
             // notepadToolStripMenuItem
             // 
             this.notepadToolStripMenuItem.Name = "notepadToolStripMenuItem";
-            this.notepadToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.notepadToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.notepadToolStripMenuItem.Text = "Notepad";
             this.notepadToolStripMenuItem.Click += new System.EventHandler(this.notepadToolStripMenuItem_Click);
             // 
@@ -519,6 +520,7 @@
             this.toolBtnSupplier.Padding = new System.Windows.Forms.Padding(4);
             this.toolBtnSupplier.Size = new System.Drawing.Size(44, 44);
             this.toolBtnSupplier.ToolTipText = "Supplier";
+            this.toolBtnSupplier.Click += new System.EventHandler(this.toolBtnSupplier_Click);
             // 
             // toolBtnUsers
             // 

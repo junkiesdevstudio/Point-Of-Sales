@@ -30,3 +30,21 @@ D:\PROJECT\RUNNING\Point Of Sales\Point Of Sales\bin\Debug\MySqlBackup.dll
 C:\Users\smart\Source\Repos\Point-Of-Sales\Point Of Sales\bin\Debug\Point Of Sales.exe.config
 C:\Users\smart\Source\Repos\Point-Of-Sales\Point Of Sales\obj\Debug\Point Of Sales.exe
 C:\Users\smart\Source\Repos\Point-Of-Sales\Point Of Sales\obj\Debug\Point Of Sales.pdb
+L:\GIT\CSHARP\Point-Of-Sales\Point Of Sales\bin\Debug\Point Of Sales.exe.config
+L:\GIT\CSHARP\Point-Of-Sales\Point Of Sales\obj\Debug\Point Of Sales.exe
+L:\GIT\CSHARP\Point-Of-Sales\Point Of Sales\obj\Debug\Point Of Sales.pdb
+L:\GIT\CSHARP\Point-Of-Sales\Point Of Sales\bin\Debug\Point Of Sales.exe
+L:\GIT\CSHARP\Point-Of-Sales\Point Of Sales\bin\Debug\Point Of Sales.pdb
+L:\GIT\CSHARP\Point-Of-Sales\Point Of Sales\bin\Debug\MySql.Data.dll
+L:\GIT\CSHARP\Point-Of-Sales\Point Of Sales\bin\Debug\MySqlBackup.dll
+L:\GIT\CSHARP\Point-Of-Sales\Point Of Sales\obj\Debug\Point Of Sales.csprojResolveAssemblyReference.cache
+L:\GIT\CSHARP\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormLogin.resources
+L:\GIT\CSHARP\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormMDI.resources
+L:\GIT\CSHARP\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormSetting.resources
+L:\GIT\CSHARP\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormSplashScreen.resources
+L:\GIT\CSHARP\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormUser.resources
+L:\GIT\CSHARP\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormUser_Modify.resources
+L:\GIT\CSHARP\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.Properties.Resources.resources
+L:\GIT\CSHARP\Point-Of-Sales\Point Of Sales\obj\Debug\Point Of Sales.csproj.GenerateResource.Cache
+L:\GIT\CSHARP\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormSupplier.resources
+L:\GIT\CSHARP\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormSupplier_Modify.resources

@@ -101,14 +101,19 @@ namespace Point_Of_Sales
 
         }
 
-        public static string GenerateCD(string sSQL)
+        public static string GenerateCD(string sSQL, string tbl)
         {
             MySqlCommand cmd = new MySqlCommand(sSQL, clsConnection.CN);
             MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
             DataSet ds = new DataSet();
-            adapter.Fill(ds, "tblusers");
+            adapter.Fill(ds, tbl);
+            MessageBox.Show(ds.Tables[0].Rows.Count.ToString());
 
-            int idgenerate = int.Parse( ds.Tables["tblusers"].Rows[0].ItemArray.GetValue(0).ToString());
+            int idgenerate = 0;
+            if (ds.Tables[tbl].Rows.Count > 1)
+                idgenerate = int.Parse(ds.Tables[tbl].Rows[0].ItemArray.GetValue(0).ToString());
+            else
+                idgenerate = 0;
 
             return idgenerate.ToString("D4");
         }

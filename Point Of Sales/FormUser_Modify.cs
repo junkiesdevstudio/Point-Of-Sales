@@ -34,7 +34,7 @@ namespace Point_Of_Sales
 
             if (ADD_STATE == true)
             {
-                txtUserKode.Text = "USR-" + clsFunctions.GenerateCD("SELECT MAX(autoid) FROM tblusers");
+                txtUserKode.Text = "USR-" + clsFunctions.GenerateCD("SELECT MAX(autoid) FROM tblusers", "tblusers");
                 txtUserID.Text = txtUserKode.Text;
 
                 cmdAddUsers = new MySqlCommand("INSERT INTO tblusers( usercode , fullname, address, email, telephone, usertype, status, username, password, datemodify, usermodifyby, dateadded, useraddedby)" + 
