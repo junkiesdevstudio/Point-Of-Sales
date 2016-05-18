@@ -1,0 +1,32 @@
+L:\CSHARP PACKAGE\Point Of Sales\Point Of Sales\bin\Debug\Point Of Sales.exe.config
+L:\CSHARP PACKAGE\Point Of Sales\Point Of Sales\bin\Debug\Point Of Sales.exe
+L:\CSHARP PACKAGE\Point Of Sales\Point Of Sales\bin\Debug\Point Of Sales.pdb
+L:\CSHARP PACKAGE\Point Of Sales\Point Of Sales\obj\Debug\Point Of Sales.csprojResolveAssemblyReference.cache
+L:\CSHARP PACKAGE\Point Of Sales\Point Of Sales\obj\Debug\Point_Of_Sales.Properties.Resources.resources
+L:\CSHARP PACKAGE\Point Of Sales\Point Of Sales\obj\Debug\Point Of Sales.csproj.GenerateResource.Cache
+L:\CSHARP PACKAGE\Point Of Sales\Point Of Sales\obj\Debug\Point Of Sales.exe
+L:\CSHARP PACKAGE\Point Of Sales\Point Of Sales\obj\Debug\Point Of Sales.pdb
+L:\CSHARP PACKAGE\Point Of Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormMDI.resources
+L:\CSHARP PACKAGE\Point Of Sales\Point Of Sales\bin\Debug\MySql.Data.dll
+L:\CSHARP PACKAGE\Point Of Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormLogin.resources
+L:\CSHARP PACKAGE\Point Of Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormSplashScreen.resources
+L:\CSHARP PACKAGE\Point Of Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormUser.resources
+D:\PROJECT\RUNNING\Point Of Sales\Point Of Sales\bin\Debug\Point Of Sales.exe.config
+D:\PROJECT\RUNNING\Point Of Sales\Point Of Sales\obj\Debug\Point Of Sales.exe
+D:\PROJECT\RUNNING\Point Of Sales\Point Of Sales\obj\Debug\Point Of Sales.pdb
+D:\PROJECT\RUNNING\Point Of Sales\Point Of Sales\obj\Debug\Point Of Sales.csprojResolveAssemblyReference.cache
+D:\PROJECT\RUNNING\Point Of Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormLogin.resources
+D:\PROJECT\RUNNING\Point Of Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormMDI.resources
+D:\PROJECT\RUNNING\Point Of Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormSplashScreen.resources
+D:\PROJECT\RUNNING\Point Of Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormUser.resources
+D:\PROJECT\RUNNING\Point Of Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormUser_Modify.resources
+D:\PROJECT\RUNNING\Point Of Sales\Point Of Sales\obj\Debug\Point_Of_Sales.Properties.Resources.resources
+D:\PROJECT\RUNNING\Point Of Sales\Point Of Sales\obj\Debug\Point Of Sales.csproj.GenerateResource.Cache
+D:\PROJECT\RUNNING\Point Of Sales\Point Of Sales\bin\Debug\Point Of Sales.exe
+D:\PROJECT\RUNNING\Point Of Sales\Point Of Sales\bin\Debug\Point Of Sales.pdb
+D:\PROJECT\RUNNING\Point Of Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormSetting.resources
+D:\PROJECT\RUNNING\Point Of Sales\Point Of Sales\bin\Debug\MySql.Data.dll
+D:\PROJECT\RUNNING\Point Of Sales\Point Of Sales\bin\Debug\MySqlBackup.dll
+C:\Users\smart\Source\Repos\Point-Of-Sales\Point Of Sales\bin\Debug\Point Of Sales.exe.config
+C:\Users\smart\Source\Repos\Point-Of-Sales\Point Of Sales\obj\Debug\Point Of Sales.exe
+C:\Users\smart\Source\Repos\Point-Of-Sales\Point Of Sales\obj\Debug\Point Of Sales.pdb
