@@ -197,6 +197,7 @@
             this.productMasterFileToolStripMenuItem.Name = "productMasterFileToolStripMenuItem";
             this.productMasterFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.productMasterFileToolStripMenuItem.Text = "Product";
+            this.productMasterFileToolStripMenuItem.Click += new System.EventHandler(this.productMasterFileToolStripMenuItem_Click);
             // 
             // transactionToolStripMenuItem
             // 
@@ -418,6 +419,7 @@
             this.toolBtnProduct.Size = new System.Drawing.Size(44, 44);
             this.toolBtnProduct.Text = "toolStripButton2";
             this.toolBtnProduct.ToolTipText = "Products";
+            this.toolBtnProduct.Click += new System.EventHandler(this.toolBtnProduct_Click);
             // 
             // toolStripSeparator5
             // 

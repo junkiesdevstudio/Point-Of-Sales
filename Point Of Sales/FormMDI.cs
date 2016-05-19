@@ -39,6 +39,17 @@ namespace Point_Of_Sales
             supplierToolStripMenuItem.Enabled = isAdmin;
         }
 
+        void CloseAllChild()
+        {
+            foreach (Form child in this.MdiChildren)
+            {
+                if(!child.Focused)
+                {
+                    child.Close();
+                }
+            }
+        }
+
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Restart();
@@ -96,6 +107,8 @@ namespace Point_Of_Sales
 
         private void usersToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            CloseAllChild();
+
             Form sForm = FormUser.Instance();
             sForm.MdiParent = this;
             sForm.Show();
@@ -122,6 +135,8 @@ namespace Point_Of_Sales
 
         private void supplierToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            CloseAllChild();
+
             Form sForm = FormSupplier.Instance();
             sForm.MdiParent = this;
             sForm.Show();
@@ -139,6 +154,19 @@ namespace Point_Of_Sales
         private void toolBtnCategory_Click(object sender, EventArgs e)
         {
             itemCategoryToolStripMenuItem.PerformClick();
+        }
+
+        private void productMasterFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form sForm = FormProduct.Instance();
+            sForm.MdiParent = this;
+            sForm.Show();
+            sForm.Activate();
+        }
+
+        private void toolBtnProduct_Click(object sender, EventArgs e)
+        {
+            productMasterFileToolStripMenuItem.PerformClick();
         }
     }
 }

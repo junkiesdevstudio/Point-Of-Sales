@@ -1,6 +1,6 @@
 ﻿namespace Point_Of_Sales
 {
-    partial class FormSupplier
+    partial class FormProduct
     {
         /// <summary>
         /// Required designer variable.
@@ -29,10 +29,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSupplier));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProduct));
             this.label10 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.lblHeader = new System.Windows.Forms.Label();
+            this.panelBOTTOM = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.bttnPrint = new System.Windows.Forms.Button();
@@ -46,21 +47,23 @@
             this.bttnReload = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.bttnCancel = new System.Windows.Forms.Button();
-            this.panelBOTTOM = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.lblContains = new System.Windows.Forms.Label();
-            this.lvSupplier = new System.Windows.Forms.ListView();
-            this.chSupplierCode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.panelRIGHT = new System.Windows.Forms.Panel();
+            this.lvProduct = new System.Windows.Forms.ListView();
+            this.chProductCode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chProductName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chCategoryName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chCategoryCode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chSupplierName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chSupplierDiscription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chContact = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chEmail = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chAddress = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chSupplierCode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chUnitPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chSellingPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chStock = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.picLOGO = new System.Windows.Forms.PictureBox();
             this.picHeader = new System.Windows.Forms.PictureBox();
-            this.panel1.SuspendLayout();
             this.panelBOTTOM.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLOGO)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHeader)).BeginInit();
             this.SuspendLayout();
@@ -68,7 +71,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(301, 15);
+            this.label10.Location = new System.Drawing.Point(303, 16);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(75, 13);
             this.label10.TabIndex = 143;
@@ -76,7 +79,7 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(382, 12);
+            this.txtSearch.Location = new System.Drawing.Point(384, 13);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(266, 20);
             this.txtSearch.TabIndex = 142;
@@ -89,11 +92,22 @@
             this.lblHeader.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblHeader.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHeader.ForeColor = System.Drawing.Color.Black;
-            this.lblHeader.Location = new System.Drawing.Point(40, 11);
+            this.lblHeader.Location = new System.Drawing.Point(42, 12);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(91, 19);
+            this.lblHeader.Size = new System.Drawing.Size(90, 19);
             this.lblHeader.TabIndex = 140;
-            this.lblHeader.Text = "SUPPLIER";
+            this.lblHeader.Text = "PRODUCT";
+            // 
+            // panelBOTTOM
+            // 
+            this.panelBOTTOM.Controls.Add(this.panel1);
+            this.panelBOTTOM.Controls.Add(this.label7);
+            this.panelBOTTOM.Controls.Add(this.lblContains);
+            this.panelBOTTOM.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelBOTTOM.Location = new System.Drawing.Point(0, 340);
+            this.panelBOTTOM.Name = "panelBOTTOM";
+            this.panelBOTTOM.Size = new System.Drawing.Size(787, 64);
+            this.panelBOTTOM.TabIndex = 144;
             // 
             // panel1
             // 
@@ -110,7 +124,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.bttnCancel);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(401, 0);
+            this.panel1.Location = new System.Drawing.Point(341, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(446, 64);
             this.panel1.TabIndex = 133;
@@ -258,17 +272,6 @@
             this.bttnCancel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.bttnCancel.Click += new System.EventHandler(this.bttnCancel_Click);
             // 
-            // panelBOTTOM
-            // 
-            this.panelBOTTOM.Controls.Add(this.panel1);
-            this.panelBOTTOM.Controls.Add(this.label7);
-            this.panelBOTTOM.Controls.Add(this.lblContains);
-            this.panelBOTTOM.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelBOTTOM.Location = new System.Drawing.Point(0, 456);
-            this.panelBOTTOM.Name = "panelBOTTOM";
-            this.panelBOTTOM.Size = new System.Drawing.Size(847, 64);
-            this.panelBOTTOM.TabIndex = 144;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -278,9 +281,9 @@
             this.label7.ForeColor = System.Drawing.Color.Firebrick;
             this.label7.Location = new System.Drawing.Point(6, 10);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(128, 16);
+            this.label7.Size = new System.Drawing.Size(126, 16);
             this.label7.TabIndex = 132;
-            this.label7.Text = "SUPPLIER RECORD:";
+            this.label7.Text = "PRODUCT RECORD:";
             // 
             // lblContains
             // 
@@ -289,77 +292,96 @@
             this.lblContains.ForeColor = System.Drawing.Color.Black;
             this.lblContains.Location = new System.Drawing.Point(5, 30);
             this.lblContains.Name = "lblContains";
-            this.lblContains.Size = new System.Drawing.Size(281, 13);
+            this.lblContains.Size = new System.Drawing.Size(390, 13);
             this.lblContains.TabIndex = 119;
-            this.lblContains.Text = "Ini berisi semua informasi tentang data supplier.";
+            this.lblContains.Text = "Ini berisi semua informasi tentang user kasir maupun administrator";
             // 
-            // lvSupplier
+            // panelRIGHT
             // 
-            this.lvSupplier.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lvSupplier.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.chSupplierCode,
+            this.panelRIGHT.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelRIGHT.Location = new System.Drawing.Point(699, 42);
+            this.panelRIGHT.Name = "panelRIGHT";
+            this.panelRIGHT.Size = new System.Drawing.Size(88, 298);
+            this.panelRIGHT.TabIndex = 146;
+            // 
+            // lvProduct
+            // 
+            this.lvProduct.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lvProduct.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.chProductCode,
+            this.chProductName,
+            this.chCategoryName,
+            this.chCategoryCode,
             this.chSupplierName,
-            this.chSupplierDiscription,
-            this.chContact,
-            this.chEmail,
-            this.chAddress,
-            this.chStatus});
-            this.lvSupplier.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lvSupplier.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvSupplier.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvSupplier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lvSupplier.FullRowSelect = true;
-            this.lvSupplier.GridLines = true;
-            this.lvSupplier.HideSelection = false;
-            this.lvSupplier.HoverSelection = true;
-            this.lvSupplier.Location = new System.Drawing.Point(0, 42);
-            this.lvSupplier.MultiSelect = false;
-            this.lvSupplier.Name = "lvSupplier";
-            this.lvSupplier.Size = new System.Drawing.Size(847, 414);
-            this.lvSupplier.TabIndex = 145;
-            this.lvSupplier.UseCompatibleStateImageBehavior = false;
-            this.lvSupplier.View = System.Windows.Forms.View.Details;
-            this.lvSupplier.SelectedIndexChanged += new System.EventHandler(this.lvSupplier_SelectedIndexChanged);
+            this.chSupplierCode,
+            this.chUnitPrice,
+            this.chSellingPrice,
+            this.chStock});
+            this.lvProduct.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lvProduct.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvProduct.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lvProduct.FullRowSelect = true;
+            this.lvProduct.GridLines = true;
+            this.lvProduct.HideSelection = false;
+            this.lvProduct.HoverSelection = true;
+            this.lvProduct.Location = new System.Drawing.Point(0, 42);
+            this.lvProduct.MultiSelect = false;
+            this.lvProduct.Name = "lvProduct";
+            this.lvProduct.Size = new System.Drawing.Size(699, 298);
+            this.lvProduct.TabIndex = 147;
+            this.lvProduct.UseCompatibleStateImageBehavior = false;
+            this.lvProduct.View = System.Windows.Forms.View.Details;
             // 
-            // chSupplierCode
+            // chProductCode
             // 
-            this.chSupplierCode.Text = "KODE";
-            this.chSupplierCode.Width = 100;
+            this.chProductCode.Text = "KODE PRODUK";
+            this.chProductCode.Width = 100;
+            // 
+            // chProductName
+            // 
+            this.chProductName.Text = "NAMA PRODUK";
+            this.chProductName.Width = 230;
+            // 
+            // chCategoryName
+            // 
+            this.chCategoryName.Text = "NAMA KATEGORI";
+            this.chCategoryName.Width = 200;
+            // 
+            // chCategoryCode
+            // 
+            this.chCategoryCode.Text = "KODE KATEGORI";
+            this.chCategoryCode.Width = 150;
             // 
             // chSupplierName
             // 
             this.chSupplierName.Text = "NAMA SUPPLIER";
             this.chSupplierName.Width = 200;
             // 
-            // chSupplierDiscription
+            // chSupplierCode
             // 
-            this.chSupplierDiscription.Text = "KETERANGAN";
-            this.chSupplierDiscription.Width = 400;
+            this.chSupplierCode.Text = "KODE SUPPLIER";
+            this.chSupplierCode.Width = 150;
             // 
-            // chContact
+            // chUnitPrice
             // 
-            this.chContact.Text = "KONTAK";
-            this.chContact.Width = 170;
+            this.chUnitPrice.Text = "HARGA BELI";
+            this.chUnitPrice.Width = 100;
             // 
-            // chEmail
+            // chSellingPrice
             // 
-            this.chEmail.Text = "EMAIL";
-            this.chEmail.Width = 130;
+            this.chSellingPrice.Text = "HARGA JUAL";
+            this.chSellingPrice.Width = 100;
             // 
-            // chAddress
+            // chStock
             // 
-            this.chAddress.Text = "ALAMAT";
-            this.chAddress.Width = 220;
-            // 
-            // chStatus
-            // 
-            this.chStatus.Text = "STATUS";
-            this.chStatus.Width = 150;
+            this.chStock.Text = "STOK";
+            this.chStock.Width = 50;
             // 
             // picLOGO
             // 
             this.picLOGO.Image = ((System.Drawing.Image)(resources.GetObject("picLOGO.Image")));
-            this.picLOGO.Location = new System.Drawing.Point(8, 6);
+            this.picLOGO.Location = new System.Drawing.Point(10, 7);
             this.picLOGO.Name = "picLOGO";
             this.picLOGO.Size = new System.Drawing.Size(24, 24);
             this.picLOGO.TabIndex = 141;
@@ -371,17 +393,18 @@
             this.picHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.picHeader.Location = new System.Drawing.Point(0, 0);
             this.picHeader.Name = "picHeader";
-            this.picHeader.Size = new System.Drawing.Size(847, 42);
+            this.picHeader.Size = new System.Drawing.Size(787, 42);
             this.picHeader.TabIndex = 139;
             this.picHeader.TabStop = false;
             // 
-            // FormSupplier
+            // FormProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(847, 520);
+            this.ClientSize = new System.Drawing.Size(787, 404);
             this.ControlBox = false;
-            this.Controls.Add(this.lvSupplier);
+            this.Controls.Add(this.lvProduct);
+            this.Controls.Add(this.panelRIGHT);
             this.Controls.Add(this.panelBOTTOM);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtSearch);
@@ -391,14 +414,15 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FormSupplier";
+            this.Name = "FormProduct";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormSupplier";
+            this.Text = "FormProduct";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.FormSupplier_Load);
-            this.panel1.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.FormProduct_Load);
             this.panelBOTTOM.ResumeLayout(false);
             this.panelBOTTOM.PerformLayout();
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picLOGO)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picHeader)).EndInit();
             this.ResumeLayout(false);
@@ -413,6 +437,7 @@
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.PictureBox picLOGO;
         private System.Windows.Forms.PictureBox picHeader;
+        private System.Windows.Forms.Panel panelBOTTOM;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button bttnPrint;
@@ -426,16 +451,18 @@
         private System.Windows.Forms.Button bttnReload;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button bttnCancel;
-        private System.Windows.Forms.Panel panelBOTTOM;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblContains;
-        public System.Windows.Forms.ListView lvSupplier;
-        private System.Windows.Forms.ColumnHeader chSupplierCode;
+        private System.Windows.Forms.Panel panelRIGHT;
+        public System.Windows.Forms.ListView lvProduct;
+        private System.Windows.Forms.ColumnHeader chProductCode;
+        private System.Windows.Forms.ColumnHeader chProductName;
+        private System.Windows.Forms.ColumnHeader chCategoryName;
+        private System.Windows.Forms.ColumnHeader chCategoryCode;
         private System.Windows.Forms.ColumnHeader chSupplierName;
-        private System.Windows.Forms.ColumnHeader chSupplierDiscription;
-        private System.Windows.Forms.ColumnHeader chContact;
-        private System.Windows.Forms.ColumnHeader chEmail;
-        private System.Windows.Forms.ColumnHeader chAddress;
-        private System.Windows.Forms.ColumnHeader chStatus;
+        private System.Windows.Forms.ColumnHeader chSupplierCode;
+        private System.Windows.Forms.ColumnHeader chUnitPrice;
+        private System.Windows.Forms.ColumnHeader chSellingPrice;
+        private System.Windows.Forms.ColumnHeader chStock;
     }
 }

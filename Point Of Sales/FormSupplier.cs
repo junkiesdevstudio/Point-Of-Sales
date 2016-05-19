@@ -210,5 +210,10 @@ namespace Point_Of_Sales
         {
             LoadSupplier("SELECT tblsupplier.suppliercode, tblsupplier.suppliername, tblsupplier.discription, tblsupplier.bussinessno, tblsupplier.email, tblsupplier.address, tblsupplier.status FROM tblsupplier ORDER BY tblsupplier.autoid ASC");
         }
+
+        private void lvSupplier_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

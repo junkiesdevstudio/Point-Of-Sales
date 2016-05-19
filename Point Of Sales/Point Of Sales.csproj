@@ -74,6 +74,12 @@
     <Compile Include="FormCategory_Modify.Designer.cs">
       <DependentUpon>FormCategory_Modify.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCategory_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCategory_View.Designer.cs">
+      <DependentUpon>FormCategory_View.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,18 @@
     </Compile>
     <Compile Include="FormMDI.Designer.cs">
       <DependentUpon>FormMDI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProduct.Designer.cs">
+      <DependentUpon>FormProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProduct_Modify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProduct_Modify.Designer.cs">
+      <DependentUpon>FormProduct_Modify.cs</DependentUpon>
     </Compile>
     <Compile Include="FormSetting.cs">
       <SubType>Form</SubType>
@@ -110,6 +128,12 @@
     <Compile Include="FormSupplier_Modify.Designer.cs">
       <DependentUpon>FormSupplier_Modify.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSupplier_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSupplier_View.Designer.cs">
+      <DependentUpon>FormSupplier_View.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,11 +153,20 @@
     <EmbeddedResource Include="FormCategory_Modify.resx">
       <DependentUpon>FormCategory_Modify.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormCategory_View.resx">
+      <DependentUpon>FormCategory_View.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMDI.resx">
       <DependentUpon>FormMDI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProduct.resx">
+      <DependentUpon>FormProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProduct_Modify.resx">
+      <DependentUpon>FormProduct_Modify.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSetting.resx">
       <DependentUpon>FormSetting.cs</DependentUpon>
@@ -146,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormSupplier_Modify.resx">
       <DependentUpon>FormSupplier_Modify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSupplier_View.resx">
+      <DependentUpon>FormSupplier_View.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUser.resx">
       <DependentUpon>FormUser.cs</DependentUpon>
