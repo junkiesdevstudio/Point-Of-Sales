@@ -55,14 +55,14 @@
             this.chQTY = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chSubTotal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lvPOS = new System.Windows.Forms.ListView();
+            this.chAutoIDProduct = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnProduct = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.lblInvoice = new System.Windows.Forms.Label();
             this.btnBayar = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.chAutoIDProduct = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnDelete = new System.Windows.Forms.Button();
             this.txtProductID = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -85,7 +85,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "KODE PRODUk";
+            this.label2.Text = "KODE PRODUK";
             // 
             // lblTotal
             // 
@@ -199,7 +199,7 @@
             this.panel1.Controls.Add(this.label7);
             this.panel1.Location = new System.Drawing.Point(491, 416);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(274, 103);
+            this.panel1.Size = new System.Drawing.Size(274, 112);
             this.panel1.TabIndex = 147;
             // 
             // lblTotalAmount
@@ -271,11 +271,11 @@
             // btnNew
             // 
             this.btnNew.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNew.Location = new System.Drawing.Point(12, 416);
+            this.btnNew.Location = new System.Drawing.Point(12, 413);
             this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(78, 35);
+            this.btnNew.Size = new System.Drawing.Size(133, 35);
             this.btnNew.TabIndex = 148;
-            this.btnNew.Text = "BARU";
+            this.btnNew.Text = "BARU [F1]";
             this.btnNew.UseVisualStyleBackColor = true;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
@@ -328,47 +328,53 @@
             this.lvPOS.TabIndex = 146;
             this.lvPOS.UseCompatibleStateImageBehavior = false;
             this.lvPOS.View = System.Windows.Forms.View.Details;
+            this.lvPOS.DoubleClick += new System.EventHandler(this.lvPOS_DoubleClick);
             this.lvPOS.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lvPOS_MouseDown);
             this.lvPOS.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lvPOS_MouseUp);
+            // 
+            // chAutoIDProduct
+            // 
+            this.chAutoIDProduct.Width = 0;
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(96, 416);
+            this.button1.Location = new System.Drawing.Point(167, 413);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(78, 35);
+            this.button1.Size = new System.Drawing.Size(133, 35);
             this.button1.TabIndex = 149;
-            this.button1.Text = "RESET";
+            this.button1.Text = "RESET [F2]";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btnProduct
             // 
-            this.button2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(12, 457);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(78, 35);
-            this.button2.TabIndex = 150;
-            this.button2.Text = "PRODUK";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnProduct.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProduct.Location = new System.Drawing.Point(12, 455);
+            this.btnProduct.Name = "btnProduct";
+            this.btnProduct.Size = new System.Drawing.Size(133, 35);
+            this.btnProduct.TabIndex = 150;
+            this.btnProduct.Text = "ITEM [F3]";
+            this.btnProduct.UseVisualStyleBackColor = true;
+            this.btnProduct.Click += new System.EventHandler(this.btnProduct_Click);
             // 
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(319, 416);
+            this.btnSave.Location = new System.Drawing.Point(329, 456);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(78, 35);
+            this.btnSave.Size = new System.Drawing.Size(133, 34);
             this.btnSave.TabIndex = 151;
-            this.btnSave.Text = "SIMPAN";
+            this.btnSave.Text = "SIMPAN [F5]";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(403, 416);
+            this.button4.Location = new System.Drawing.Point(329, 496);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(78, 35);
+            this.button4.Size = new System.Drawing.Size(133, 34);
             this.button4.TabIndex = 152;
             this.button4.Text = "BATAL";
             this.button4.UseVisualStyleBackColor = true;
@@ -388,35 +394,34 @@
             // btnBayar
             // 
             this.btnBayar.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBayar.Location = new System.Drawing.Point(235, 416);
+            this.btnBayar.Location = new System.Drawing.Point(329, 413);
             this.btnBayar.Name = "btnBayar";
-            this.btnBayar.Size = new System.Drawing.Size(78, 35);
+            this.btnBayar.Size = new System.Drawing.Size(133, 34);
             this.btnBayar.TabIndex = 154;
-            this.btnBayar.Text = "BAYAR";
+            this.btnBayar.Text = "BAYAR [F4]";
             this.btnBayar.UseVisualStyleBackColor = true;
             this.btnBayar.Click += new System.EventHandler(this.btnBayar_Click);
             // 
-            // button6
+            // btnDelete
             // 
-            this.button6.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(96, 457);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(78, 35);
-            this.button6.TabIndex = 155;
-            this.button6.Text = "HAPUS";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // chAutoIDProduct
-            // 
-            this.chAutoIDProduct.Width = 0;
+            this.btnDelete.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Location = new System.Drawing.Point(167, 455);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(133, 35);
+            this.btnDelete.TabIndex = 155;
+            this.btnDelete.Text = "HAPUS [DEL]";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // txtProductID
             // 
             this.txtProductID.Location = new System.Drawing.Point(748, 137);
             this.txtProductID.Name = "txtProductID";
+            this.txtProductID.ReadOnly = true;
             this.txtProductID.Size = new System.Drawing.Size(17, 20);
             this.txtProductID.TabIndex = 156;
             this.txtProductID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtProductID.Visible = false;
             // 
             // FormPOS
             // 
@@ -425,12 +430,12 @@
             this.ClientSize = new System.Drawing.Size(777, 542);
             this.ControlBox = false;
             this.Controls.Add(this.txtProductID);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnBayar);
             this.Controls.Add(this.lblInvoice);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnProduct);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.panel1);
@@ -491,12 +496,12 @@
         private System.Windows.Forms.ColumnHeader chSubTotal;
         public System.Windows.Forms.ListView lvPOS;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnProduct;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label lblInvoice;
         private System.Windows.Forms.Button btnBayar;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.ColumnHeader chAutoIDProduct;
         private System.Windows.Forms.TextBox txtProductID;
     }

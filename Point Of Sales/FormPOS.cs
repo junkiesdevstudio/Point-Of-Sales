@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using BondTech.HotkeyManagement.Win;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,17 @@ namespace Point_Of_Sales
 {
     public partial class FormPOS : Form
     {
+        //HOTJKEY
+        internal HotKeyManager MyHotKeyManager;
+        #region **HotKeys
+        LocalHotKey lhkNewInvoice = new LocalHotKey("lhkNewInvoice", Keys.F1);
+        LocalHotKey lhkResetInvoice = new LocalHotKey("lhkResetInvoice", Keys.F2);
+        LocalHotKey lhkItemInvoice = new LocalHotKey("lhkItemInvoice", Keys.F3);
+        LocalHotKey lhkDeleteInvoice = new LocalHotKey("lhkDeleteInvoice", Keys.Delete);
+        LocalHotKey lhkCashInvoice = new LocalHotKey("lhkCashInvoice", Keys.F4);
+        LocalHotKey lhkSaveInvoice = new LocalHotKey("lhkSaveInvoice", Keys.F5);
+        #endregion
+
         clsFunctions sFunctions = new clsFunctions();
 
         public static FormPOS publicFormPOS;
@@ -35,6 +47,54 @@ namespace Point_Of_Sales
         public FormPOS()
         {
             InitializeComponent();
+            MyHotKeyManager = new HotKeyManager(this);
+            MyHotKeyManager.LocalHotKeyPressed += new LocalHotKeyEventHandler(MyHotKeyManager_LocalHotKeyPressed);
+
+            lhkNewInvoice.Enabled = true;
+            lhkResetInvoice.Enabled = true;
+            lhkItemInvoice.Enabled = true;
+            lhkDeleteInvoice.Enabled = true;
+            lhkCashInvoice.Enabled = true;
+            lhkSaveInvoice.Enabled = true;
+
+            MyHotKeyManager.AddLocalHotKey(lhkNewInvoice);
+            MyHotKeyManager.AddLocalHotKey(lhkResetInvoice);
+            MyHotKeyManager.AddLocalHotKey(lhkItemInvoice);
+            MyHotKeyManager.AddLocalHotKey(lhkDeleteInvoice);
+            MyHotKeyManager.AddLocalHotKey(lhkCashInvoice);
+            MyHotKeyManager.AddLocalHotKey(lhkSaveInvoice);
+
+            //MyHotKeyManager.DisableOnManagerFormInactive = true;
+        }
+
+        void MyHotKeyManager_LocalHotKeyPressed(object sender, LocalHotKeyEventArgs e)
+        {
+
+            switch (e.HotKey.Name.ToLower())
+            {
+                case "lhknewinvoice":
+                    btnNew.PerformClick();
+                    break;
+                case "lhkresetinvoice":
+                    button1.PerformClick();
+                    break;
+                case "lhkiteminvoice":
+                    btnProduct.PerformClick();
+                    break;
+                case "lhkdeleteinvoice":
+                    btnDelete.PerformClick();
+                    break;
+                case "lhkcashinvoice":
+                    btnBayar.PerformClick();
+                    break;
+                case "lhksaveinvoice":
+                    btnSave.PerformClick();
+                    break;
+                default:
+                    if (e.HotKey.Tag != null) System.Diagnostics.Process.Start((string)e.HotKey.Tag);
+                    break;
+            }
+           
         }
 
         private void FormPOS_Load(object sender, EventArgs e)
@@ -64,9 +124,19 @@ namespace Point_Of_Sales
             GenerateInvoice();
         }
 
+        public Int32 UnixTimeStampUTC()
+        {
+            Int32 unixTimeStamp;
+            DateTime currentTime = DateTime.Now;
+            DateTime zuluTime = currentTime.ToUniversalTime();
+            DateTime unixEpoch = new DateTime(1970, 1, 1);
+            unixTimeStamp = (Int32)(zuluTime.Subtract(unixEpoch)).TotalSeconds;
+            return unixTimeStamp;
+        }
+
         void GenerateInvoice()
         {
-            lblInvoice.Text = "INV-" + clsFunctions.GenerateCD("SELECT MAX(autoid) FROM tblsales", "tblsales") + "/" + DateTime.Now.Millisecond.ToString();
+            lblInvoice.Text = "INV-" + clsFunctions.GenerateCD("SELECT MAX(autoid) FROM tblsales", "tblsales") + "/" + UnixTimeStampUTC();
         }
 
         private void btnNew_Click(object sender, EventArgs e)
@@ -82,7 +152,7 @@ namespace Point_Of_Sales
             SetProductPOS("SELECT productcode, productname, unitprice, sellingprice, stock, autoid FROM tblproduct WHERE productcode='" + txtProductCode.Text + "'");
         }
 
-        private void SetProductPOS(string sSQL)
+        public void SetProductPOS(string sSQL)
         {
             try
             {
@@ -93,8 +163,10 @@ namespace Point_Of_Sales
                 dsFormPOSList.Clear();
                 daFormPOSList.Fill(dsFormPOSList, "tblproduct");
 
+
                 totalRow = dsFormPOSList.Tables["tblproduct"].Rows.Count - 1;
 
+                txtProductCode.Text = dsFormPOSList.Tables["tblproduct"].Rows[0].ItemArray.GetValue(0).ToString();
                 txtProductName.Text = dsFormPOSList.Tables["tblproduct"].Rows[0].ItemArray.GetValue(1).ToString();
                 txtPrice.Text = dsFormPOSList.Tables["tblproduct"].Rows[0].ItemArray.GetValue(2).ToString();
                 txtQTY.Text = "1";
@@ -107,6 +179,8 @@ namespace Point_Of_Sales
 
             }
             catch (Exception ex) {}
+
+
         }
 
         void Reset()
@@ -228,9 +302,9 @@ namespace Point_Of_Sales
 
         private void lvPOS_MouseDown(object sender, MouseEventArgs e)
         {
-            li = lvPOS.GetItemAt(e.X, e.Y);
-            PosX = e.X;
-            PosY = e.Y;
+            //li = lvPOS.GetItemAt(e.X, e.Y);
+            //PosX = e.X;
+            //PosY = e.Y;
         }
 
         private void btnBayar_Click(object sender, EventArgs e)
@@ -258,7 +332,7 @@ namespace Point_Of_Sales
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (lvPOS.Items.Count > 0)
+            if (lvPOS.Items.Count > 0 && decimal.Parse(lblCash.Text) != 0)
             {
                 for (int i = 0; i < lvPOS.Items.Count; i++)
                 {
@@ -283,6 +357,49 @@ namespace Point_Of_Sales
                 lblChange.Text = "0";
 
                 NewInvoice();
+            }
+        }
+
+
+        private void btnProduct_Click(object sender, EventArgs e)
+        {
+            FormProduct_View.sFormIndex = "POS";
+            FormProduct_View sForm = new FormProduct_View();
+            sForm.ShowDialog();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (lvPOS.Items.Count > 0)
+            {
+                if (lvPOS.Items[lvPOS.FocusedItem.Index].Selected)
+                {
+                    lvPOS.Items[lvPOS.FocusedItem.Index].Remove();
+                    SumTotalAmount();
+                    txtProductCode.Focus();
+                }
+                
+            }
+        }
+
+        private void lvPOS_DoubleClick(object sender, EventArgs e)
+        {
+            if (lvPOS.SelectedItems.Count == 1)
+            {
+                ListView.SelectedListViewItemCollection items = lvPOS.SelectedItems;
+
+                ListViewItem lvItem = items[0];
+                //string what = lvItem.Text;
+
+                string value = lvItem.SubItems[3].Text;
+
+                if (InputBox("[ " + lvItem.SubItems[0].Text + " ] " + lvItem.SubItems[1].Text, "QTY [ " + lvItem.SubItems[1].Text + " ] :", ref value) == DialogResult.OK)
+                {
+                    lvItem.SubItems[3].Text = value;
+                    lvItem.SubItems[4].Text = (decimal.Parse(lvItem.SubItems[3].Text) * decimal.Parse(lvItem.SubItems[2].Text)).ToString();
+                    SumTotalAmount();
+                }
+
             }
         }
 

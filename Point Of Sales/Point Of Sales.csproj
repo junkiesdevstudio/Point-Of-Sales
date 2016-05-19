@@ -35,6 +35,9 @@
     <StartupObject>Point_Of_Sales.clsStart</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="HotkeyManagement">
+      <HintPath>..\..\..\..\CSHARP PACKAGE\Manager\Global Shortcut Manager\Dlls\Win\HotkeyManagement.dll</HintPath>
+    </Reference>
     <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.6.9.8\lib\net45\MySql.Data.dll</HintPath>
       <Private>True</Private>
@@ -62,6 +65,12 @@
     <Compile Include="CLASS\clsSecurity.cs" />
     <Compile Include="CLASS\clsStart.cs" />
     <Compile Include="CLASS\clsVariables.cs" />
+    <Compile Include="FormAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAbout.Designer.cs">
+      <DependentUpon>FormAbout.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCash.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +125,12 @@
     <Compile Include="FormProduct_Modify.Designer.cs">
       <DependentUpon>FormProduct_Modify.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormProduct_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProduct_View.Designer.cs">
+      <DependentUpon>FormProduct_View.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormSetting.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +174,9 @@
       <DependentUpon>FormUser_Modify.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormAbout.resx">
+      <DependentUpon>FormAbout.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCash.resx">
       <DependentUpon>FormCash.cs</DependentUpon>
     </EmbeddedResource>
@@ -185,6 +203,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormProduct_Modify.resx">
       <DependentUpon>FormProduct_Modify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProduct_View.resx">
+      <DependentUpon>FormProduct_View.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSetting.resx">
       <DependentUpon>FormSetting.cs</DependentUpon>

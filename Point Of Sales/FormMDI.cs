@@ -160,6 +160,7 @@ namespace Point_Of_Sales
 
         private void productMasterFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            CloseAllChild();
             Form sForm = FormProduct.Instance();
             sForm.MdiParent = this;
             sForm.Show();
@@ -173,6 +174,7 @@ namespace Point_Of_Sales
 
         private void pointOfSalesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            CloseAllChild();
             Form sForm = FormPOS.Instance();
             sForm.MdiParent = this;
             sForm.Show();
@@ -182,6 +184,18 @@ namespace Point_Of_Sales
         private void toolBtnPOS_Click(object sender, EventArgs e)
         {
             pointOfSalesToolStripMenuItem.PerformClick();
+        }
+
+        private void aboutFastaWorldToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormAbout mFrom = new FormAbout();
+            mFrom.MdiParent = this;
+            mFrom.Show();
+        }
+
+        private void toolBtnHelp_Click(object sender, EventArgs e)
+        {
+            aboutFastaWorldToolStripMenuItem.PerformClick();
         }
     }
 }

@@ -211,7 +211,7 @@
             // pointOfSalesToolStripMenuItem
             // 
             this.pointOfSalesToolStripMenuItem.Name = "pointOfSalesToolStripMenuItem";
-            this.pointOfSalesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pointOfSalesToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.pointOfSalesToolStripMenuItem.Text = "Point Of Sales";
             this.pointOfSalesToolStripMenuItem.Click += new System.EventHandler(this.pointOfSalesToolStripMenuItem_Click);
             // 
@@ -220,7 +220,7 @@
             this.inventoryToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.inventoryAdjustmentToolStripMenuItem});
             this.inventoryToolStripMenuItem.Name = "inventoryToolStripMenuItem";
-            this.inventoryToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.inventoryToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.inventoryToolStripMenuItem.Text = "Inventory";
             // 
             // inventoryAdjustmentToolStripMenuItem
@@ -328,6 +328,7 @@
             this.aboutFastaWorldToolStripMenuItem.Name = "aboutFastaWorldToolStripMenuItem";
             this.aboutFastaWorldToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.aboutFastaWorldToolStripMenuItem.Text = "About FastaWorld";
+            this.aboutFastaWorldToolStripMenuItem.Click += new System.EventHandler(this.aboutFastaWorldToolStripMenuItem_Click);
             // 
             // toolStripTop
             // 
@@ -594,6 +595,7 @@
             this.toolBtnHelp.Padding = new System.Windows.Forms.Padding(4);
             this.toolBtnHelp.Size = new System.Drawing.Size(44, 44);
             this.toolBtnHelp.ToolTipText = "Help";
+            this.toolBtnHelp.Click += new System.EventHandler(this.toolBtnHelp_Click);
             // 
             // FormMDI
             // 

@@ -1,5 +1,5 @@
 -- MySqlBackup.NET 2.0.9.3
--- Dump Time: 2016-05-19 20.57.27
+-- Dump Time: 2016-05-20 01.18.47
 -- --------------------------------------
 -- Server version 5.6.21 MySQL Community Server (GPL)
 
@@ -90,7 +90,7 @@ CREATE TABLE IF NOT EXISTS `tblsales` (
   KEY `invoiceno` (`invoiceno`,`productautoid`),
   KEY `productautoid` (`productautoid`),
   CONSTRAINT `tblsales_ibfk_1` FOREIGN KEY (`productautoid`) REFERENCES `tblproduct` (`autoid`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 -- 
 -- Dumping data for table tblsales
@@ -102,7 +102,9 @@ INSERT INTO `tblsales`(`autoid`,`invoiceno`,`productautoid`,`unitprice`,`quantit
 (2,'INV-0001',1,3000,1,3000,13000,15000,2000,'2016-05-19 00:00:00'),
 (3,'INV-0001',2,5000,2,10000,13000,15000,2000,'2016-05-19 00:00:00'),
 (4,'INV-0003/497',2,5000,1,5000,20000,50000,30000,'2016-05-19 00:00:00'),
-(5,'INV-0003/497',1,3000,5,15000,20000,50000,30000,'2016-05-19 00:00:00');
+(5,'INV-0003/497',1,3000,5,15000,20000,50000,30000,'2016-05-19 00:00:00'),
+(6,'INV-0005/1463681215',2,5000,5,25000,25000,0,0,'2016-05-20 00:00:00'),
+(7,'INV-0006/1463681404',1,3000,5,15000,15000,20000,5000,'2016-05-20 00:00:00');
 /*!40000 ALTER TABLE `tblsales` ENABLE KEYS */;
 
 -- 
@@ -204,5 +206,5 @@ INSERT INTO `tblusertype`(`autoid`,`typename`) VALUES
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 
--- Dump completed on 2016-05-19 20.57.27
--- Total time: 0:0:0:0:262 (d:h:m:s:ms)
+-- Dump completed on 2016-05-20 01.18.47
+-- Total time: 0:0:0:0:217 (d:h:m:s:ms)
