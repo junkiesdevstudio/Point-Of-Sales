@@ -54,3 +54,4 @@ L:\GIT\CSHARP\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormProduct
 L:\GIT\CSHARP\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormProduct_Modify.resources
 L:\GIT\CSHARP\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormCategory_View.resources
 L:\GIT\CSHARP\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormSupplier_View.resources
+L:\GIT\CSHARP\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormPOS.resources

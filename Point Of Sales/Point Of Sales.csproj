@@ -92,6 +92,12 @@
     <Compile Include="FormMDI.Designer.cs">
       <DependentUpon>FormMDI.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormPOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPOS.Designer.cs">
+      <DependentUpon>FormPOS.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMDI.resx">
       <DependentUpon>FormMDI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPOS.resx">
+      <DependentUpon>FormPOS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormProduct.resx">
       <DependentUpon>FormProduct.cs</DependentUpon>

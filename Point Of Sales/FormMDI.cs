@@ -170,5 +170,18 @@ namespace Point_Of_Sales
         {
             productMasterFileToolStripMenuItem.PerformClick();
         }
+
+        private void pointOfSalesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form sForm = FormPOS.Instance();
+            sForm.MdiParent = this;
+            sForm.Show();
+            sForm.Activate();
+        }
+
+        private void toolBtnPOS_Click(object sender, EventArgs e)
+        {
+            pointOfSalesToolStripMenuItem.PerformClick();
+        }
     }
 }
