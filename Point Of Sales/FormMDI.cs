@@ -23,8 +23,6 @@ namespace Point_Of_Sales
 
         private void FormMDI_Load(object sender, EventArgs e)
         {
-
-
             lblWelcome.Text = "Selamat Datang! " + clsVariables.sFullname;
 
             FormSplashScreen SplashScreen = new FormSplashScreen();
@@ -117,6 +115,8 @@ namespace Point_Of_Sales
 
         private void toolBtnSetting_Click(object sender, EventArgs e)
         {
+            CloseAllChild();
+
             Form sForm = FormSetting.Instance();
             sForm.MdiParent = this;
             sForm.Show();
@@ -145,6 +145,8 @@ namespace Point_Of_Sales
 
         private void itemCategoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            CloseAllChild();
+
             Form sForm = FormCategory.Instance();
             sForm.MdiParent = this;
             sForm.Show();
