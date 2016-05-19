@@ -26,7 +26,7 @@ namespace Point_Of_Sales
         }
 
         MySqlDataAdapter daFormPOSList = new MySqlDataAdapter();
-        MySqlCommand cmdDelete;
+        MySqlCommand cmdAddInvoice;
         DataSet dsFormPOSList = new DataSet();
 
         int PosX, PosY;
@@ -40,9 +40,23 @@ namespace Point_Of_Sales
         private void FormPOS_Load(object sender, EventArgs e)
         {
             daFormPOSList = new MySqlDataAdapter("", clsConnection.CN);
+
+            cmdAddInvoice = new MySqlCommand("INSERT INTO tblsales( invoiceno , productautoid, unitprice, quantity, subtotal, cash, changecash, dateadded, totalamount)" +
+                                               "VALUES (@getInvoice,@getProductID,@getUnitPrice,@getQuantity,@getSubTotal,@getCash,@getChange,@getDateAdded,@getTotalAmount)", clsConnection.CN);
+
             NewInvoice();
 
+            cmdAddInvoice.Parameters.Add("@getInvoice", MySqlDbType.VarChar);
+            cmdAddInvoice.Parameters.Add("@getProductID", MySqlDbType.Int16);
+            cmdAddInvoice.Parameters.Add("@getUnitPrice", MySqlDbType.Decimal);
+            cmdAddInvoice.Parameters.Add("@getQuantity", MySqlDbType.Int16);
+            cmdAddInvoice.Parameters.Add("@getSubTotal", MySqlDbType.Decimal);
+            cmdAddInvoice.Parameters.Add("@getCash", MySqlDbType.Decimal);
+            cmdAddInvoice.Parameters.Add("@getChange", MySqlDbType.Decimal);
+            cmdAddInvoice.Parameters.Add("@getDateAdded", MySqlDbType.Date);
+            cmdAddInvoice.Parameters.Add("@getTotalAmount", MySqlDbType.Decimal);
 
+            publicFormPOS = this;
         }
 
         void NewInvoice()
@@ -52,18 +66,20 @@ namespace Point_Of_Sales
 
         void GenerateInvoice()
         {
-            lblInvoice.Text = "INV-" + clsFunctions.GenerateCD("SELECT MAX(autoid) FROM tblsales", "tblsales") + "/" + DateTime.Now.Ticks;
+            lblInvoice.Text = "INV-" + clsFunctions.GenerateCD("SELECT MAX(autoid) FROM tblsales", "tblsales") + "/" + DateTime.Now.Millisecond.ToString();
         }
 
         private void btnNew_Click(object sender, EventArgs e)
         {
             NewInvoice();
+            Reset();
+            lvPOS.Items.Clear();
         }
 
 
         private void txtProductCode_KeyPress(object sender, KeyPressEventArgs e)
         {
-            SetProductPOS("SELECT productcode, productname, unitprice, sellingprice, stock FROM tblproduct WHERE productcode='" + txtProductCode.Text + "'");
+            SetProductPOS("SELECT productcode, productname, unitprice, sellingprice, stock, autoid FROM tblproduct WHERE productcode='" + txtProductCode.Text + "'");
         }
 
         private void SetProductPOS(string sSQL)
@@ -82,6 +98,7 @@ namespace Point_Of_Sales
                 txtProductName.Text = dsFormPOSList.Tables["tblproduct"].Rows[0].ItemArray.GetValue(1).ToString();
                 txtPrice.Text = dsFormPOSList.Tables["tblproduct"].Rows[0].ItemArray.GetValue(2).ToString();
                 txtQTY.Text = "1";
+                txtProductID.Text = dsFormPOSList.Tables["tblproduct"].Rows[0].ItemArray.GetValue(5).ToString();
 
                 txtSubTotal.Text = (decimal.Parse(txtQTY.Text) * decimal.Parse(txtPrice.Text)).ToString();
 
@@ -101,8 +118,9 @@ namespace Point_Of_Sales
             txtPrice.Text = string.Empty;
             txtQTY.Text = string.Empty;
             txtSubTotal.Text = string.Empty;
+            txtProductID.Text = string.Empty;
 
-            
+
         }
 
         private void AddProductList()
@@ -111,6 +129,7 @@ namespace Point_Of_Sales
             if (lvPOS.FindItemWithText(txtProductCode.Text) != null)
             {
                 MessageBox.Show("Produk yang anda pilih sudah tercantum.", clsVariables.sMSGBOX, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Reset();
                 return;
             }
 
@@ -119,12 +138,18 @@ namespace Point_Of_Sales
             item.SubItems.Add(txtPrice.Text);
             item.SubItems.Add(txtQTY.Text);
             item.SubItems.Add(txtSubTotal.Text);
+            item.SubItems.Add(txtProductID.Text);
 
             lvPOS.Items.Add(item);
 
             Reset();
 
             SumTotalAmount();
+
+            if (decimal.Parse(lblCash.Text) > 0)
+            {
+                SumCashFinish(lblCash.Text);
+            }
 
         }
 
@@ -138,6 +163,7 @@ namespace Point_Of_Sales
             }
 
             lblTotalAmount.Text = sTotalAmount.ToString();
+            lblTotal.Text = lblTotalAmount.Text;
         }
 
         private void txtQTY_TextChanged(object sender, EventArgs e)
@@ -154,6 +180,14 @@ namespace Point_Of_Sales
                 
             }
                
+        }
+
+        public void SumCashFinish(string cash)
+        {
+            lblCash.Text = cash;
+
+            lblChange.Text = (decimal.Parse(cash) - decimal.Parse(lblTotalAmount.Text)).ToString();
+
         }
 
         private void lvPOS_MouseUp(object sender, MouseEventArgs e)
@@ -199,6 +233,58 @@ namespace Point_Of_Sales
             PosY = e.Y;
         }
 
+        private void btnBayar_Click(object sender, EventArgs e)
+        {
+            FormCash sForm = new FormCash();
+            sForm.ShowDialog();
+        }
+
+        private void txtProductCode_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Reset();
+            lvPOS.Items.Clear();
+        }
+
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (lvPOS.Items.Count > 0)
+            {
+                for (int i = 0; i < lvPOS.Items.Count; i++)
+                {
+                    cmdAddInvoice.Parameters["@getInvoice"].Value = lblInvoice.Text;
+                    cmdAddInvoice.Parameters["@getProductID"].Value = int.Parse(lvPOS.Items[i].SubItems[5].Text);
+                    cmdAddInvoice.Parameters["@getUnitPrice"].Value = decimal.Parse(lvPOS.Items[i].SubItems[2].Text);
+                    cmdAddInvoice.Parameters["@getQuantity"].Value = int.Parse(lvPOS.Items[i].SubItems[3].Text);
+                    cmdAddInvoice.Parameters["@getSubTotal"].Value = decimal.Parse(lvPOS.Items[i].SubItems[4].Text);
+                    cmdAddInvoice.Parameters["@getCash"].Value = decimal.Parse(lblCash.Text);
+                    cmdAddInvoice.Parameters["@getChange"].Value =  decimal.Parse(lblChange.Text); 
+                    cmdAddInvoice.Parameters["@getDateAdded"].Value = DateTime.Now;
+                    cmdAddInvoice.Parameters["@getTotalAmount"].Value = decimal.Parse(lblTotalAmount.Text);
+
+                    cmdAddInvoice.ExecuteNonQuery();
+                }
+
+                Reset();
+                lvPOS.Items.Clear();
+                lblTotalAmount.Text = "0";
+                lblTotal.Text = "0";
+                lblCash.Text = "0";
+                lblChange.Text = "0";
+
+                NewInvoice();
+            }
+        }
 
         public static DialogResult InputBox(string title, string promptText, ref string value)
         {

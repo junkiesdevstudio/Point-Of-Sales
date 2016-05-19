@@ -62,6 +62,12 @@
     <Compile Include="CLASS\clsSecurity.cs" />
     <Compile Include="CLASS\clsStart.cs" />
     <Compile Include="CLASS\clsVariables.cs" />
+    <Compile Include="FormCash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCash.Designer.cs">
+      <DependentUpon>FormCash.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCategory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +159,9 @@
       <DependentUpon>FormUser_Modify.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormCash.resx">
+      <DependentUpon>FormCash.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCategory.resx">
       <DependentUpon>FormCategory.cs</DependentUpon>
     </EmbeddedResource>

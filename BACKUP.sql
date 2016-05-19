@@ -1,5 +1,5 @@
 -- MySqlBackup.NET 2.0.9.3
--- Dump Time: 2016-05-19 01.25.39
+-- Dump Time: 2016-05-19 20.57.27
 -- --------------------------------------
 -- Server version 5.6.21 MySQL Community Server (GPL)
 
@@ -40,6 +40,72 @@ INSERT INTO `tblcategory`(`autoid`,`categorycode`,`categoryname`,`description`,`
 /*!40000 ALTER TABLE `tblcategory` ENABLE KEYS */;
 
 -- 
+-- Definition of tblproduct
+-- 
+
+DROP TABLE IF EXISTS `tblproduct`;
+CREATE TABLE IF NOT EXISTS `tblproduct` (
+  `autoid` int(11) NOT NULL AUTO_INCREMENT,
+  `productcode` varchar(50) NOT NULL,
+  `productname` varchar(50) NOT NULL,
+  `categoryautoid` int(50) NOT NULL,
+  `supplierautoid` int(50) NOT NULL,
+  `unitprice` decimal(10,0) NOT NULL,
+  `sellingprice` decimal(10,0) NOT NULL,
+  `stock` int(11) NOT NULL,
+  PRIMARY KEY (`autoid`),
+  KEY `categoryautoid` (`categoryautoid`,`supplierautoid`),
+  KEY `supplierautoid` (`supplierautoid`),
+  CONSTRAINT `tblproduct_ibfk_1` FOREIGN KEY (`categoryautoid`) REFERENCES `tblcategory` (`autoid`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `tblproduct_ibfk_2` FOREIGN KEY (`supplierautoid`) REFERENCES `tblsupplier` (`autoid`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+-- 
+-- Dumping data for table tblproduct
+-- 
+
+/*!40000 ALTER TABLE `tblproduct` DISABLE KEYS */;
+INSERT INTO `tblproduct`(`autoid`,`productcode`,`productname`,`categoryautoid`,`supplierautoid`,`unitprice`,`sellingprice`,`stock`) VALUES
+(1,'8990001000135','Fresh Tea',2,2,3000,3500,10),
+(2,'8990001000128','Es Teh',2,2,5000,6000,10);
+/*!40000 ALTER TABLE `tblproduct` ENABLE KEYS */;
+
+-- 
+-- Definition of tblsales
+-- 
+
+DROP TABLE IF EXISTS `tblsales`;
+CREATE TABLE IF NOT EXISTS `tblsales` (
+  `autoid` int(11) NOT NULL AUTO_INCREMENT,
+  `invoiceno` varchar(50) NOT NULL,
+  `productautoid` int(50) NOT NULL,
+  `unitprice` decimal(50,0) NOT NULL,
+  `quantity` int(50) NOT NULL,
+  `subtotal` decimal(50,0) NOT NULL,
+  `totalamount` decimal(50,0) NOT NULL,
+  `cash` decimal(50,0) NOT NULL,
+  `changecash` decimal(50,0) NOT NULL,
+  `dateadded` date NOT NULL,
+  PRIMARY KEY (`autoid`),
+  KEY `invoiceno` (`invoiceno`,`productautoid`),
+  KEY `productautoid` (`productautoid`),
+  CONSTRAINT `tblsales_ibfk_1` FOREIGN KEY (`productautoid`) REFERENCES `tblproduct` (`autoid`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+-- 
+-- Dumping data for table tblsales
+-- 
+
+/*!40000 ALTER TABLE `tblsales` DISABLE KEYS */;
+INSERT INTO `tblsales`(`autoid`,`invoiceno`,`productautoid`,`unitprice`,`quantity`,`subtotal`,`totalamount`,`cash`,`changecash`,`dateadded`) VALUES
+(1,'INV-0000',1,3000,1,3000,3000,5000,2000,'2016-05-19 00:00:00'),
+(2,'INV-0001',1,3000,1,3000,13000,15000,2000,'2016-05-19 00:00:00'),
+(3,'INV-0001',2,5000,2,10000,13000,15000,2000,'2016-05-19 00:00:00'),
+(4,'INV-0003/497',2,5000,1,5000,20000,50000,30000,'2016-05-19 00:00:00'),
+(5,'INV-0003/497',1,3000,5,15000,20000,50000,30000,'2016-05-19 00:00:00');
+/*!40000 ALTER TABLE `tblsales` ENABLE KEYS */;
+
+-- 
 -- Definition of tblsupplier
 -- 
 
@@ -67,7 +133,7 @@ CREATE TABLE IF NOT EXISTS `tblsupplier` (
 
 /*!40000 ALTER TABLE `tblsupplier` DISABLE KEYS */;
 INSERT INTO `tblsupplier`(`autoid`,`suppliercode`,`suppliername`,`discription`,`contactperson`,`bussinessno`,`telefaxno`,`mobileno`,`email`,`address`,`status`,`dateadded`) VALUES
-(2,'SUPP-0000','Toko Maju Mundur','Ini Keterangan Supplier','Joni Widianto','1234567890','','','asdfg@gmail.com','Ini Alamat Supplier','ACTIVE','2016-05-19 00:00:00');
+(2,'SUPP-0000','Toko Maju Mundur','Ini Keterangan Supplier','Joni Widianto','1234567890','','','asdfg@gmail.com','Ini Alamat Supplier','ACTIVE','2016-05-17 00:00:00');
 /*!40000 ALTER TABLE `tblsupplier` ENABLE KEYS */;
 
 -- 
@@ -138,5 +204,5 @@ INSERT INTO `tblusertype`(`autoid`,`typename`) VALUES
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 
--- Dump completed on 2016-05-19 01.25.39
--- Total time: 0:0:0:0:78 (d:h:m:s:ms)
+-- Dump completed on 2016-05-19 20.57.27
+-- Total time: 0:0:0:0:262 (d:h:m:s:ms)

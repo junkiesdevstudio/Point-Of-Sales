@@ -63,7 +63,7 @@
             this.bttnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bttnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.bttnUpdate.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bttnUpdate.Location = new System.Drawing.Point(180, 401);
+            this.bttnUpdate.Location = new System.Drawing.Point(181, 401);
             this.bttnUpdate.Name = "bttnUpdate";
             this.bttnUpdate.Size = new System.Drawing.Size(88, 26);
             this.bttnUpdate.TabIndex = 213;
