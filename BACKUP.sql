@@ -1,7 +1,7 @@
 -- MySqlBackup.NET 2.0.9.3
--- Dump Time: 2016-05-20 01.18.47
+-- Dump Time: 2016-05-20 14:24:29
 -- --------------------------------------
--- Server version 5.6.21 MySQL Community Server (GPL)
+-- Server version 5.5.27 MySQL Community Server (GPL)
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS `tblproduct` (
   KEY `supplierautoid` (`supplierautoid`),
   CONSTRAINT `tblproduct_ibfk_1` FOREIGN KEY (`categoryautoid`) REFERENCES `tblcategory` (`autoid`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `tblproduct_ibfk_2` FOREIGN KEY (`supplierautoid`) REFERENCES `tblsupplier` (`autoid`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
 -- 
 -- Dumping data for table tblproduct
@@ -66,8 +66,10 @@ CREATE TABLE IF NOT EXISTS `tblproduct` (
 
 /*!40000 ALTER TABLE `tblproduct` DISABLE KEYS */;
 INSERT INTO `tblproduct`(`autoid`,`productcode`,`productname`,`categoryautoid`,`supplierautoid`,`unitprice`,`sellingprice`,`stock`) VALUES
-(1,'8990001000135','Fresh Tea',2,2,3000,3500,10),
-(2,'8990001000128','Es Teh',2,2,5000,6000,10);
+(13,'9780201374445','HTA',1,2,5000,5500,19),
+(14,'9780201375558','HTB',2,2,3000,3200,8),
+(15,'9780201376661','HTC',1,2,4000,4300,8),
+(16,'9780201371116','HTD',1,2,1500,2000,20);
 /*!40000 ALTER TABLE `tblproduct` ENABLE KEYS */;
 
 -- 
@@ -90,7 +92,7 @@ CREATE TABLE IF NOT EXISTS `tblsales` (
   KEY `invoiceno` (`invoiceno`,`productautoid`),
   KEY `productautoid` (`productautoid`),
   CONSTRAINT `tblsales_ibfk_1` FOREIGN KEY (`productautoid`) REFERENCES `tblproduct` (`autoid`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 -- 
 -- Dumping data for table tblsales
@@ -98,13 +100,10 @@ CREATE TABLE IF NOT EXISTS `tblsales` (
 
 /*!40000 ALTER TABLE `tblsales` DISABLE KEYS */;
 INSERT INTO `tblsales`(`autoid`,`invoiceno`,`productautoid`,`unitprice`,`quantity`,`subtotal`,`totalamount`,`cash`,`changecash`,`dateadded`) VALUES
-(1,'INV-0000',1,3000,1,3000,3000,5000,2000,'2016-05-19 00:00:00'),
-(2,'INV-0001',1,3000,1,3000,13000,15000,2000,'2016-05-19 00:00:00'),
-(3,'INV-0001',2,5000,2,10000,13000,15000,2000,'2016-05-19 00:00:00'),
-(4,'INV-0003/497',2,5000,1,5000,20000,50000,30000,'2016-05-19 00:00:00'),
-(5,'INV-0003/497',1,3000,5,15000,20000,50000,30000,'2016-05-19 00:00:00'),
-(6,'INV-0005/1463681215',2,5000,5,25000,25000,0,0,'2016-05-20 00:00:00'),
-(7,'INV-0006/1463681404',1,3000,5,15000,15000,20000,5000,'2016-05-20 00:00:00');
+(11,'INV-0000/1463728518',16,1500,5,7500,26500,30000,3500,'2016-05-20 00:00:00'),
+(12,'INV-0000/1463728518',15,4000,2,8000,26500,30000,3500,'2016-05-20 00:00:00'),
+(13,'INV-0000/1463728518',14,3000,2,6000,26500,30000,3500,'2016-05-20 00:00:00'),
+(14,'INV-0000/1463728518',13,5000,1,5000,26500,30000,3500,'2016-05-20 00:00:00');
 /*!40000 ALTER TABLE `tblsales` ENABLE KEYS */;
 
 -- 
@@ -196,6 +195,18 @@ INSERT INTO `tblusertype`(`autoid`,`typename`) VALUES
 (2,'KASIR');
 /*!40000 ALTER TABLE `tblusertype` ENABLE KEYS */;
 
+-- 
+-- Dumping triggers
+-- 
+
+DROP TRIGGER /*!50030 IF EXISTS */ `MIN_STOCK`;
+DELIMITER |
+CREATE TRIGGER `MIN_STOCK` AFTER INSERT ON `tblsales` FOR EACH ROW BEGIN
+UPDATE tblproduct SET stock=stock-NEW.quantity 
+WHERE autoid=NEW.productautoid;
+END |
+DELIMITER ;
+
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
@@ -206,5 +217,5 @@ INSERT INTO `tblusertype`(`autoid`,`typename`) VALUES
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 
--- Dump completed on 2016-05-20 01.18.47
--- Total time: 0:0:0:0:217 (d:h:m:s:ms)
+-- Dump completed on 2016-05-20 14:24:29
+-- Total time: 0:0:0:0:311 (d:h:m:s:ms)

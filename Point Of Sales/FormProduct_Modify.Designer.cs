@@ -71,7 +71,6 @@
             // 
             // txtProductCode
             // 
-            this.txtProductCode.Enabled = false;
             this.txtProductCode.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProductCode.Location = new System.Drawing.Point(89, 70);
             this.txtProductCode.Name = "txtProductCode";

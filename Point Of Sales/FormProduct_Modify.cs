@@ -32,7 +32,7 @@ namespace Point_Of_Sales
         {
             if (ADD_STATE == true)
             {
-                txtProductCode.Text = "PROD-" + clsFunctions.GenerateCD("SELECT MAX(autoid) FROM tblproduct", "tblproduct");
+                //txtProductCode.Text = "PROD-" + clsFunctions.GenerateCD("SELECT MAX(autoid) FROM tblproduct", "tblproduct");
 
                 cmdAddProduct = new MySqlCommand("INSERT INTO tblproduct( productcode , productname, categoryautoid, supplierautoid, unitprice, sellingprice, stock)" +
                                                "VALUES (@getProductCode,@getProductName,@getCategoryId,@getSupplierID,@getUnitPrice,@getSellingPrice,@getStock)", clsConnection.CN);
@@ -40,7 +40,7 @@ namespace Point_Of_Sales
             }
             else
             {
-                txtProductCode.ReadOnly = true;
+                txtProductCode.Enabled = false;
 
                 //Set Edit OleDbCommand
                 cmdAddProduct = new MySqlCommand("UPDATE tblproduct SET productcode=@getProductCode, productname=@getProductName, categoryautoid=@getCategoryId, supplierautoid=@getSupplierID, unitprice=@getUnitPrice, sellingprice=@getSellingPrice, stock=@getStock WHERE productcode LIKE '" + sProductKode + "' ", clsConnection.CN);

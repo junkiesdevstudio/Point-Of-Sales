@@ -60,3 +60,32 @@ L:\GIT\CSHARP\Point-Of-Sales\Point Of Sales\obj\Debug\Point Of Sales.csproj.Gene
 L:\GIT\CSHARP\Point-Of-Sales\Point Of Sales\obj\Debug\Point Of Sales.exe
 L:\GIT\CSHARP\Point-Of-Sales\Point Of Sales\obj\Debug\Point Of Sales.pdb
 L:\GIT\CSHARP\Point-Of-Sales\Point Of Sales\obj\Debug\Point Of Sales.csprojResolveAssemblyReference.cache
+D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\bin\Debug\Point Of Sales.exe.config
+D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\obj\Debug\Point Of Sales.exe
+D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\obj\Debug\Point Of Sales.pdb
+D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\bin\Debug\Point Of Sales.exe
+D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\bin\Debug\Point Of Sales.pdb
+D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\bin\Debug\MySql.Data.dll
+D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\bin\Debug\MySqlBackup.dll
+D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\bin\Debug\HotkeyManagement.pdb
+D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\obj\Debug\Point Of Sales.csprojResolveAssemblyReference.cache
+D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormAbout.resources
+D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormCash.resources
+D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormCategory.resources
+D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormCategory_Modify.resources
+D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormCategory_View.resources
+D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormLogin.resources
+D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormMDI.resources
+D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormPOS.resources
+D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormProduct.resources
+D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormProduct_Modify.resources
+D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormProduct_View.resources
+D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormSetting.resources
+D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormSplashScreen.resources
+D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormSupplier.resources
+D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormSupplier_Modify.resources
+D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormSupplier_View.resources
+D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormUser.resources
+D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormUser_Modify.resources
+D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.Properties.Resources.resources
+D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\obj\Debug\Point Of Sales.csproj.GenerateResource.Cache
