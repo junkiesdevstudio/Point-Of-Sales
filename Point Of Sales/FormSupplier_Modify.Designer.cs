@@ -54,6 +54,12 @@
             this.bttnUpdate = new System.Windows.Forms.Button();
             this.bttnReset = new System.Windows.Forms.Button();
             this.bttnCancel = new System.Windows.Forms.Button();
+            this.txtCash = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.dtTempo = new System.Windows.Forms.DateTimePicker();
+            this.txtStock = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picLOGO)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -298,6 +304,59 @@
             this.bttnCancel.Text = "&Batal";
             this.bttnCancel.Click += new System.EventHandler(this.bttnCancel_Click);
             // 
+            // txtCash
+            // 
+            this.txtCash.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCash.Location = new System.Drawing.Point(402, 118);
+            this.txtCash.Name = "txtCash";
+            this.txtCash.Size = new System.Drawing.Size(200, 20);
+            this.txtCash.TabIndex = 218;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(318, 121);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(40, 13);
+            this.label12.TabIndex = 217;
+            this.label12.Text = "&Harga:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(317, 147);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(43, 13);
+            this.label13.TabIndex = 220;
+            this.label13.Text = "&Tempo:";
+            // 
+            // dtTempo
+            // 
+            this.dtTempo.Location = new System.Drawing.Point(402, 144);
+            this.dtTempo.Name = "dtTempo";
+            this.dtTempo.Size = new System.Drawing.Size(200, 20);
+            this.dtTempo.TabIndex = 219;
+            // 
+            // txtStock
+            // 
+            this.txtStock.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStock.Location = new System.Drawing.Point(402, 170);
+            this.txtStock.Name = "txtStock";
+            this.txtStock.Size = new System.Drawing.Size(200, 20);
+            this.txtStock.TabIndex = 222;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(318, 173);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(32, 13);
+            this.label14.TabIndex = 221;
+            this.label14.Text = "&Stok:";
+            // 
             // FormSupplier_Modify
             // 
             this.AcceptButton = this.bttnUpdate;
@@ -305,6 +364,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.bttnCancel;
             this.ClientSize = new System.Drawing.Size(615, 376);
+            this.Controls.Add(this.txtStock);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.dtTempo);
+            this.Controls.Add(this.txtCash);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.bttnUpdate);
             this.Controls.Add(this.bttnReset);
             this.Controls.Add(this.bttnCancel);
@@ -372,5 +437,11 @@
         private System.Windows.Forms.Button bttnUpdate;
         private System.Windows.Forms.Button bttnReset;
         private System.Windows.Forms.Button bttnCancel;
+        private System.Windows.Forms.TextBox txtCash;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.DateTimePicker dtTempo;
+        private System.Windows.Forms.TextBox txtStock;
+        private System.Windows.Forms.Label label14;
     }
 }

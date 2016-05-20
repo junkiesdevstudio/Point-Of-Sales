@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,8 @@ namespace Point_Of_Sales
         LocalHotKey lhkCashInvoice = new LocalHotKey("lhkCashInvoice", Keys.F4);
         LocalHotKey lhkSaveInvoice = new LocalHotKey("lhkSaveInvoice", Keys.F5);
         #endregion
+
+        CultureInfo culture = new CultureInfo("id-ID");
 
         clsFunctions sFunctions = new clsFunctions();
 
@@ -168,17 +171,21 @@ namespace Point_Of_Sales
 
                 txtProductCode.Text = dsFormPOSList.Tables["tblproduct"].Rows[0].ItemArray.GetValue(0).ToString();
                 txtProductName.Text = dsFormPOSList.Tables["tblproduct"].Rows[0].ItemArray.GetValue(1).ToString();
-                txtPrice.Text = dsFormPOSList.Tables["tblproduct"].Rows[0].ItemArray.GetValue(2).ToString();
+                decimal mPrice = decimal.Parse(dsFormPOSList.Tables["tblproduct"].Rows[0].ItemArray.GetValue(2).ToString());
+                txtPrice.Text = mPrice.ToString("C", culture);
                 txtQTY.Text = "1";
+                txtStock.Text = dsFormPOSList.Tables["tblproduct"].Rows[0].ItemArray.GetValue(4).ToString();
                 txtProductID.Text = dsFormPOSList.Tables["tblproduct"].Rows[0].ItemArray.GetValue(5).ToString();
 
-                txtSubTotal.Text = (decimal.Parse(txtQTY.Text) * decimal.Parse(txtPrice.Text)).ToString();
+                txtSubTotal.Text = (decimal.Parse(txtQTY.Text) * decimal.Parse(CurToDec(txtPrice.Text))).ToString("c", culture);
 
                 txtQTY.Focus();
                 
 
             }
-            catch (Exception ex) {}
+            catch (Exception ex) { 
+                //MessageBox.Show(ex.Message);
+            }
 
 
         }
@@ -227,30 +234,51 @@ namespace Point_Of_Sales
 
         }
 
+      
+        private string CurToDec(string m_Curr)
+        {
+            return m_Curr.Replace("Rp", "").Replace(".","");
+        }
+
         void SumTotalAmount()
         {
             decimal sTotalAmount = 0;
 
             for (int x=0; x < lvPOS.Items.Count;x++)
             {
-                sTotalAmount += decimal.Parse(lvPOS.Items[x].SubItems[4].Text);
+                sTotalAmount += decimal.Parse(CurToDec(lvPOS.Items[x].SubItems[4].Text));
             }
 
-            lblTotalAmount.Text = sTotalAmount.ToString();
+            lblTotalAmount.Text = sTotalAmount.ToString("C", culture);
             lblTotal.Text = lblTotalAmount.Text;
         }
 
         private void txtQTY_TextChanged(object sender, EventArgs e)
         {
-            if(txtQTY.Text != string.Empty)
-                txtSubTotal.Text = (decimal.Parse(txtQTY.Text) * decimal.Parse(txtPrice.Text)).ToString();
+
+            if (txtQTY.Text != string.Empty)
+                txtSubTotal.Text = (decimal.Parse(txtQTY.Text) * decimal.Parse(CurToDec(txtPrice.Text))).ToString("C", culture);
         }
 
         private void txtQTY_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                AddProductList();
+                //JIKA STOCK MASIH
+                if(int.Parse(txtQTY.Text) <= int.Parse(txtStock.Text))
+                {
+                    if (txtQTY.Text == string.Empty)
+                        txtQTY.Text = "1";
+
+                    AddProductList();
+                }
+                else
+                {
+                    MessageBox.Show("Maaf, sisa stok tidak tersedia. Sisa stok adalah " + txtStock.Text + ".", clsVariables.sMSGBOX, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtQTY.Text = txtStock.Text;
+                }
+
+
                 
             }
                
@@ -258,9 +286,18 @@ namespace Point_Of_Sales
 
         public void SumCashFinish(string cash)
         {
-            lblCash.Text = cash;
+           
+            if(decimal.Parse(CurToDec(cash)) < decimal.Parse(CurToDec(lblTotalAmount.Text)))
+            {
+                MessageBox.Show("Maaf, nilai pembayaran lebih kecil dari nilai Total.", clsVariables.sMSGBOX, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                lblCash.Text = decimal.Parse(cash).ToString("C", culture);
+                lblChange.Text = (decimal.Parse(CurToDec(cash)) - decimal.Parse(CurToDec(lblTotalAmount.Text))).ToString("C", culture);
+            }
 
-            lblChange.Text = (decimal.Parse(cash) - decimal.Parse(lblTotalAmount.Text)).ToString();
+            
 
         }
 
@@ -292,7 +329,7 @@ namespace Point_Of_Sales
                 if (InputBox("[ " + li.SubItems[0].Text + " ] " + li.SubItems[1].Text, "QTY [ " + li.SubItems[1].Text + " ] :", ref value) == DialogResult.OK)
                 {
                     li.SubItems[3].Text = value;
-                    li.SubItems[4].Text = (decimal.Parse(li.SubItems[3].Text) * decimal.Parse(li.SubItems[2].Text)).ToString();
+                    li.SubItems[4].Text = (decimal.Parse(li.SubItems[3].Text) * decimal.Parse(li.SubItems[2].Text)).ToString("C", culture);
                     SumTotalAmount();
                 }
 
@@ -332,19 +369,19 @@ namespace Point_Of_Sales
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (lvPOS.Items.Count > 0 && decimal.Parse(lblCash.Text) != 0)
+            if (lvPOS.Items.Count > 0 && decimal.Parse(CurToDec(lblCash.Text)) > 0)
             {
                 for (int i = 0; i < lvPOS.Items.Count; i++)
                 {
                     cmdAddInvoice.Parameters["@getInvoice"].Value = lblInvoice.Text;
                     cmdAddInvoice.Parameters["@getProductID"].Value = int.Parse(lvPOS.Items[i].SubItems[5].Text);
-                    cmdAddInvoice.Parameters["@getUnitPrice"].Value = decimal.Parse(lvPOS.Items[i].SubItems[2].Text);
+                    cmdAddInvoice.Parameters["@getUnitPrice"].Value = decimal.Parse(CurToDec(lvPOS.Items[i].SubItems[2].Text));
                     cmdAddInvoice.Parameters["@getQuantity"].Value = int.Parse(lvPOS.Items[i].SubItems[3].Text);
-                    cmdAddInvoice.Parameters["@getSubTotal"].Value = decimal.Parse(lvPOS.Items[i].SubItems[4].Text);
-                    cmdAddInvoice.Parameters["@getCash"].Value = decimal.Parse(lblCash.Text);
-                    cmdAddInvoice.Parameters["@getChange"].Value =  decimal.Parse(lblChange.Text); 
+                    cmdAddInvoice.Parameters["@getSubTotal"].Value = decimal.Parse(CurToDec(lvPOS.Items[i].SubItems[4].Text));
+                    cmdAddInvoice.Parameters["@getCash"].Value = decimal.Parse(CurToDec(lblCash.Text));
+                    cmdAddInvoice.Parameters["@getChange"].Value =  decimal.Parse(CurToDec(lblChange.Text)); 
                     cmdAddInvoice.Parameters["@getDateAdded"].Value = DateTime.Now;
-                    cmdAddInvoice.Parameters["@getTotalAmount"].Value = decimal.Parse(lblTotalAmount.Text);
+                    cmdAddInvoice.Parameters["@getTotalAmount"].Value = decimal.Parse(CurToDec(lblTotalAmount.Text));
 
                     cmdAddInvoice.ExecuteNonQuery();
                 }
@@ -396,11 +433,20 @@ namespace Point_Of_Sales
                 if (InputBox("[ " + lvItem.SubItems[0].Text + " ] " + lvItem.SubItems[1].Text, "QTY [ " + lvItem.SubItems[1].Text + " ] :", ref value) == DialogResult.OK)
                 {
                     lvItem.SubItems[3].Text = value;
-                    lvItem.SubItems[4].Text = (decimal.Parse(lvItem.SubItems[3].Text) * decimal.Parse(lvItem.SubItems[2].Text)).ToString();
+                    lvItem.SubItems[4].Text = (decimal.Parse(CurToDec(lvItem.SubItems[3].Text)) * decimal.Parse(CurToDec(lvItem.SubItems[2].Text))).ToString("C", culture);
                     SumTotalAmount();
                 }
 
             }
+        }
+
+        private void txtQTY_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) ||
+            char.IsSymbol(e.KeyChar) ||
+            char.IsWhiteSpace(e.KeyChar) ||
+            char.IsPunctuation(e.KeyChar))
+                        e.Handled = true;
         }
 
         public static DialogResult InputBox(string title, string promptText, ref string value)

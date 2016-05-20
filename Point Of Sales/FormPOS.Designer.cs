@@ -64,6 +64,7 @@
             this.btnBayar = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.txtProductID = new System.Windows.Forms.TextBox();
+            this.txtStock = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -121,7 +122,6 @@
             // 
             // txtPrice
             // 
-            this.txtPrice.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtPrice.Enabled = false;
             this.txtPrice.Location = new System.Drawing.Point(446, 160);
             this.txtPrice.Name = "txtPrice";
@@ -138,6 +138,7 @@
             this.txtQTY.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtQTY.TextChanged += new System.EventHandler(this.txtQTY_TextChanged);
             this.txtQTY.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtQTY_KeyDown);
+            this.txtQTY.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQTY_KeyPress);
             // 
             // txtSubTotal
             // 
@@ -415,7 +416,7 @@
             // 
             // txtProductID
             // 
-            this.txtProductID.Location = new System.Drawing.Point(748, 137);
+            this.txtProductID.Location = new System.Drawing.Point(450, 9);
             this.txtProductID.Name = "txtProductID";
             this.txtProductID.ReadOnly = true;
             this.txtProductID.Size = new System.Drawing.Size(17, 20);
@@ -423,12 +424,23 @@
             this.txtProductID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtProductID.Visible = false;
             // 
+            // txtStock
+            // 
+            this.txtStock.Location = new System.Drawing.Point(473, 9);
+            this.txtStock.Name = "txtStock";
+            this.txtStock.ReadOnly = true;
+            this.txtStock.Size = new System.Drawing.Size(17, 20);
+            this.txtStock.TabIndex = 157;
+            this.txtStock.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtStock.Visible = false;
+            // 
             // FormPOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(777, 542);
             this.ControlBox = false;
+            this.Controls.Add(this.txtStock);
             this.Controls.Add(this.txtProductID);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnBayar);
@@ -504,5 +516,6 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.ColumnHeader chAutoIDProduct;
         private System.Windows.Forms.TextBox txtProductID;
+        private System.Windows.Forms.TextBox txtStock;
     }
 }

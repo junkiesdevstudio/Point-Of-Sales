@@ -26,11 +26,27 @@ namespace Point_Of_Sales
 
         private void txtCash_KeyDown(object sender, KeyEventArgs e)
         {
+
+
             if (e.KeyCode == Keys.Enter)
             {
                 FormPOS.publicFormPOS.SumCashFinish(txtCash.Text);
                 this.Close();
             }
+        }
+
+        private void txtCash_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCash_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) ||
+                char.IsSymbol(e.KeyChar) ||
+                char.IsWhiteSpace(e.KeyChar) ||
+                char.IsPunctuation(e.KeyChar))
+                e.Handled = true;
         }
     }
 }

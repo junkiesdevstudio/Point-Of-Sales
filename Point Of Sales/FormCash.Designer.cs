@@ -44,7 +44,9 @@
             this.txtCash.TabIndex = 0;
             this.txtCash.Text = "0";
             this.txtCash.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCash.TextChanged += new System.EventHandler(this.txtCash_TextChanged);
             this.txtCash.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCash_KeyDown);
+            this.txtCash.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCash_KeyPress);
             // 
             // FormCash
             // 
