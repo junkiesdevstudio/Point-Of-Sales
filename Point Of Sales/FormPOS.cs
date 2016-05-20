@@ -267,10 +267,17 @@ namespace Point_Of_Sales
                 //JIKA STOCK MASIH
                 if(int.Parse(txtQTY.Text) <= int.Parse(txtStock.Text))
                 {
-                    if (txtQTY.Text == string.Empty)
-                        txtQTY.Text = "1";
+                    if(int.Parse(txtQTY.Text) != 0)
+                    {
+                        if (txtQTY.Text == string.Empty)
+                            txtQTY.Text = "1";
 
-                    AddProductList();
+                        AddProductList();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Jumlah Quantity tidak boleh 0.", clsVariables.sMSGBOX, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
                 else
                 {
