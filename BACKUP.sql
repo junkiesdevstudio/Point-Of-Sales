@@ -1,5 +1,5 @@
 -- MySqlBackup.NET 2.0.9.3
--- Dump Time: 2016-05-20 14:24:29
+-- Dump Time: 2016-05-20 16:19:28
 -- --------------------------------------
 -- Server version 5.5.27 MySQL Community Server (GPL)
 
@@ -123,6 +123,9 @@ CREATE TABLE IF NOT EXISTS `tblsupplier` (
   `email` varchar(50) NOT NULL,
   `address` text NOT NULL,
   `status` varchar(50) NOT NULL,
+  `cash` decimal(50,0) NOT NULL,
+  `tempo` date NOT NULL,
+  `stock` int(50) NOT NULL,
   `dateadded` date NOT NULL,
   PRIMARY KEY (`autoid`),
   KEY `suppliercode` (`suppliercode`)
@@ -133,8 +136,8 @@ CREATE TABLE IF NOT EXISTS `tblsupplier` (
 -- 
 
 /*!40000 ALTER TABLE `tblsupplier` DISABLE KEYS */;
-INSERT INTO `tblsupplier`(`autoid`,`suppliercode`,`suppliername`,`discription`,`contactperson`,`bussinessno`,`telefaxno`,`mobileno`,`email`,`address`,`status`,`dateadded`) VALUES
-(2,'SUPP-0000','Toko Maju Mundur','Ini Keterangan Supplier','Joni Widianto','1234567890','','','asdfg@gmail.com','Ini Alamat Supplier','ACTIVE','2016-05-17 00:00:00');
+INSERT INTO `tblsupplier`(`autoid`,`suppliercode`,`suppliername`,`discription`,`contactperson`,`bussinessno`,`telefaxno`,`mobileno`,`email`,`address`,`status`,`cash`,`tempo`,`stock`,`dateadded`) VALUES
+(2,'SUPP-0000','Toko Maju Mundur','Ini Keterangan Supplier','Joni Widianto','1234567890','','','asdfg@gmail.com','Ini Alamat Supplier','ACTIVE',0,'2016-05-16 00:00:00',0,'2016-05-17 00:00:00');
 /*!40000 ALTER TABLE `tblsupplier` ENABLE KEYS */;
 
 -- 
@@ -217,5 +220,5 @@ DELIMITER ;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 
--- Dump completed on 2016-05-20 14:24:29
--- Total time: 0:0:0:0:311 (d:h:m:s:ms)
+-- Dump completed on 2016-05-20 16:19:28
+-- Total time: 0:0:0:0:81 (d:h:m:s:ms)
