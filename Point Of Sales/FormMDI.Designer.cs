@@ -62,33 +62,33 @@
             this.licenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutFastaWorldToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripTop = new System.Windows.Forms.ToolStrip();
+            this.toolBtnLogout = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolBtnSupplier = new System.Windows.Forms.ToolStripButton();
+            this.toolBtnUsers = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolBtnCategory = new System.Windows.Forms.ToolStripButton();
+            this.toolBtnProduct = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolBtnPOS = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripBtnReport = new System.Windows.Forms.ToolStripSplitButton();
+            this.toolManuBtnReportProduct = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolBtnHelp = new System.Windows.Forms.ToolStripButton();
             this.lblDate = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.toolStripBottom = new System.Windows.Forms.ToolStrip();
+            this.toolBtnUsersBottom = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolBtnSetting = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolBtnCalculator = new System.Windows.Forms.ToolStripButton();
+            this.toolBtnNotepad = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.TimerDate = new System.Windows.Forms.Timer(this.components);
-            this.toolBtnUsersBottom = new System.Windows.Forms.ToolStripButton();
-            this.toolBtnSetting = new System.Windows.Forms.ToolStripButton();
-            this.toolBtnCalculator = new System.Windows.Forms.ToolStripButton();
-            this.toolBtnNotepad = new System.Windows.Forms.ToolStripButton();
-            this.toolBtnLogout = new System.Windows.Forms.ToolStripButton();
-            this.toolBtnSupplier = new System.Windows.Forms.ToolStripButton();
-            this.toolBtnUsers = new System.Windows.Forms.ToolStripButton();
-            this.toolBtnCategory = new System.Windows.Forms.ToolStripButton();
-            this.toolBtnProduct = new System.Windows.Forms.ToolStripButton();
-            this.toolBtnPOS = new System.Windows.Forms.ToolStripButton();
-            this.toolStripBtnReport = new System.Windows.Forms.ToolStripSplitButton();
-            this.toolManuBtnReportProduct = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolBtnHelp = new System.Windows.Forms.ToolStripButton();
             this.menuStrip.SuspendLayout();
             this.toolStripTop.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -158,44 +158,45 @@
             // supplierToolStripMenuItem
             // 
             this.supplierToolStripMenuItem.Name = "supplierToolStripMenuItem";
-            this.supplierToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.supplierToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.supplierToolStripMenuItem.Text = "Supplier";
             this.supplierToolStripMenuItem.Click += new System.EventHandler(this.supplierToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.toolStripMenuItem1.Text = "Member";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(146, 6);
+            this.toolStripSeparator8.Size = new System.Drawing.Size(149, 6);
             // 
             // usersToolStripMenuItem
             // 
             this.usersToolStripMenuItem.Name = "usersToolStripMenuItem";
-            this.usersToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.usersToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.usersToolStripMenuItem.Text = "Users";
             this.usersToolStripMenuItem.Click += new System.EventHandler(this.usersToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(146, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
             // 
             // itemCategoryToolStripMenuItem
             // 
             this.itemCategoryToolStripMenuItem.Name = "itemCategoryToolStripMenuItem";
-            this.itemCategoryToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.itemCategoryToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.itemCategoryToolStripMenuItem.Text = "Item Category";
             this.itemCategoryToolStripMenuItem.Click += new System.EventHandler(this.itemCategoryToolStripMenuItem_Click);
             // 
             // productMasterFileToolStripMenuItem
             // 
             this.productMasterFileToolStripMenuItem.Name = "productMasterFileToolStripMenuItem";
-            this.productMasterFileToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.productMasterFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.productMasterFileToolStripMenuItem.Text = "Product";
             this.productMasterFileToolStripMenuItem.Click += new System.EventHandler(this.productMasterFileToolStripMenuItem_Click);
             // 
@@ -205,7 +206,7 @@
             this.pointOfSalesToolStripMenuItem,
             this.inventoryToolStripMenuItem});
             this.transactionToolStripMenuItem.Name = "transactionToolStripMenuItem";
-            this.transactionToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
+            this.transactionToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
             this.transactionToolStripMenuItem.Text = "&Transaction";
             // 
             // pointOfSalesToolStripMenuItem
@@ -352,30 +353,133 @@
             this.toolStripTop.Size = new System.Drawing.Size(811, 47);
             this.toolStripTop.TabIndex = 2;
             // 
+            // toolBtnLogout
+            // 
+            this.toolBtnLogout.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolBtnLogout.Image = global::Point_Of_Sales.Properties.Resources._lock;
+            this.toolBtnLogout.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolBtnLogout.Margin = new System.Windows.Forms.Padding(2, 1, 2, 2);
+            this.toolBtnLogout.Name = "toolBtnLogout";
+            this.toolBtnLogout.Padding = new System.Windows.Forms.Padding(4);
+            this.toolBtnLogout.Size = new System.Drawing.Size(44, 44);
+            this.toolBtnLogout.ToolTipText = "Logout";
+            this.toolBtnLogout.Click += new System.EventHandler(this.toolBtnLogout_Click);
+            // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 47);
+            // 
+            // toolBtnSupplier
+            // 
+            this.toolBtnSupplier.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolBtnSupplier.Image = global::Point_Of_Sales.Properties.Resources.cart;
+            this.toolBtnSupplier.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolBtnSupplier.Margin = new System.Windows.Forms.Padding(2, 1, 2, 2);
+            this.toolBtnSupplier.Name = "toolBtnSupplier";
+            this.toolBtnSupplier.Padding = new System.Windows.Forms.Padding(4);
+            this.toolBtnSupplier.Size = new System.Drawing.Size(44, 44);
+            this.toolBtnSupplier.ToolTipText = "Supplier";
+            this.toolBtnSupplier.Click += new System.EventHandler(this.toolBtnSupplier_Click);
+            // 
+            // toolBtnUsers
+            // 
+            this.toolBtnUsers.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolBtnUsers.Image = global::Point_Of_Sales.Properties.Resources.team;
+            this.toolBtnUsers.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolBtnUsers.Margin = new System.Windows.Forms.Padding(2, 1, 2, 2);
+            this.toolBtnUsers.Name = "toolBtnUsers";
+            this.toolBtnUsers.Padding = new System.Windows.Forms.Padding(4);
+            this.toolBtnUsers.Size = new System.Drawing.Size(44, 44);
+            this.toolBtnUsers.ToolTipText = "Users";
+            this.toolBtnUsers.Click += new System.EventHandler(this.toolBtnUsers_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 47);
             // 
+            // toolBtnCategory
+            // 
+            this.toolBtnCategory.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolBtnCategory.Image = global::Point_Of_Sales.Properties.Resources.notepad;
+            this.toolBtnCategory.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolBtnCategory.Margin = new System.Windows.Forms.Padding(2, 1, 2, 2);
+            this.toolBtnCategory.Name = "toolBtnCategory";
+            this.toolBtnCategory.Padding = new System.Windows.Forms.Padding(4);
+            this.toolBtnCategory.Size = new System.Drawing.Size(44, 44);
+            this.toolBtnCategory.ToolTipText = "Category";
+            this.toolBtnCategory.Click += new System.EventHandler(this.toolBtnCategory_Click);
+            // 
+            // toolBtnProduct
+            // 
+            this.toolBtnProduct.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolBtnProduct.Image = ((System.Drawing.Image)(resources.GetObject("toolBtnProduct.Image")));
+            this.toolBtnProduct.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolBtnProduct.Margin = new System.Windows.Forms.Padding(2, 1, 2, 2);
+            this.toolBtnProduct.Name = "toolBtnProduct";
+            this.toolBtnProduct.Padding = new System.Windows.Forms.Padding(4);
+            this.toolBtnProduct.Size = new System.Drawing.Size(44, 44);
+            this.toolBtnProduct.Text = "toolStripButton2";
+            this.toolBtnProduct.ToolTipText = "Products";
+            this.toolBtnProduct.Click += new System.EventHandler(this.toolBtnProduct_Click);
+            // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
             this.toolStripSeparator5.Size = new System.Drawing.Size(6, 47);
+            // 
+            // toolBtnPOS
+            // 
+            this.toolBtnPOS.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolBtnPOS.Image = global::Point_Of_Sales.Properties.Resources.cashier;
+            this.toolBtnPOS.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolBtnPOS.Margin = new System.Windows.Forms.Padding(2, 1, 2, 2);
+            this.toolBtnPOS.Name = "toolBtnPOS";
+            this.toolBtnPOS.Padding = new System.Windows.Forms.Padding(4);
+            this.toolBtnPOS.Size = new System.Drawing.Size(44, 44);
+            this.toolBtnPOS.Click += new System.EventHandler(this.toolBtnPOS_Click);
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
             this.toolStripSeparator6.Size = new System.Drawing.Size(6, 47);
             // 
+            // toolStripBtnReport
+            // 
+            this.toolStripBtnReport.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripBtnReport.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolManuBtnReportProduct});
+            this.toolStripBtnReport.Image = global::Point_Of_Sales.Properties.Resources.newspaper;
+            this.toolStripBtnReport.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripBtnReport.Margin = new System.Windows.Forms.Padding(2, 1, 2, 2);
+            this.toolStripBtnReport.Name = "toolStripBtnReport";
+            this.toolStripBtnReport.Padding = new System.Windows.Forms.Padding(4);
+            this.toolStripBtnReport.Size = new System.Drawing.Size(56, 44);
+            this.toolStripBtnReport.ToolTipText = "Report";
+            // 
+            // toolManuBtnReportProduct
+            // 
+            this.toolManuBtnReportProduct.Name = "toolManuBtnReportProduct";
+            this.toolManuBtnReportProduct.Size = new System.Drawing.Size(154, 22);
+            this.toolManuBtnReportProduct.Text = "Report Product";
+            // 
             // toolStripSeparator7
             // 
             this.toolStripSeparator7.Name = "toolStripSeparator7";
             this.toolStripSeparator7.Size = new System.Drawing.Size(6, 47);
+            // 
+            // toolBtnHelp
+            // 
+            this.toolBtnHelp.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolBtnHelp.Image = global::Point_Of_Sales.Properties.Resources.Help_48;
+            this.toolBtnHelp.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolBtnHelp.Margin = new System.Windows.Forms.Padding(2, 1, 2, 2);
+            this.toolBtnHelp.Name = "toolBtnHelp";
+            this.toolBtnHelp.Padding = new System.Windows.Forms.Padding(4);
+            this.toolBtnHelp.Size = new System.Drawing.Size(44, 44);
+            this.toolBtnHelp.ToolTipText = "Help";
+            this.toolBtnHelp.Click += new System.EventHandler(this.toolBtnHelp_Click);
             // 
             // lblDate
             // 
@@ -429,33 +533,6 @@
             this.toolStripBottom.TabIndex = 10;
             this.toolStripBottom.Text = "toolStrip1";
             // 
-            // toolStripSeparator9
-            // 
-            this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripSeparator10
-            // 
-            this.toolStripSeparator10.Name = "toolStripSeparator10";
-            this.toolStripSeparator10.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripSeparator11
-            // 
-            this.toolStripSeparator11.Name = "toolStripSeparator11";
-            this.toolStripSeparator11.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(312, 22);
-            this.toolStripLabel1.Text = "Copyright ©2016. FastWorld Software. All Rights Reserved";
-            // 
-            // TimerDate
-            // 
-            this.TimerDate.Enabled = true;
-            this.TimerDate.Interval = 1000;
-            this.TimerDate.Tick += new System.EventHandler(this.TimerDate_Tick);
-            // 
             // toolBtnUsersBottom
             // 
             this.toolBtnUsersBottom.Image = global::Point_Of_Sales.Properties.Resources.cashier_human;
@@ -464,6 +541,11 @@
             this.toolBtnUsersBottom.Size = new System.Drawing.Size(66, 22);
             this.toolBtnUsersBottom.Text = "Cashier";
             this.toolBtnUsersBottom.ToolTipText = "Cashier";
+            // 
+            // toolStripSeparator9
+            // 
+            this.toolStripSeparator9.Name = "toolStripSeparator9";
+            this.toolStripSeparator9.Size = new System.Drawing.Size(6, 25);
             // 
             // toolBtnSetting
             // 
@@ -474,6 +556,11 @@
             this.toolBtnSetting.Text = "Setting";
             this.toolBtnSetting.ToolTipText = "Setting";
             this.toolBtnSetting.Click += new System.EventHandler(this.toolBtnSetting_Click);
+            // 
+            // toolStripSeparator10
+            // 
+            this.toolStripSeparator10.Name = "toolStripSeparator10";
+            this.toolStripSeparator10.Size = new System.Drawing.Size(6, 25);
             // 
             // toolBtnCalculator
             // 
@@ -494,108 +581,22 @@
             this.toolBtnNotepad.Size = new System.Drawing.Size(23, 22);
             this.toolBtnNotepad.Click += new System.EventHandler(this.toolBtnNotepad_Click);
             // 
-            // toolBtnLogout
+            // toolStripSeparator11
             // 
-            this.toolBtnLogout.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolBtnLogout.Image = global::Point_Of_Sales.Properties.Resources._lock;
-            this.toolBtnLogout.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolBtnLogout.Margin = new System.Windows.Forms.Padding(2, 1, 2, 2);
-            this.toolBtnLogout.Name = "toolBtnLogout";
-            this.toolBtnLogout.Padding = new System.Windows.Forms.Padding(4);
-            this.toolBtnLogout.Size = new System.Drawing.Size(44, 44);
-            this.toolBtnLogout.ToolTipText = "Logout";
-            this.toolBtnLogout.Click += new System.EventHandler(this.toolBtnLogout_Click);
+            this.toolStripSeparator11.Name = "toolStripSeparator11";
+            this.toolStripSeparator11.Size = new System.Drawing.Size(6, 25);
             // 
-            // toolBtnSupplier
+            // toolStripLabel1
             // 
-            this.toolBtnSupplier.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolBtnSupplier.Image = global::Point_Of_Sales.Properties.Resources.cart;
-            this.toolBtnSupplier.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolBtnSupplier.Margin = new System.Windows.Forms.Padding(2, 1, 2, 2);
-            this.toolBtnSupplier.Name = "toolBtnSupplier";
-            this.toolBtnSupplier.Padding = new System.Windows.Forms.Padding(4);
-            this.toolBtnSupplier.Size = new System.Drawing.Size(44, 44);
-            this.toolBtnSupplier.ToolTipText = "Supplier";
-            this.toolBtnSupplier.Click += new System.EventHandler(this.toolBtnSupplier_Click);
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(312, 22);
+            this.toolStripLabel1.Text = "Copyright ©2016. FastWorld Software. All Rights Reserved";
             // 
-            // toolBtnUsers
+            // TimerDate
             // 
-            this.toolBtnUsers.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolBtnUsers.Image = global::Point_Of_Sales.Properties.Resources.team;
-            this.toolBtnUsers.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolBtnUsers.Margin = new System.Windows.Forms.Padding(2, 1, 2, 2);
-            this.toolBtnUsers.Name = "toolBtnUsers";
-            this.toolBtnUsers.Padding = new System.Windows.Forms.Padding(4);
-            this.toolBtnUsers.Size = new System.Drawing.Size(44, 44);
-            this.toolBtnUsers.ToolTipText = "Users";
-            this.toolBtnUsers.Click += new System.EventHandler(this.toolBtnUsers_Click);
-            // 
-            // toolBtnCategory
-            // 
-            this.toolBtnCategory.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolBtnCategory.Image = global::Point_Of_Sales.Properties.Resources.notepad;
-            this.toolBtnCategory.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolBtnCategory.Margin = new System.Windows.Forms.Padding(2, 1, 2, 2);
-            this.toolBtnCategory.Name = "toolBtnCategory";
-            this.toolBtnCategory.Padding = new System.Windows.Forms.Padding(4);
-            this.toolBtnCategory.Size = new System.Drawing.Size(44, 44);
-            this.toolBtnCategory.ToolTipText = "Category";
-            this.toolBtnCategory.Click += new System.EventHandler(this.toolBtnCategory_Click);
-            // 
-            // toolBtnProduct
-            // 
-            this.toolBtnProduct.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolBtnProduct.Image = ((System.Drawing.Image)(resources.GetObject("toolBtnProduct.Image")));
-            this.toolBtnProduct.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolBtnProduct.Margin = new System.Windows.Forms.Padding(2, 1, 2, 2);
-            this.toolBtnProduct.Name = "toolBtnProduct";
-            this.toolBtnProduct.Padding = new System.Windows.Forms.Padding(4);
-            this.toolBtnProduct.Size = new System.Drawing.Size(44, 44);
-            this.toolBtnProduct.Text = "toolStripButton2";
-            this.toolBtnProduct.ToolTipText = "Products";
-            this.toolBtnProduct.Click += new System.EventHandler(this.toolBtnProduct_Click);
-            // 
-            // toolBtnPOS
-            // 
-            this.toolBtnPOS.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolBtnPOS.Image = global::Point_Of_Sales.Properties.Resources.cashier;
-            this.toolBtnPOS.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolBtnPOS.Margin = new System.Windows.Forms.Padding(2, 1, 2, 2);
-            this.toolBtnPOS.Name = "toolBtnPOS";
-            this.toolBtnPOS.Padding = new System.Windows.Forms.Padding(4);
-            this.toolBtnPOS.Size = new System.Drawing.Size(44, 44);
-            this.toolBtnPOS.Click += new System.EventHandler(this.toolBtnPOS_Click);
-            // 
-            // toolStripBtnReport
-            // 
-            this.toolStripBtnReport.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripBtnReport.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolManuBtnReportProduct});
-            this.toolStripBtnReport.Image = global::Point_Of_Sales.Properties.Resources.newspaper;
-            this.toolStripBtnReport.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripBtnReport.Margin = new System.Windows.Forms.Padding(2, 1, 2, 2);
-            this.toolStripBtnReport.Name = "toolStripBtnReport";
-            this.toolStripBtnReport.Padding = new System.Windows.Forms.Padding(4);
-            this.toolStripBtnReport.Size = new System.Drawing.Size(56, 44);
-            this.toolStripBtnReport.ToolTipText = "Report";
-            // 
-            // toolManuBtnReportProduct
-            // 
-            this.toolManuBtnReportProduct.Name = "toolManuBtnReportProduct";
-            this.toolManuBtnReportProduct.Size = new System.Drawing.Size(154, 22);
-            this.toolManuBtnReportProduct.Text = "Report Product";
-            // 
-            // toolBtnHelp
-            // 
-            this.toolBtnHelp.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolBtnHelp.Image = global::Point_Of_Sales.Properties.Resources.Help_48;
-            this.toolBtnHelp.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolBtnHelp.Margin = new System.Windows.Forms.Padding(2, 1, 2, 2);
-            this.toolBtnHelp.Name = "toolBtnHelp";
-            this.toolBtnHelp.Padding = new System.Windows.Forms.Padding(4);
-            this.toolBtnHelp.Size = new System.Drawing.Size(44, 44);
-            this.toolBtnHelp.ToolTipText = "Help";
-            this.toolBtnHelp.Click += new System.EventHandler(this.toolBtnHelp_Click);
+            this.TimerDate.Enabled = true;
+            this.TimerDate.Interval = 1000;
+            this.TimerDate.Tick += new System.EventHandler(this.TimerDate_Tick);
             // 
             // FormMDI
             // 

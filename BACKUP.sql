@@ -1,5 +1,5 @@
 -- MySqlBackup.NET 2.0.9.3
--- Dump Time: 2016-05-20 16:19:28
+-- Dump Time: 2016-05-23 14:52:29
 -- --------------------------------------
 -- Server version 5.5.27 MySQL Community Server (GPL)
 
@@ -40,6 +40,54 @@ INSERT INTO `tblcategory`(`autoid`,`categorycode`,`categoryname`,`description`,`
 /*!40000 ALTER TABLE `tblcategory` ENABLE KEYS */;
 
 -- 
+-- Definition of tbldiscount
+-- 
+
+DROP TABLE IF EXISTS `tbldiscount`;
+CREATE TABLE IF NOT EXISTS `tbldiscount` (
+  `autoid` int(50) NOT NULL AUTO_INCREMENT,
+  `percent` decimal(50,0) NOT NULL,
+  PRIMARY KEY (`autoid`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+-- 
+-- Dumping data for table tbldiscount
+-- 
+
+/*!40000 ALTER TABLE `tbldiscount` DISABLE KEYS */;
+INSERT INTO `tbldiscount`(`autoid`,`percent`) VALUES
+(1,5),
+(2,10);
+/*!40000 ALTER TABLE `tbldiscount` ENABLE KEYS */;
+
+-- 
+-- Definition of tblmember
+-- 
+
+DROP TABLE IF EXISTS `tblmember`;
+CREATE TABLE IF NOT EXISTS `tblmember` (
+  `autoid` int(50) NOT NULL AUTO_INCREMENT,
+  `membercode` varchar(50) NOT NULL,
+  `fullname` varchar(50) NOT NULL,
+  `address` text NOT NULL,
+  `telephone` varchar(50) NOT NULL,
+  `status` varchar(50) NOT NULL,
+  `discount` int(50) NOT NULL,
+  PRIMARY KEY (`autoid`),
+  KEY `discount` (`discount`),
+  CONSTRAINT `tblmember_ibfk_1` FOREIGN KEY (`discount`) REFERENCES `tbldiscount` (`autoid`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+-- 
+-- Dumping data for table tblmember
+-- 
+
+/*!40000 ALTER TABLE `tblmember` DISABLE KEYS */;
+INSERT INTO `tblmember`(`autoid`,`membercode`,`fullname`,`address`,`telephone`,`status`,`discount`) VALUES
+(1,'000000000','Nadia Kumala Sari','Jln. Sorowajan RT10','0987654321','ACTIVE',2);
+/*!40000 ALTER TABLE `tblmember` ENABLE KEYS */;
+
+-- 
 -- Definition of tblproduct
 -- 
 
@@ -67,7 +115,7 @@ CREATE TABLE IF NOT EXISTS `tblproduct` (
 /*!40000 ALTER TABLE `tblproduct` DISABLE KEYS */;
 INSERT INTO `tblproduct`(`autoid`,`productcode`,`productname`,`categoryautoid`,`supplierautoid`,`unitprice`,`sellingprice`,`stock`) VALUES
 (13,'9780201374445','HTA',1,2,5000,5500,19),
-(14,'9780201375558','HTB',2,2,3000,3200,8),
+(14,'9780201375558','HTB',2,2,3000,3200,0),
 (15,'9780201376661','HTC',1,2,4000,4300,8),
 (16,'9780201371116','HTD',1,2,1500,2000,20);
 /*!40000 ALTER TABLE `tblproduct` ENABLE KEYS */;
@@ -87,23 +135,28 @@ CREATE TABLE IF NOT EXISTS `tblsales` (
   `totalamount` decimal(50,0) NOT NULL,
   `cash` decimal(50,0) NOT NULL,
   `changecash` decimal(50,0) NOT NULL,
+  `memberauto` int(50) DEFAULT NULL,
+  `discount` decimal(50,0) DEFAULT NULL,
+  `amountdiscount` decimal(50,0) DEFAULT NULL,
   `dateadded` date NOT NULL,
   PRIMARY KEY (`autoid`),
   KEY `invoiceno` (`invoiceno`,`productautoid`),
   KEY `productautoid` (`productautoid`),
+  KEY `memberauto` (`memberauto`),
   CONSTRAINT `tblsales_ibfk_1` FOREIGN KEY (`productautoid`) REFERENCES `tblproduct` (`autoid`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 
 -- 
 -- Dumping data for table tblsales
 -- 
 
 /*!40000 ALTER TABLE `tblsales` DISABLE KEYS */;
-INSERT INTO `tblsales`(`autoid`,`invoiceno`,`productautoid`,`unitprice`,`quantity`,`subtotal`,`totalamount`,`cash`,`changecash`,`dateadded`) VALUES
-(11,'INV-0000/1463728518',16,1500,5,7500,26500,30000,3500,'2016-05-20 00:00:00'),
-(12,'INV-0000/1463728518',15,4000,2,8000,26500,30000,3500,'2016-05-20 00:00:00'),
-(13,'INV-0000/1463728518',14,3000,2,6000,26500,30000,3500,'2016-05-20 00:00:00'),
-(14,'INV-0000/1463728518',13,5000,1,5000,26500,30000,3500,'2016-05-20 00:00:00');
+INSERT INTO `tblsales`(`autoid`,`invoiceno`,`productautoid`,`unitprice`,`quantity`,`subtotal`,`totalamount`,`cash`,`changecash`,`memberauto`,`discount`,`amountdiscount`,`dateadded`) VALUES
+(11,'INV-0000/1463728518',16,1500,5,7500,26500,30000,3500,NULL,NULL,NULL,'2016-05-20 00:00:00'),
+(12,'INV-0000/1463728518',15,4000,2,8000,26500,30000,3500,NULL,NULL,NULL,'2016-05-20 00:00:00'),
+(13,'INV-0000/1463728518',14,3000,2,6000,26500,30000,3500,NULL,NULL,NULL,'2016-05-20 00:00:00'),
+(14,'INV-0000/1463728518',13,5000,1,5000,26500,30000,3500,NULL,NULL,NULL,'2016-05-20 00:00:00'),
+(15,'INV-0014/1463736042',14,3000,8,24000,24000,50000,26000,NULL,NULL,NULL,'2016-05-20 00:00:00');
 /*!40000 ALTER TABLE `tblsales` ENABLE KEYS */;
 
 -- 
@@ -129,7 +182,7 @@ CREATE TABLE IF NOT EXISTS `tblsupplier` (
   `dateadded` date NOT NULL,
   PRIMARY KEY (`autoid`),
   KEY `suppliercode` (`suppliercode`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 -- 
 -- Dumping data for table tblsupplier
@@ -220,5 +273,5 @@ DELIMITER ;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 
--- Dump completed on 2016-05-20 16:19:28
--- Total time: 0:0:0:0:81 (d:h:m:s:ms)
+-- Dump completed on 2016-05-23 14:52:29
+-- Total time: 0:0:0:0:559 (d:h:m:s:ms)

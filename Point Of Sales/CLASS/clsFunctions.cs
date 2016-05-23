@@ -114,7 +114,7 @@ namespace Point_Of_Sales
             else
                 idgenerate = 0;
 
-            return idgenerate.ToString("D4");
+            return idgenerate.ToString("D9");
         }
 
         public static void BackupDatabase(string sPath)

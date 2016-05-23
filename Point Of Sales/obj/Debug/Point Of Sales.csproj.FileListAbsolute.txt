@@ -89,3 +89,5 @@ D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormUser.r
 D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormUser_Modify.resources
 D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.Properties.Resources.resources
 D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\obj\Debug\Point Of Sales.csproj.GenerateResource.Cache
+D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormMember.resources
+D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormMember_Modify.resources

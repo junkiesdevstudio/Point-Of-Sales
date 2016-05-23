@@ -23,7 +23,8 @@ namespace Point_Of_Sales
         LocalHotKey lhkItemInvoice = new LocalHotKey("lhkItemInvoice", Keys.F3);
         LocalHotKey lhkDeleteInvoice = new LocalHotKey("lhkDeleteInvoice", Keys.Delete);
         LocalHotKey lhkCashInvoice = new LocalHotKey("lhkCashInvoice", Keys.F4);
-        LocalHotKey lhkSaveInvoice = new LocalHotKey("lhkSaveInvoice", Keys.F5);
+        LocalHotKey lhkDiscount = new LocalHotKey("lhkDiscount", Keys.F5);
+        LocalHotKey lhkSaveInvoice = new LocalHotKey("lhkSaveInvoice", Keys.F6);
         #endregion
 
         CultureInfo culture = new CultureInfo("id-ID");
@@ -59,6 +60,7 @@ namespace Point_Of_Sales
             lhkDeleteInvoice.Enabled = true;
             lhkCashInvoice.Enabled = true;
             lhkSaveInvoice.Enabled = true;
+            lhkDiscount.Enabled = true;
 
             MyHotKeyManager.AddLocalHotKey(lhkNewInvoice);
             MyHotKeyManager.AddLocalHotKey(lhkResetInvoice);
@@ -66,6 +68,7 @@ namespace Point_Of_Sales
             MyHotKeyManager.AddLocalHotKey(lhkDeleteInvoice);
             MyHotKeyManager.AddLocalHotKey(lhkCashInvoice);
             MyHotKeyManager.AddLocalHotKey(lhkSaveInvoice);
+            MyHotKeyManager.AddLocalHotKey(lhkDiscount);
 
             //MyHotKeyManager.DisableOnManagerFormInactive = true;
         }
@@ -91,6 +94,9 @@ namespace Point_Of_Sales
                     btnBayar.PerformClick();
                     break;
                 case "lhksaveinvoice":
+                    btnSave.PerformClick();
+                    break;
+                case "lhkdiscount":
                     btnSave.PerformClick();
                     break;
                 default:

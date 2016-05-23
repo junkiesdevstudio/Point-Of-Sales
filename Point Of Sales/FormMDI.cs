@@ -197,5 +197,14 @@ namespace Point_Of_Sales
         {
             aboutFastaWorldToolStripMenuItem.PerformClick();
         }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            CloseAllChild();
+            Form sForm = FormMember.Instance();
+            sForm.MdiParent = this;
+            sForm.Show();
+            sForm.Activate();
+        }
     }
 }

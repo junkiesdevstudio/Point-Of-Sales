@@ -107,6 +107,18 @@
     <Compile Include="FormMDI.Designer.cs">
       <DependentUpon>FormMDI.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMember.Designer.cs">
+      <DependentUpon>FormMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMember_Modify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMember_Modify.Designer.cs">
+      <DependentUpon>FormMember_Modify.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPOS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,6 +206,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMDI.resx">
       <DependentUpon>FormMDI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMember.resx">
+      <DependentUpon>FormMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMember_Modify.resx">
+      <DependentUpon>FormMember_Modify.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPOS.resx">
       <DependentUpon>FormPOS.cs</DependentUpon>
