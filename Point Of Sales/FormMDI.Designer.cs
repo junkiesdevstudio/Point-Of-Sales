@@ -89,6 +89,7 @@
             this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.TimerDate = new System.Windows.Forms.Timer(this.components);
+            this.barcodePrinterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStripTop.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -158,45 +159,45 @@
             // supplierToolStripMenuItem
             // 
             this.supplierToolStripMenuItem.Name = "supplierToolStripMenuItem";
-            this.supplierToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.supplierToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.supplierToolStripMenuItem.Text = "Supplier";
             this.supplierToolStripMenuItem.Click += new System.EventHandler(this.supplierToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 22);
             this.toolStripMenuItem1.Text = "Member";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator8.Size = new System.Drawing.Size(146, 6);
             // 
             // usersToolStripMenuItem
             // 
             this.usersToolStripMenuItem.Name = "usersToolStripMenuItem";
-            this.usersToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.usersToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.usersToolStripMenuItem.Text = "Users";
             this.usersToolStripMenuItem.Click += new System.EventHandler(this.usersToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(146, 6);
             // 
             // itemCategoryToolStripMenuItem
             // 
             this.itemCategoryToolStripMenuItem.Name = "itemCategoryToolStripMenuItem";
-            this.itemCategoryToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.itemCategoryToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.itemCategoryToolStripMenuItem.Text = "Item Category";
             this.itemCategoryToolStripMenuItem.Click += new System.EventHandler(this.itemCategoryToolStripMenuItem_Click);
             // 
             // productMasterFileToolStripMenuItem
             // 
             this.productMasterFileToolStripMenuItem.Name = "productMasterFileToolStripMenuItem";
-            this.productMasterFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.productMasterFileToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.productMasterFileToolStripMenuItem.Text = "Product";
             this.productMasterFileToolStripMenuItem.Click += new System.EventHandler(this.productMasterFileToolStripMenuItem_Click);
             // 
@@ -284,7 +285,8 @@
             // 
             this.utilitiesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.calculatorToolStripMenuItem,
-            this.notepadToolStripMenuItem});
+            this.notepadToolStripMenuItem,
+            this.barcodePrinterToolStripMenuItem});
             this.utilitiesToolStripMenuItem.Name = "utilitiesToolStripMenuItem";
             this.utilitiesToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
             this.utilitiesToolStripMenuItem.Text = "&Utilities";
@@ -292,14 +294,14 @@
             // calculatorToolStripMenuItem
             // 
             this.calculatorToolStripMenuItem.Name = "calculatorToolStripMenuItem";
-            this.calculatorToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.calculatorToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.calculatorToolStripMenuItem.Text = "Calculator";
             this.calculatorToolStripMenuItem.Click += new System.EventHandler(this.calculatorToolStripMenuItem_Click);
             // 
             // notepadToolStripMenuItem
             // 
             this.notepadToolStripMenuItem.Name = "notepadToolStripMenuItem";
-            this.notepadToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.notepadToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.notepadToolStripMenuItem.Text = "Notepad";
             this.notepadToolStripMenuItem.Click += new System.EventHandler(this.notepadToolStripMenuItem_Click);
             // 
@@ -598,6 +600,13 @@
             this.TimerDate.Interval = 1000;
             this.TimerDate.Tick += new System.EventHandler(this.TimerDate_Tick);
             // 
+            // barcodePrinterToolStripMenuItem
+            // 
+            this.barcodePrinterToolStripMenuItem.Name = "barcodePrinterToolStripMenuItem";
+            this.barcodePrinterToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.barcodePrinterToolStripMenuItem.Text = "Barcode Printer";
+            this.barcodePrinterToolStripMenuItem.Click += new System.EventHandler(this.barcodePrinterToolStripMenuItem_Click);
+            // 
             // FormMDI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -690,6 +699,7 @@
         private System.Windows.Forms.Timer TimerDate;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
+        private System.Windows.Forms.ToolStripMenuItem barcodePrinterToolStripMenuItem;
     }
 }
 

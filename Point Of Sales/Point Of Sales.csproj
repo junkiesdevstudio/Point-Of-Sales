@@ -294,7 +294,9 @@
   <ItemGroup>
     <None Include="Resources\Help-48.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="DATASET\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cogwheel.png" />
   </ItemGroup>
