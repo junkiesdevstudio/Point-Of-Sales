@@ -27,7 +27,8 @@ namespace Point_Of_Sales
         LocalHotKey lhkSaveInvoice = new LocalHotKey("lhkSaveInvoice", Keys.F6);
         #endregion
 
-        public decimal m_Discount;
+        public decimal m_Discount, totalAmountDiscount;
+        public string m_MCode;
 
         CultureInfo culture = new CultureInfo("id-ID");
 
@@ -112,8 +113,8 @@ namespace Point_Of_Sales
         {
             daFormPOSList = new MySqlDataAdapter("", clsConnection.CN);
 
-            cmdAddInvoice = new MySqlCommand("INSERT INTO tblsales( invoiceno , productautoid, unitprice, quantity, subtotal, cash, changecash, dateadded, totalamount)" +
-                                               "VALUES (@getInvoice,@getProductID,@getUnitPrice,@getQuantity,@getSubTotal,@getCash,@getChange,@getDateAdded,@getTotalAmount)", clsConnection.CN);
+            cmdAddInvoice = new MySqlCommand("INSERT INTO tblsales( invoiceno , productautoid, unitprice, quantity, subtotal, cash, changecash, dateadded, totalamount, membercode, discount, amountdiscount)" +
+                                               "VALUES (@getInvoice,@getProductID,@getUnitPrice,@getQuantity,@getSubTotal,@getCash,@getChange,@getDateAdded,@getTotalAmount, @getMemberCode, @getDiscount, @getAmountDiscount)", clsConnection.CN);
 
             NewInvoice();
 
@@ -126,6 +127,9 @@ namespace Point_Of_Sales
             cmdAddInvoice.Parameters.Add("@getChange", MySqlDbType.Decimal);
             cmdAddInvoice.Parameters.Add("@getDateAdded", MySqlDbType.Date);
             cmdAddInvoice.Parameters.Add("@getTotalAmount", MySqlDbType.Decimal);
+            cmdAddInvoice.Parameters.Add("@getMemberCode", MySqlDbType.Int16);
+            cmdAddInvoice.Parameters.Add("@getDiscount", MySqlDbType.Decimal);
+            cmdAddInvoice.Parameters.Add("@getAmountDiscount", MySqlDbType.Decimal);
 
             publicFormPOS = this;
         }
@@ -215,7 +219,8 @@ namespace Point_Of_Sales
             lblTotalAmount.Text = "0";
             lblDiskon.Text = "0%";
             lblChange.Text = "0";
-
+            m_MCode = "";
+            totalAmountDiscount = 0;
 
         }
 
@@ -405,11 +410,15 @@ namespace Point_Of_Sales
                     cmdAddInvoice.Parameters["@getChange"].Value =  decimal.Parse(CurToDec(lblChange.Text)); 
                     cmdAddInvoice.Parameters["@getDateAdded"].Value = DateTime.Now;
                     cmdAddInvoice.Parameters["@getTotalAmount"].Value = decimal.Parse(CurToDec(lblTotalAmount.Text));
+                    cmdAddInvoice.Parameters["@getMemberCode"].Value = m_MCode;
+                    cmdAddInvoice.Parameters["@getDiscount"].Value = decimal.Parse(CurToDec(lblInvoice.Text));
+                    cmdAddInvoice.Parameters["@getAmountDiscount"].Value = totalAmountDiscount;
 
                     cmdAddInvoice.ExecuteNonQuery();
                 }
 
                 Reset();
+
                 lvPOS.Items.Clear();
                 lblTotalAmount.Text = "0";
                 lblTotal.Text = "0";
@@ -481,12 +490,12 @@ namespace Point_Of_Sales
 
         public void SetDiscount(string mMemberCode = "")
         {
-            /*
+            
             try
             {
-            */
+            
                 long totalRow = 0;
-
+                m_MCode = mMemberCode;
                 if (mMemberCode != "")
                 {
                     daFormPOSList.SelectCommand.CommandText = "SELECT tblmember.membercode, tblmember.fullname, tblmember.address, tblmember.telephone, tblmember.status, tblmember.discount, tbldiscount.percent FROM tbldiscount RIGHT JOIN tblmember ON tbldiscount.autoid = tblmember.discount WHERE tblmember.membercode LIKE '" + mMemberCode + "' ";
@@ -509,7 +518,7 @@ namespace Point_Of_Sales
                 }
 
                 decimal mRumusDiskon = (m_Discount / 100) * sTotalAmount;
-                decimal totalAmountDiscount = sTotalAmount - mRumusDiskon;
+                totalAmountDiscount = sTotalAmount - mRumusDiskon;
 
                 lblTotalAmount.Text = totalAmountDiscount.ToString("C", culture);
                 lblTotal.Text = lblTotalAmount.Text;
@@ -522,13 +531,13 @@ namespace Point_Of_Sales
                     lblChange.Text = (decimal.Parse(CurToDec(lblCash.Text)) - decimal.Parse(CurToDec(lblTotalAmount.Text))).ToString("C", culture);
                 }
 
-                /*
+                
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            */
+            
           
         }
 

@@ -372,7 +372,7 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(133, 34);
             this.btnSave.TabIndex = 151;
-            this.btnSave.Text = "SIMPAN [F6]";
+            this.btnSave.Text = "PRINT DAN SIMPAN [F6]";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -447,7 +447,7 @@
             this.btnDiscount.Name = "btnDiscount";
             this.btnDiscount.Size = new System.Drawing.Size(133, 35);
             this.btnDiscount.TabIndex = 158;
-            this.btnDiscount.Text = "MEMBER DISKON [F5]";
+            this.btnDiscount.Text = "MEMBER DISKON\r\n[F5]";
             this.btnDiscount.UseVisualStyleBackColor = true;
             this.btnDiscount.Click += new System.EventHandler(this.btnDiscount_Click);
             // 

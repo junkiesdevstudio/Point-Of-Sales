@@ -1,5 +1,5 @@
 -- MySqlBackup.NET 2.0.9.3
--- Dump Time: 2016-05-23 14:52:29
+-- Dump Time: 2016-05-24 16:58:08
 -- --------------------------------------
 -- Server version 5.5.27 MySQL Community Server (GPL)
 
@@ -76,7 +76,7 @@ CREATE TABLE IF NOT EXISTS `tblmember` (
   PRIMARY KEY (`autoid`),
   KEY `discount` (`discount`),
   CONSTRAINT `tblmember_ibfk_1` FOREIGN KEY (`discount`) REFERENCES `tbldiscount` (`autoid`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 -- 
 -- Dumping data for table tblmember
@@ -84,7 +84,9 @@ CREATE TABLE IF NOT EXISTS `tblmember` (
 
 /*!40000 ALTER TABLE `tblmember` DISABLE KEYS */;
 INSERT INTO `tblmember`(`autoid`,`membercode`,`fullname`,`address`,`telephone`,`status`,`discount`) VALUES
-(1,'000000000','Nadia Kumala Sari','Jln. Sorowajan RT10','0987654321','ACTIVE',2);
+(1,'000000000','Nadia Kumala Sari','Jln. Sorowajan RT10','0987654321','ACTIVE',2),
+(2,'000000001','Diah Permatasari','Jln. Kuningan Malam','0987654321','ACTIVE',2),
+(3,'000000002','Dani Kusuma Wardana','Jln. Persatuan Kita','1234567890','ACTIVE',1);
 /*!40000 ALTER TABLE `tblmember` ENABLE KEYS */;
 
 -- 
@@ -114,10 +116,10 @@ CREATE TABLE IF NOT EXISTS `tblproduct` (
 
 /*!40000 ALTER TABLE `tblproduct` DISABLE KEYS */;
 INSERT INTO `tblproduct`(`autoid`,`productcode`,`productname`,`categoryautoid`,`supplierautoid`,`unitprice`,`sellingprice`,`stock`) VALUES
-(13,'9780201374445','HTA',1,2,5000,5500,19),
-(14,'9780201375558','HTB',2,2,3000,3200,0),
-(15,'9780201376661','HTC',1,2,4000,4300,8),
-(16,'9780201371116','HTD',1,2,1500,2000,20);
+(13,'4564778678763','HTA',1,2,5000,5500,19),
+(14,'4536354645643','HTB',2,2,3000,3200,5),
+(15,'7686789687675','HTC',1,2,4000,4300,7),
+(16,'4564564564560','HTD',1,2,1500,2000,20);
 /*!40000 ALTER TABLE `tblproduct` ENABLE KEYS */;
 
 -- 
@@ -135,28 +137,30 @@ CREATE TABLE IF NOT EXISTS `tblsales` (
   `totalamount` decimal(50,0) NOT NULL,
   `cash` decimal(50,0) NOT NULL,
   `changecash` decimal(50,0) NOT NULL,
-  `memberauto` int(50) DEFAULT NULL,
+  `membercode` varchar(50) DEFAULT NULL,
   `discount` decimal(50,0) DEFAULT NULL,
   `amountdiscount` decimal(50,0) DEFAULT NULL,
   `dateadded` date NOT NULL,
   PRIMARY KEY (`autoid`),
   KEY `invoiceno` (`invoiceno`,`productautoid`),
   KEY `productautoid` (`productautoid`),
-  KEY `memberauto` (`memberauto`),
+  KEY `memberauto` (`membercode`),
   CONSTRAINT `tblsales_ibfk_1` FOREIGN KEY (`productautoid`) REFERENCES `tblproduct` (`autoid`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 
 -- 
 -- Dumping data for table tblsales
 -- 
 
 /*!40000 ALTER TABLE `tblsales` DISABLE KEYS */;
-INSERT INTO `tblsales`(`autoid`,`invoiceno`,`productautoid`,`unitprice`,`quantity`,`subtotal`,`totalamount`,`cash`,`changecash`,`memberauto`,`discount`,`amountdiscount`,`dateadded`) VALUES
+INSERT INTO `tblsales`(`autoid`,`invoiceno`,`productautoid`,`unitprice`,`quantity`,`subtotal`,`totalamount`,`cash`,`changecash`,`membercode`,`discount`,`amountdiscount`,`dateadded`) VALUES
 (11,'INV-0000/1463728518',16,1500,5,7500,26500,30000,3500,NULL,NULL,NULL,'2016-05-20 00:00:00'),
 (12,'INV-0000/1463728518',15,4000,2,8000,26500,30000,3500,NULL,NULL,NULL,'2016-05-20 00:00:00'),
 (13,'INV-0000/1463728518',14,3000,2,6000,26500,30000,3500,NULL,NULL,NULL,'2016-05-20 00:00:00'),
 (14,'INV-0000/1463728518',13,5000,1,5000,26500,30000,3500,NULL,NULL,NULL,'2016-05-20 00:00:00'),
-(15,'INV-0014/1463736042',14,3000,8,24000,24000,50000,26000,NULL,NULL,NULL,'2016-05-20 00:00:00');
+(15,'INV-0014/1463736042',14,3000,8,24000,24000,50000,26000,NULL,NULL,NULL,'2016-05-20 00:00:00'),
+(16,'INV-000000015/1464080824',14,3000,5,15000,19000,20000,1000,NULL,NULL,NULL,'2016-05-24 00:00:00'),
+(17,'INV-000000015/1464080824',15,4000,1,4000,19000,20000,1000,NULL,NULL,NULL,'2016-05-24 00:00:00');
 /*!40000 ALTER TABLE `tblsales` ENABLE KEYS */;
 
 -- 
@@ -273,5 +277,5 @@ DELIMITER ;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 
--- Dump completed on 2016-05-23 14:52:29
--- Total time: 0:0:0:0:559 (d:h:m:s:ms)
+-- Dump completed on 2016-05-24 16:58:09
+-- Total time: 0:0:0:0:491 (d:h:m:s:ms)
