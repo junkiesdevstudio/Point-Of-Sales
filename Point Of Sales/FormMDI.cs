@@ -30,6 +30,7 @@ namespace Point_Of_Sales
             FormSplashScreen SplashScreen = new FormSplashScreen();
             SplashScreen.ShowDialog();
 
+
             clsConnection conn = new clsConnection();
             conn.setConnection(clsVariables.sIPAddress, clsVariables.sDbUser, clsVariables.sDbName, clsVariables.sDbPassword);
 
