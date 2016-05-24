@@ -26,6 +26,7 @@ namespace Point_Of_Sales
         {
             lblWelcome.Text = "Selamat Datang! " + clsVariables.sFullname;
 
+
             FormSplashScreen SplashScreen = new FormSplashScreen();
             SplashScreen.ShowDialog();
 
