@@ -121,3 +121,4 @@ D:\POS\Point-Of-Sales\Point Of Sales\obj\Debug\Point Of Sales.csproj.GenerateRes
 D:\POS\Point-Of-Sales\Point Of Sales\obj\Debug\Point Of Sales.exe
 D:\POS\Point-Of-Sales\Point Of Sales\obj\Debug\Point Of Sales.pdb
 D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormDiscount.resources
+D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormReport.resources
