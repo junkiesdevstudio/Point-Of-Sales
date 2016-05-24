@@ -144,6 +144,11 @@ D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\bin\Debug\stdole.dll
 D:\github\Point-Of-Sales\Point Of Sales\bin\Debug\Point Of Sales.exe.config
 D:\github\Point-Of-Sales\Point Of Sales\bin\Debug\Point Of Sales.exe
 D:\github\Point-Of-Sales\Point Of Sales\bin\Debug\Point Of Sales.pdb
+D:\github\Point-Of-Sales\Point Of Sales\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+D:\github\Point-Of-Sales\Point Of Sales\bin\Debug\CrystalDecisions.ReportSource.dll
+D:\github\Point-Of-Sales\Point Of Sales\bin\Debug\CrystalDecisions.Shared.dll
+D:\github\Point-Of-Sales\Point Of Sales\bin\Debug\CrystalDecisions.Windows.Forms.dll
+D:\github\Point-Of-Sales\Point Of Sales\bin\Debug\FlashControlV71.dll
 D:\github\Point-Of-Sales\Point Of Sales\bin\Debug\MySql.Data.dll
 D:\github\Point-Of-Sales\Point Of Sales\bin\Debug\MySqlBackup.dll
 D:\github\Point-Of-Sales\Point Of Sales\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
