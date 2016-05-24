@@ -27,6 +27,8 @@ namespace Point_Of_Sales
         LocalHotKey lhkSaveInvoice = new LocalHotKey("lhkSaveInvoice", Keys.F6);
         #endregion
 
+        public decimal m_Discount;
+
         CultureInfo culture = new CultureInfo("id-ID");
 
         clsFunctions sFunctions = new clsFunctions();
@@ -97,7 +99,7 @@ namespace Point_Of_Sales
                     btnSave.PerformClick();
                     break;
                 case "lhkdiscount":
-                    btnSave.PerformClick();
+                    btnDiscount.PerformClick();
                     break;
                 default:
                     if (e.HotKey.Tag != null) System.Diagnostics.Process.Start((string)e.HotKey.Tag);
@@ -207,6 +209,13 @@ namespace Point_Of_Sales
             txtSubTotal.Text = string.Empty;
             txtProductID.Text = string.Empty;
 
+            m_Discount = 0;
+
+            lblTotal.Text = "0";
+            lblTotalAmount.Text = "0";
+            lblDiskon.Text = "0%";
+            lblChange.Text = "0";
+
 
         }
 
@@ -233,10 +242,7 @@ namespace Point_Of_Sales
 
             SumTotalAmount();
 
-            if (decimal.Parse(lblCash.Text) > 0)
-            {
-                SumCashFinish(lblCash.Text);
-            }
+
 
         }
 
@@ -248,6 +254,7 @@ namespace Point_Of_Sales
 
         void SumTotalAmount()
         {
+            /*
             decimal sTotalAmount = 0;
 
             for (int x=0; x < lvPOS.Items.Count;x++)
@@ -257,6 +264,9 @@ namespace Point_Of_Sales
 
             lblTotalAmount.Text = sTotalAmount.ToString("C", culture);
             lblTotal.Text = lblTotalAmount.Text;
+            */
+
+            SetDiscount();
         }
 
         private void txtQTY_TextChanged(object sender, EventArgs e)
@@ -447,7 +457,8 @@ namespace Point_Of_Sales
                 {
                     lvItem.SubItems[3].Text = value;
                     lvItem.SubItems[4].Text = (decimal.Parse(CurToDec(lvItem.SubItems[3].Text)) * decimal.Parse(CurToDec(lvItem.SubItems[2].Text))).ToString("C", culture);
-                    SumTotalAmount();
+                    //SumTotalAmount();
+                    SetDiscount();
                 }
 
             }
@@ -460,6 +471,70 @@ namespace Point_Of_Sales
             char.IsWhiteSpace(e.KeyChar) ||
             char.IsPunctuation(e.KeyChar))
                         e.Handled = true;
+        }
+
+        private void btnDiscount_Click(object sender, EventArgs e)
+        {
+            FormDiscount sForm = new FormDiscount();
+            sForm.ShowDialog();
+        }
+
+        public void SetDiscount(string mMemberCode = "")
+        {
+            /*
+            try
+            {
+            */
+                long totalRow = 0;
+
+                if (mMemberCode != "")
+                {
+                    daFormPOSList.SelectCommand.CommandText = "SELECT tblmember.membercode, tblmember.fullname, tblmember.address, tblmember.telephone, tblmember.status, tblmember.discount, tbldiscount.percent FROM tbldiscount RIGHT JOIN tblmember ON tbldiscount.autoid = tblmember.discount WHERE tblmember.membercode LIKE '" + mMemberCode + "' ";
+
+                    dsFormPOSList.Clear();
+                    daFormPOSList.Fill(dsFormPOSList, "tblmember");
+
+                    totalRow = dsFormPOSList.Tables["tblmember"].Rows.Count - 1;
+
+                    m_Discount = decimal.Parse(dsFormPOSList.Tables["tblmember"].Rows[0].ItemArray.GetValue(6).ToString());
+
+                }
+
+
+                decimal sTotalAmount = 0;
+
+                for (int x = 0; x < lvPOS.Items.Count; x++)
+                {
+                    sTotalAmount += decimal.Parse(CurToDec(lvPOS.Items[x].SubItems[4].Text));
+                }
+
+                decimal mRumusDiskon = (m_Discount / 100) * sTotalAmount;
+                decimal totalAmountDiscount = sTotalAmount - mRumusDiskon;
+
+                lblTotalAmount.Text = totalAmountDiscount.ToString("C", culture);
+                lblTotal.Text = lblTotalAmount.Text;
+
+                lblDiskon.Text = m_Discount + "%";
+
+                if (decimal.Parse(CurToDec(lblCash.Text)) > 0)
+                {
+                    lblCash.Text = decimal.Parse(CurToDec(lblCash.Text)).ToString("C", culture);
+                    lblChange.Text = (decimal.Parse(CurToDec(lblCash.Text)) - decimal.Parse(CurToDec(lblTotalAmount.Text))).ToString("C", culture);
+                }
+
+                /*
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            */
+          
+        }
+
+        private void lvPOS_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
         public static DialogResult InputBox(string title, string promptText, ref string value)

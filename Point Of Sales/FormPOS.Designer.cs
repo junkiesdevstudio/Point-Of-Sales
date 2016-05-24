@@ -65,7 +65,9 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.txtProductID = new System.Windows.Forms.TextBox();
             this.txtStock = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnDiscount = new System.Windows.Forms.Button();
+            this.lblDiskon = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -99,7 +101,7 @@
             this.lblTotal.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblTotal.Size = new System.Drawing.Size(752, 87);
             this.lblTotal.TabIndex = 3;
-            this.lblTotal.Text = "0.00";
+            this.lblTotal.Text = "0";
             this.lblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtProductCode
@@ -193,6 +195,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.Controls.Add(this.lblDiskon);
+            this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.lblTotalAmount);
             this.panel1.Controls.Add(this.lblCash);
             this.panel1.Controls.Add(this.lblChange);
@@ -201,7 +205,7 @@
             this.panel1.Controls.Add(this.label7);
             this.panel1.Location = new System.Drawing.Point(491, 416);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(274, 112);
+            this.panel1.Size = new System.Drawing.Size(274, 125);
             this.panel1.TabIndex = 147;
             // 
             // lblTotalAmount
@@ -330,6 +334,7 @@
             this.lvPOS.TabIndex = 146;
             this.lvPOS.UseCompatibleStateImageBehavior = false;
             this.lvPOS.View = System.Windows.Forms.View.Details;
+            this.lvPOS.SelectedIndexChanged += new System.EventHandler(this.lvPOS_SelectedIndexChanged);
             this.lvPOS.DoubleClick += new System.EventHandler(this.lvPOS_DoubleClick);
             this.lvPOS.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lvPOS_MouseDown);
             this.lvPOS.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lvPOS_MouseUp);
@@ -374,7 +379,7 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(329, 492);
+            this.button4.Location = new System.Drawing.Point(329, 493);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(133, 34);
             this.button4.TabIndex = 152;
@@ -435,23 +440,46 @@
             this.txtStock.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtStock.Visible = false;
             // 
-            // button2
+            // btnDiscount
             // 
-            this.button2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(329, 412);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(133, 35);
-            this.button2.TabIndex = 158;
-            this.button2.Text = "DISCOUNT [F5]";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnDiscount.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDiscount.Location = new System.Drawing.Point(329, 412);
+            this.btnDiscount.Name = "btnDiscount";
+            this.btnDiscount.Size = new System.Drawing.Size(133, 35);
+            this.btnDiscount.TabIndex = 158;
+            this.btnDiscount.Text = "MEMBER DISKON [F5]";
+            this.btnDiscount.UseVisualStyleBackColor = true;
+            this.btnDiscount.Click += new System.EventHandler(this.btnDiscount_Click);
+            // 
+            // lblDiskon
+            // 
+            this.lblDiskon.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDiskon.ForeColor = System.Drawing.Color.Lime;
+            this.lblDiskon.Location = new System.Drawing.Point(114, 96);
+            this.lblDiskon.Name = "lblDiskon";
+            this.lblDiskon.Size = new System.Drawing.Size(157, 25);
+            this.lblDiskon.TabIndex = 5;
+            this.lblDiskon.Text = "0%";
+            this.lblDiskon.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Lime;
+            this.label11.Location = new System.Drawing.Point(3, 96);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(98, 25);
+            this.label11.TabIndex = 4;
+            this.label11.Text = "DISKON";
             // 
             // FormPOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(777, 542);
+            this.ClientSize = new System.Drawing.Size(777, 543);
             this.ControlBox = false;
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnDiscount);
             this.Controls.Add(this.txtStock);
             this.Controls.Add(this.txtProductID);
             this.Controls.Add(this.btnDelete);
@@ -529,6 +557,8 @@
         private System.Windows.Forms.ColumnHeader chAutoIDProduct;
         private System.Windows.Forms.TextBox txtProductID;
         private System.Windows.Forms.TextBox txtStock;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnDiscount;
+        private System.Windows.Forms.Label lblDiskon;
+        private System.Windows.Forms.Label label11;
     }
 }

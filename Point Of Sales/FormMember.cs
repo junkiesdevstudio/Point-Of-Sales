@@ -182,11 +182,16 @@ namespace Point_Of_Sales
                     sForm.ShowDialog();
 
                 }
-                catch (ArgumentOutOfRangeException aooreE) { MessageBox.Show("" + aooreE.Message); }
+                catch (ArgumentOutOfRangeException aooreE) {}
                 catch (NullReferenceException nreE) { }
             }
             else { MessageBox.Show("No record to edit.", clsVariables.sMSGBOX, MessageBoxButtons.OK, MessageBoxIcon.Exclamation); }
 
+        }
+
+        private void bttnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

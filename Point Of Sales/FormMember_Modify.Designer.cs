@@ -37,7 +37,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtUserKode = new System.Windows.Forms.TextBox();
+            this.txtMemberKode = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cmbDiscount = new System.Windows.Forms.ComboBox();
@@ -120,14 +120,14 @@
             this.label3.TabIndex = 207;
             this.label3.Text = "&Nama Lengkap:";
             // 
-            // txtUserKode
+            // txtMemberKode
             // 
-            this.txtUserKode.Enabled = false;
-            this.txtUserKode.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserKode.Location = new System.Drawing.Point(93, 70);
-            this.txtUserKode.Name = "txtUserKode";
-            this.txtUserKode.Size = new System.Drawing.Size(209, 20);
-            this.txtUserKode.TabIndex = 206;
+            this.txtMemberKode.Enabled = false;
+            this.txtMemberKode.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMemberKode.Location = new System.Drawing.Point(93, 70);
+            this.txtMemberKode.Name = "txtMemberKode";
+            this.txtMemberKode.Size = new System.Drawing.Size(209, 20);
+            this.txtMemberKode.TabIndex = 206;
             // 
             // label2
             // 
@@ -190,6 +190,7 @@
             this.bttnUpdate.Size = new System.Drawing.Size(88, 26);
             this.bttnUpdate.TabIndex = 222;
             this.bttnUpdate.Text = "&Simpan";
+            this.bttnUpdate.Click += new System.EventHandler(this.bttnUpdate_Click);
             // 
             // bttnReset
             // 
@@ -201,6 +202,7 @@
             this.bttnReset.Size = new System.Drawing.Size(88, 26);
             this.bttnReset.TabIndex = 221;
             this.bttnReset.Text = "&Reset";
+            this.bttnReset.Click += new System.EventHandler(this.bttnReset_Click);
             // 
             // bttnCancel
             // 
@@ -232,7 +234,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtFirstName);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtUserKode);
+            this.Controls.Add(this.txtMemberKode);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.picLOGO);
@@ -259,7 +261,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtUserKode;
+        private System.Windows.Forms.TextBox txtMemberKode;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cmbDiscount;

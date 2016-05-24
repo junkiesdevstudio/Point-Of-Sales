@@ -67,7 +67,6 @@ D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\bin\Debug\Point Of Sales.exe
 D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\bin\Debug\Point Of Sales.pdb
 D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\bin\Debug\MySql.Data.dll
 D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\bin\Debug\MySqlBackup.dll
-D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\bin\Debug\HotkeyManagement.pdb
 D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\obj\Debug\Point Of Sales.csprojResolveAssemblyReference.cache
 D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormAbout.resources
 D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormCash.resources
@@ -121,3 +120,4 @@ D:\POS\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.Properties.Resourc
 D:\POS\Point-Of-Sales\Point Of Sales\obj\Debug\Point Of Sales.csproj.GenerateResource.Cache
 D:\POS\Point-Of-Sales\Point Of Sales\obj\Debug\Point Of Sales.exe
 D:\POS\Point-Of-Sales\Point Of Sales\obj\Debug\Point Of Sales.pdb
+D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormDiscount.resources

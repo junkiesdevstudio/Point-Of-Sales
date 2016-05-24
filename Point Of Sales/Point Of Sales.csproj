@@ -95,6 +95,12 @@
     <Compile Include="FormCategory_View.Designer.cs">
       <DependentUpon>FormCategory_View.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDiscount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDiscount.Designer.cs">
+      <DependentUpon>FormDiscount.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormCategory_View.resx">
       <DependentUpon>FormCategory_View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDiscount.resx">
+      <DependentUpon>FormDiscount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>

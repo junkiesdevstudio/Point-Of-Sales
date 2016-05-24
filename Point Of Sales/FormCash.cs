@@ -12,8 +12,8 @@ namespace Point_Of_Sales
 {
     public partial class FormCash : Form
     {
-        public static FormCash publicFormCash;
-
+        
+public static FormCash publicFormCash;
         public FormCash()
         {
             InitializeComponent();
@@ -26,8 +26,6 @@ namespace Point_Of_Sales
 
         private void txtCash_KeyDown(object sender, KeyEventArgs e)
         {
-
-
             if (e.KeyCode == Keys.Enter)
             {
                 FormPOS.publicFormPOS.SumCashFinish(txtCash.Text);

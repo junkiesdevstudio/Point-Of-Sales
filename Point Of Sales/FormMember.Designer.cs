@@ -241,6 +241,7 @@
             this.bttnCancel.Size = new System.Drawing.Size(40, 40);
             this.bttnCancel.TabIndex = 135;
             this.bttnCancel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.bttnCancel.Click += new System.EventHandler(this.bttnCancel_Click);
             // 
             // panelBOTTOM
             // 
