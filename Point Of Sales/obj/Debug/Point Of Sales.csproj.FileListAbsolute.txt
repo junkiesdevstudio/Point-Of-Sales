@@ -141,3 +141,49 @@ D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\bin\Debug\CrystalDecisions.ReportAp
 D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\bin\Debug\ShockwaveFlashObjects.dll
 D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\bin\Debug\stdole.dll
+D:\github\Point-Of-Sales\Point Of Sales\bin\Debug\Point Of Sales.exe.config
+D:\github\Point-Of-Sales\Point Of Sales\bin\Debug\Point Of Sales.exe
+D:\github\Point-Of-Sales\Point Of Sales\bin\Debug\Point Of Sales.pdb
+D:\github\Point-Of-Sales\Point Of Sales\bin\Debug\MySql.Data.dll
+D:\github\Point-Of-Sales\Point Of Sales\bin\Debug\MySqlBackup.dll
+D:\github\Point-Of-Sales\Point Of Sales\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+D:\github\Point-Of-Sales\Point Of Sales\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+D:\github\Point-Of-Sales\Point Of Sales\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+D:\github\Point-Of-Sales\Point Of Sales\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
+D:\github\Point-Of-Sales\Point Of Sales\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+D:\github\Point-Of-Sales\Point Of Sales\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+D:\github\Point-Of-Sales\Point Of Sales\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+D:\github\Point-Of-Sales\Point Of Sales\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+D:\github\Point-Of-Sales\Point Of Sales\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+D:\github\Point-Of-Sales\Point Of Sales\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+D:\github\Point-Of-Sales\Point Of Sales\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+D:\github\Point-Of-Sales\Point Of Sales\bin\Debug\ShockwaveFlashObjects.dll
+D:\github\Point-Of-Sales\Point Of Sales\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+D:\github\Point-Of-Sales\Point Of Sales\bin\Debug\stdole.dll
+D:\github\Point-Of-Sales\Point Of Sales\obj\Debug\Point Of Sales.csprojResolveAssemblyReference.cache
+D:\github\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormAbout.resources
+D:\github\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormCash.resources
+D:\github\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormCategory.resources
+D:\github\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormCategory_Modify.resources
+D:\github\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormCategory_View.resources
+D:\github\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormDiscount.resources
+D:\github\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormLogin.resources
+D:\github\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormMDI.resources
+D:\github\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormMember.resources
+D:\github\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormMember_Modify.resources
+D:\github\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormPOS.resources
+D:\github\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormProduct.resources
+D:\github\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormProduct_Modify.resources
+D:\github\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormProduct_View.resources
+D:\github\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormReport.resources
+D:\github\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormSetting.resources
+D:\github\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormSplashScreen.resources
+D:\github\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormSupplier.resources
+D:\github\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormSupplier_Modify.resources
+D:\github\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormSupplier_View.resources
+D:\github\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormUser.resources
+D:\github\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormUser_Modify.resources
+D:\github\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.Properties.Resources.resources
+D:\github\Point-Of-Sales\Point Of Sales\obj\Debug\Point Of Sales.csproj.GenerateResource.Cache
+D:\github\Point-Of-Sales\Point Of Sales\obj\Debug\Point Of Sales.exe
+D:\github\Point-Of-Sales\Point Of Sales\obj\Debug\Point Of Sales.pdb
