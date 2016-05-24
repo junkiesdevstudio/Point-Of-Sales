@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Point_Of_Sales.REPORT;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -211,6 +212,16 @@ namespace Point_Of_Sales
         private void barcodePrinterToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Process.Start("C:\\Program Files (x86)\\Labeljoy 5\\Labeljoy5.exe");          
+        }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+
+            Form sForm = FormReport.Instance();
+            sForm.MdiParent = this;
+            FormReport.mType = "Member";
+            sForm.Show();
+            sForm.Activate();
         }
     }
 }

@@ -18,6 +18,7 @@
                 components.Dispose();
             }
             base.Dispose(disposing);
+            sForm = null;
         }
 
         #region Windows Form Designer generated code
@@ -28,19 +29,45 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.crystalReportViewer = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.SuspendLayout();
+            // 
+            // crystalReportViewer
+            // 
+            this.crystalReportViewer.ActiveViewIndex = -1;
+            this.crystalReportViewer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewer.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crystalReportViewer.EnableToolTips = false;
+            this.crystalReportViewer.Location = new System.Drawing.Point(0, 0);
+            this.crystalReportViewer.Name = "crystalReportViewer";
+            this.crystalReportViewer.ShowCopyButton = false;
+            this.crystalReportViewer.ShowExportButton = false;
+            this.crystalReportViewer.ShowGroupTreeButton = false;
+            this.crystalReportViewer.ShowLogo = false;
+            this.crystalReportViewer.Size = new System.Drawing.Size(811, 452);
+            this.crystalReportViewer.TabIndex = 1;
+            this.crystalReportViewer.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
             // FormReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(793, 398);
+            this.ClientSize = new System.Drawing.Size(811, 452);
+            this.Controls.Add(this.crystalReportViewer);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormReport";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormReport";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FormReport_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer;
     }
 }
