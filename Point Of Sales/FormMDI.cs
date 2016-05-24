@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -205,6 +206,11 @@ namespace Point_Of_Sales
             sForm.MdiParent = this;
             sForm.Show();
             sForm.Activate();
+        }
+
+        private void barcodePrinterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start("C:\\Program Files (x86)\\Labeljoy 5\\Labeljoy5.exe");          
         }
     }
 }

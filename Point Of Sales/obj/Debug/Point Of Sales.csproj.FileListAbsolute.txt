@@ -91,3 +91,33 @@ D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.Properties
 D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\obj\Debug\Point Of Sales.csproj.GenerateResource.Cache
 D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormMember.resources
 D:\PROJECT\GIT\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormMember_Modify.resources
+D:\POS\Point-Of-Sales\Point Of Sales\bin\Debug\Point Of Sales.exe.config
+D:\POS\Point-Of-Sales\Point Of Sales\bin\Debug\Point Of Sales.exe
+D:\POS\Point-Of-Sales\Point Of Sales\bin\Debug\Point Of Sales.pdb
+D:\POS\Point-Of-Sales\Point Of Sales\bin\Debug\MySql.Data.dll
+D:\POS\Point-Of-Sales\Point Of Sales\bin\Debug\MySqlBackup.dll
+D:\POS\Point-Of-Sales\Point Of Sales\obj\Debug\Point Of Sales.csprojResolveAssemblyReference.cache
+D:\POS\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormAbout.resources
+D:\POS\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormCash.resources
+D:\POS\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormCategory.resources
+D:\POS\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormCategory_Modify.resources
+D:\POS\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormCategory_View.resources
+D:\POS\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormLogin.resources
+D:\POS\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormMDI.resources
+D:\POS\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormMember.resources
+D:\POS\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormMember_Modify.resources
+D:\POS\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormPOS.resources
+D:\POS\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormProduct.resources
+D:\POS\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormProduct_Modify.resources
+D:\POS\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormProduct_View.resources
+D:\POS\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormSetting.resources
+D:\POS\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormSplashScreen.resources
+D:\POS\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormSupplier.resources
+D:\POS\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormSupplier_Modify.resources
+D:\POS\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormSupplier_View.resources
+D:\POS\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormUser.resources
+D:\POS\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormUser_Modify.resources
+D:\POS\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.Properties.Resources.resources
+D:\POS\Point-Of-Sales\Point Of Sales\obj\Debug\Point Of Sales.csproj.GenerateResource.Cache
+D:\POS\Point-Of-Sales\Point Of Sales\obj\Debug\Point Of Sales.exe
+D:\POS\Point-Of-Sales\Point Of Sales\obj\Debug\Point Of Sales.pdb
