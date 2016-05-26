@@ -36,9 +36,7 @@
             this.bttnPrint = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.bttnAddNew = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.bttnModify = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.bttnDelete = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,8 +47,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.lblContains = new System.Windows.Forms.Label();
             this.lblHeader = new System.Windows.Forms.Label();
-            this.picLOGO = new System.Windows.Forms.PictureBox();
-            this.picHeader = new System.Windows.Forms.PictureBox();
             this.lvMember = new System.Windows.Forms.ListView();
             this.chUsercode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chFullname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -58,6 +54,10 @@
             this.chPhone = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chDiscount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.picLOGO = new System.Windows.Forms.PictureBox();
+            this.picHeader = new System.Windows.Forms.PictureBox();
+            this.bttnAddNew = new System.Windows.Forms.Button();
+            this.bttnModify = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelBOTTOM.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLOGO)).BeginInit();
@@ -96,6 +96,7 @@
             this.bttnPrint.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.bttnPrint.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttnPrint.ForeColor = System.Drawing.Color.Black;
+            this.bttnPrint.Image = global::Point_Of_Sales.Properties.Resources.@__Print;
             this.bttnPrint.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.bttnPrint.Location = new System.Drawing.Point(177, 8);
             this.bttnPrint.Name = "bttnPrint";
@@ -133,20 +134,6 @@
             this.label5.Text = "&New";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // bttnAddNew
-            // 
-            this.bttnAddNew.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bttnAddNew.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.bttnAddNew.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bttnAddNew.ForeColor = System.Drawing.Color.Black;
-            this.bttnAddNew.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.bttnAddNew.Location = new System.Drawing.Point(83, 8);
-            this.bttnAddNew.Name = "bttnAddNew";
-            this.bttnAddNew.Size = new System.Drawing.Size(40, 40);
-            this.bttnAddNew.TabIndex = 145;
-            this.bttnAddNew.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.bttnAddNew.Click += new System.EventHandler(this.bttnAddNew_Click);
-            // 
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("Tahoma", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -154,22 +141,8 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(32, 16);
             this.label6.TabIndex = 144;
-            this.label6.Text = "&Modify";
+            this.label6.Text = "&Rubah";
             this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // bttnModify
-            // 
-            this.bttnModify.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bttnModify.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.bttnModify.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bttnModify.ForeColor = System.Drawing.Color.Black;
-            this.bttnModify.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.bttnModify.Location = new System.Drawing.Point(131, 8);
-            this.bttnModify.Name = "bttnModify";
-            this.bttnModify.Size = new System.Drawing.Size(40, 40);
-            this.bttnModify.TabIndex = 143;
-            this.bttnModify.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.bttnModify.Click += new System.EventHandler(this.bttnModify_Click);
             // 
             // label4
             // 
@@ -187,6 +160,7 @@
             this.bttnDelete.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.bttnDelete.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttnDelete.ForeColor = System.Drawing.Color.Black;
+            this.bttnDelete.Image = global::Point_Of_Sales.Properties.Resources._Delete;
             this.bttnDelete.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.bttnDelete.Location = new System.Drawing.Point(223, 8);
             this.bttnDelete.Name = "bttnDelete";
@@ -211,6 +185,7 @@
             this.bttnReload.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.bttnReload.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttnReload.ForeColor = System.Drawing.Color.Black;
+            this.bttnReload.Image = global::Point_Of_Sales.Properties.Resources.Refresh;
             this.bttnReload.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.bttnReload.Location = new System.Drawing.Point(271, 8);
             this.bttnReload.Name = "bttnReload";
@@ -235,6 +210,7 @@
             this.bttnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.bttnCancel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttnCancel.ForeColor = System.Drawing.Color.Black;
+            this.bttnCancel.Image = global::Point_Of_Sales.Properties.Resources._Cancel;
             this.bttnCancel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.bttnCancel.Location = new System.Drawing.Point(319, 8);
             this.bttnCancel.Name = "bttnCancel";
@@ -290,25 +266,6 @@
             this.lblHeader.Size = new System.Drawing.Size(141, 19);
             this.lblHeader.TabIndex = 140;
             this.lblHeader.Text = "USER MANAGER";
-            // 
-            // picLOGO
-            // 
-            this.picLOGO.Image = ((System.Drawing.Image)(resources.GetObject("picLOGO.Image")));
-            this.picLOGO.Location = new System.Drawing.Point(8, 7);
-            this.picLOGO.Name = "picLOGO";
-            this.picLOGO.Size = new System.Drawing.Size(24, 24);
-            this.picLOGO.TabIndex = 141;
-            this.picLOGO.TabStop = false;
-            // 
-            // picHeader
-            // 
-            this.picHeader.BackColor = System.Drawing.Color.Transparent;
-            this.picHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.picHeader.Location = new System.Drawing.Point(0, 0);
-            this.picHeader.Name = "picHeader";
-            this.picHeader.Size = new System.Drawing.Size(848, 42);
-            this.picHeader.TabIndex = 139;
-            this.picHeader.TabStop = false;
             // 
             // lvMember
             // 
@@ -367,6 +324,55 @@
             // 
             this.chStatus.Text = "STATUS";
             this.chStatus.Width = 75;
+            // 
+            // picLOGO
+            // 
+            this.picLOGO.Image = ((System.Drawing.Image)(resources.GetObject("picLOGO.Image")));
+            this.picLOGO.Location = new System.Drawing.Point(8, 7);
+            this.picLOGO.Name = "picLOGO";
+            this.picLOGO.Size = new System.Drawing.Size(24, 24);
+            this.picLOGO.TabIndex = 141;
+            this.picLOGO.TabStop = false;
+            // 
+            // picHeader
+            // 
+            this.picHeader.BackColor = System.Drawing.Color.Transparent;
+            this.picHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.picHeader.Location = new System.Drawing.Point(0, 0);
+            this.picHeader.Name = "picHeader";
+            this.picHeader.Size = new System.Drawing.Size(848, 42);
+            this.picHeader.TabIndex = 139;
+            this.picHeader.TabStop = false;
+            // 
+            // bttnAddNew
+            // 
+            this.bttnAddNew.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bttnAddNew.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.bttnAddNew.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bttnAddNew.ForeColor = System.Drawing.Color.Black;
+            this.bttnAddNew.Image = global::Point_Of_Sales.Properties.Resources._New_file;
+            this.bttnAddNew.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.bttnAddNew.Location = new System.Drawing.Point(83, 8);
+            this.bttnAddNew.Name = "bttnAddNew";
+            this.bttnAddNew.Size = new System.Drawing.Size(40, 40);
+            this.bttnAddNew.TabIndex = 145;
+            this.bttnAddNew.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.bttnAddNew.Click += new System.EventHandler(this.bttnAddNew_Click);
+            // 
+            // bttnModify
+            // 
+            this.bttnModify.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bttnModify.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.bttnModify.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bttnModify.ForeColor = System.Drawing.Color.Black;
+            this.bttnModify.Image = global::Point_Of_Sales.Properties.Resources.@__Edit_page;
+            this.bttnModify.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.bttnModify.Location = new System.Drawing.Point(131, 8);
+            this.bttnModify.Name = "bttnModify";
+            this.bttnModify.Size = new System.Drawing.Size(40, 40);
+            this.bttnModify.TabIndex = 143;
+            this.bttnModify.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.bttnModify.Click += new System.EventHandler(this.bttnModify_Click);
             // 
             // FormMember
             // 

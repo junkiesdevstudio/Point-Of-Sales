@@ -72,6 +72,7 @@
     <Compile Include="CLASS\clsSecurity.cs" />
     <Compile Include="CLASS\clsStart.cs" />
     <Compile Include="CLASS\clsVariables.cs" />
+    <Compile Include="CLASS\PrintDGV.cs" />
     <Compile Include="FormAbout.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,11 +157,17 @@
     <Compile Include="FormProduct_View.Designer.cs">
       <DependentUpon>FormProduct_View.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormReport.cs">
+    <Compile Include="FormReportMember.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormReport.Designer.cs">
-      <DependentUpon>FormReport.cs</DependentUpon>
+    <Compile Include="FormReportMember.Designer.cs">
+      <DependentUpon>FormReportMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormReportSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReportSupplier.Designer.cs">
+      <DependentUpon>FormReportSupplier.cs</DependentUpon>
     </Compile>
     <Compile Include="FormSetting.cs">
       <SubType>Form</SubType>
@@ -204,12 +211,23 @@
     <Compile Include="FormUser_Modify.Designer.cs">
       <DependentUpon>FormUser_Modify.cs</DependentUpon>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="REPORT\ReportMember.cs">
+    <Compile Include="pointofsalesDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ReportMember.rpt</DependentUpon>
-      <SubType>Component</SubType>
+      <DependentUpon>pointofsalesDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PrintOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintOptions.Designer.cs">
+      <DependentUpon>PrintOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Testing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Testing.Designer.cs">
+      <DependentUpon>Testing.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FormAbout.resx">
       <DependentUpon>FormAbout.cs</DependentUpon>
@@ -253,8 +271,11 @@
     <EmbeddedResource Include="FormProduct_View.resx">
       <DependentUpon>FormProduct_View.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormReport.resx">
-      <DependentUpon>FormReport.cs</DependentUpon>
+    <EmbeddedResource Include="FormReportMember.resx">
+      <DependentUpon>FormReportMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReportSupplier.resx">
+      <DependentUpon>FormReportSupplier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSetting.resx">
       <DependentUpon>FormSetting.cs</DependentUpon>
@@ -277,6 +298,9 @@
     <EmbeddedResource Include="FormUser_Modify.resx">
       <DependentUpon>FormUser_Modify.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PrintOptions.resx">
+      <DependentUpon>PrintOptions.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -287,11 +311,21 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="REPORT\ReportMember.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ReportMember.cs</LastGenOutput>
+    <EmbeddedResource Include="Testing.resx">
+      <DependentUpon>Testing.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="pointofsalesDataSet.xsc">
+      <DependentUpon>pointofsalesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="pointofsalesDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>pointofsalesDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="pointofsalesDataSet.xss">
+      <DependentUpon>pointofsalesDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -331,6 +365,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DATASET\" />
+    <Folder Include="REPORT\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cogwheel.png" />
@@ -340,6 +375,66 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ Add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ Cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ Close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ Erase.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ Exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ Help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ Home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ Info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ New file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ Ok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ Pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ Preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ Warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Synchronize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ _Print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ _Edit_page.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ Preview1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -165,7 +165,6 @@ D:\github\Point-Of-Sales\Point Of Sales\bin\Debug\CrystalDecisions.ReportAppServ
 D:\github\Point-Of-Sales\Point Of Sales\bin\Debug\ShockwaveFlashObjects.dll
 D:\github\Point-Of-Sales\Point Of Sales\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 D:\github\Point-Of-Sales\Point Of Sales\bin\Debug\stdole.dll
-D:\github\Point-Of-Sales\Point Of Sales\obj\Debug\Point Of Sales.csprojResolveAssemblyReference.cache
 D:\github\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormAbout.resources
 D:\github\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormCash.resources
 D:\github\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormCategory.resources
@@ -180,7 +179,8 @@ D:\github\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormPOS.resourc
 D:\github\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormProduct.resources
 D:\github\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormProduct_Modify.resources
 D:\github\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormProduct_View.resources
-D:\github\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormReport.resources
+D:\github\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormReportMember.resources
+D:\github\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormReportSupplier.resources
 D:\github\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormSetting.resources
 D:\github\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormSplashScreen.resources
 D:\github\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormSupplier.resources
@@ -189,6 +189,9 @@ D:\github\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormSupplier_Vi
 D:\github\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormUser.resources
 D:\github\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.FormUser_Modify.resources
 D:\github\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.Properties.Resources.resources
+D:\github\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.Testing.resources
 D:\github\Point-Of-Sales\Point Of Sales\obj\Debug\Point Of Sales.csproj.GenerateResource.Cache
 D:\github\Point-Of-Sales\Point Of Sales\obj\Debug\Point Of Sales.exe
 D:\github\Point-Of-Sales\Point Of Sales\obj\Debug\Point Of Sales.pdb
+D:\github\Point-Of-Sales\Point Of Sales\obj\Debug\Point Of Sales.csprojResolveAssemblyReference.cache
+D:\github\Point-Of-Sales\Point Of Sales\obj\Debug\Point_Of_Sales.PrintOptions.resources

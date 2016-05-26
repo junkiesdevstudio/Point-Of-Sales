@@ -218,6 +218,7 @@
             this.bttnPrint.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.bttnPrint.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttnPrint.ForeColor = System.Drawing.Color.Black;
+            this.bttnPrint.Image = global::Point_Of_Sales.Properties.Resources.@__Print;
             this.bttnPrint.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.bttnPrint.Location = new System.Drawing.Point(177, 8);
             this.bttnPrint.Name = "bttnPrint";
@@ -242,6 +243,7 @@
             this.bttnAddNew.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.bttnAddNew.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttnAddNew.ForeColor = System.Drawing.Color.Black;
+            this.bttnAddNew.Image = global::Point_Of_Sales.Properties.Resources._New_file;
             this.bttnAddNew.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.bttnAddNew.Location = new System.Drawing.Point(83, 8);
             this.bttnAddNew.Name = "bttnAddNew";
@@ -257,7 +259,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(32, 16);
             this.label6.TabIndex = 144;
-            this.label6.Text = "&Modify";
+            this.label6.Text = "&Rubah";
             this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // bttnModify
@@ -266,6 +268,7 @@
             this.bttnModify.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.bttnModify.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttnModify.ForeColor = System.Drawing.Color.Black;
+            this.bttnModify.Image = global::Point_Of_Sales.Properties.Resources.@__Edit_page;
             this.bttnModify.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.bttnModify.Location = new System.Drawing.Point(131, 8);
             this.bttnModify.Name = "bttnModify";
@@ -290,6 +293,7 @@
             this.bttnDelete.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.bttnDelete.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttnDelete.ForeColor = System.Drawing.Color.Black;
+            this.bttnDelete.Image = global::Point_Of_Sales.Properties.Resources._Delete;
             this.bttnDelete.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.bttnDelete.Location = new System.Drawing.Point(223, 8);
             this.bttnDelete.Name = "bttnDelete";
@@ -314,6 +318,7 @@
             this.bttnReload.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.bttnReload.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttnReload.ForeColor = System.Drawing.Color.Black;
+            this.bttnReload.Image = global::Point_Of_Sales.Properties.Resources.Refresh;
             this.bttnReload.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.bttnReload.Location = new System.Drawing.Point(271, 8);
             this.bttnReload.Name = "bttnReload";
@@ -338,6 +343,7 @@
             this.bttnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.bttnCancel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttnCancel.ForeColor = System.Drawing.Color.Black;
+            this.bttnCancel.Image = global::Point_Of_Sales.Properties.Resources._Cancel;
             this.bttnCancel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.bttnCancel.Location = new System.Drawing.Point(319, 8);
             this.bttnCancel.Name = "bttnCancel";

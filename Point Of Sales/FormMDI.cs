@@ -1,4 +1,4 @@
-﻿using Point_Of_Sales.REPORT;
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,10 +25,10 @@ namespace Point_Of_Sales
 
         private void FormMDI_Load(object sender, EventArgs e)
         {
-            lblWelcome.Text = "Selamat Datang! " + clsVariables.sFullname;
+            //lblWelcome.Text = "Selamat Datang! " + clsVariables.sFullname;
 
-            FormSplashScreen SplashScreen = new FormSplashScreen();
-            SplashScreen.ShowDialog();
+            //FormSplashScreen SplashScreen = new FormSplashScreen();
+            //SplashScreen.ShowDialog();
 
             clsConnection conn = new clsConnection();
             conn.setConnection(clsVariables.sIPAddress, clsVariables.sDbUser, clsVariables.sDbName, clsVariables.sDbPassword);
@@ -217,9 +217,22 @@ namespace Point_Of_Sales
         private void toolStripMenuItem3_Click(object sender, EventArgs e)
         {
 
-            Form sForm = FormReport.Instance();
+        }
+
+        private void memberToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form sForm = FormReportMember.Instance();
             sForm.MdiParent = this;
-            FormReport.mType = "Member";
+            FormReportMember.mType = "Member";
+            sForm.Show();
+            sForm.Activate();
+        }
+
+        private void supplierToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Form sForm = FormReportSupplier.Instance();
+            sForm.MdiParent = this;
+            FormReportSupplier.mType2 = "Supplier";
             sForm.Show();
             sForm.Activate();
         }
