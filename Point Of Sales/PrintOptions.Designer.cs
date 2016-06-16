@@ -36,7 +36,7 @@
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.gboxRowsToPrint = new System.Windows.Forms.GroupBox();
             this.lblColumnsToPrint = new System.Windows.Forms.Label();
-            this.chklst = new System.Windows.Forms.CheckedListBox();
+            this.Pilih = new System.Windows.Forms.CheckedListBox();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnHelp = new System.Windows.Forms.Button();
@@ -49,10 +49,10 @@
             this.rdoSelectedRows.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdoSelectedRows.Location = new System.Drawing.Point(91, 19);
             this.rdoSelectedRows.Name = "rdoSelectedRows";
-            this.rdoSelectedRows.Size = new System.Drawing.Size(75, 17);
+            this.rdoSelectedRows.Size = new System.Drawing.Size(49, 17);
             this.rdoSelectedRows.TabIndex = 1;
             this.rdoSelectedRows.TabStop = true;
-            this.rdoSelectedRows.Text = "Selected";
+            this.rdoSelectedRows.Text = "Pilih";
             this.rdoSelectedRows.UseVisualStyleBackColor = true;
             // 
             // rdoAllRows
@@ -61,10 +61,10 @@
             this.rdoAllRows.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdoAllRows.Location = new System.Drawing.Point(9, 19);
             this.rdoAllRows.Name = "rdoAllRows";
-            this.rdoAllRows.Size = new System.Drawing.Size(39, 17);
+            this.rdoAllRows.Size = new System.Drawing.Size(63, 17);
             this.rdoAllRows.TabIndex = 0;
             this.rdoAllRows.TabStop = true;
-            this.rdoAllRows.Text = "All";
+            this.rdoAllRows.Text = "Semua";
             this.rdoAllRows.UseVisualStyleBackColor = true;
             // 
             // chkFitToPageWidth
@@ -75,9 +75,9 @@
             this.chkFitToPageWidth.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkFitToPageWidth.Location = new System.Drawing.Point(185, 78);
             this.chkFitToPageWidth.Name = "chkFitToPageWidth";
-            this.chkFitToPageWidth.Size = new System.Drawing.Size(127, 18);
+            this.chkFitToPageWidth.Size = new System.Drawing.Size(117, 18);
             this.chkFitToPageWidth.TabIndex = 30;
-            this.chkFitToPageWidth.Text = "Fit to page width";
+            this.chkFitToPageWidth.Text = "Lebar Halaman";
             this.chkFitToPageWidth.UseVisualStyleBackColor = true;
             // 
             // lblTitle
@@ -86,9 +86,9 @@
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.Location = new System.Drawing.Point(182, 107);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(80, 13);
+            this.lblTitle.Size = new System.Drawing.Size(37, 13);
             this.lblTitle.TabIndex = 29;
-            this.lblTitle.Text = "Title of print ";
+            this.lblTitle.Text = "Judul";
             // 
             // txtTitle
             // 
@@ -110,7 +110,7 @@
             this.gboxRowsToPrint.Size = new System.Drawing.Size(173, 42);
             this.gboxRowsToPrint.TabIndex = 27;
             this.gboxRowsToPrint.TabStop = false;
-            this.gboxRowsToPrint.Text = "Rows to print";
+            this.gboxRowsToPrint.Text = "Pilih Baris";
             // 
             // lblColumnsToPrint
             // 
@@ -118,19 +118,19 @@
             this.lblColumnsToPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblColumnsToPrint.Location = new System.Drawing.Point(6, 9);
             this.lblColumnsToPrint.Name = "lblColumnsToPrint";
-            this.lblColumnsToPrint.Size = new System.Drawing.Size(102, 13);
+            this.lblColumnsToPrint.Size = new System.Drawing.Size(69, 13);
             this.lblColumnsToPrint.TabIndex = 26;
-            this.lblColumnsToPrint.Text = "Columns to print ";
+            this.lblColumnsToPrint.Text = "Pilih Kolom";
             // 
-            // chklst
+            // Pilih
             // 
-            this.chklst.CheckOnClick = true;
-            this.chklst.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chklst.FormattingEnabled = true;
-            this.chklst.Location = new System.Drawing.Point(6, 28);
-            this.chklst.Name = "chklst";
-            this.chklst.Size = new System.Drawing.Size(170, 244);
-            this.chklst.TabIndex = 22;
+            this.Pilih.CheckOnClick = true;
+            this.Pilih.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Pilih.FormattingEnabled = true;
+            this.Pilih.Location = new System.Drawing.Point(6, 28);
+            this.Pilih.Name = "Pilih";
+            this.Pilih.Size = new System.Drawing.Size(170, 244);
+            this.Pilih.TabIndex = 22;
             // 
             // btnOK
             // 
@@ -164,7 +164,7 @@
             this.btnCancel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnCancel.Size = new System.Drawing.Size(56, 25);
             this.btnCancel.TabIndex = 24;
-            this.btnCancel.Text = "&Cancel";
+            this.btnCancel.Text = "&Batal";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -181,7 +181,7 @@
             this.btnHelp.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnHelp.Size = new System.Drawing.Size(56, 25);
             this.btnHelp.TabIndex = 25;
-            this.btnHelp.Text = "&Help";
+            this.btnHelp.Text = "&Bantuan";
             this.btnHelp.UseVisualStyleBackColor = false;
             // 
             // PrintOptions
@@ -197,7 +197,7 @@
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnHelp);
-            this.Controls.Add(this.chklst);
+            this.Controls.Add(this.Pilih);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "PrintOptions";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -222,6 +222,6 @@
         protected System.Windows.Forms.Button btnOK;
         protected System.Windows.Forms.Button btnCancel;
         protected System.Windows.Forms.Button btnHelp;
-        internal System.Windows.Forms.CheckedListBox chklst;
+        internal System.Windows.Forms.CheckedListBox Pilih;
     }
 }

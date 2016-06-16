@@ -31,9 +31,9 @@
             this.lvProduct = new System.Windows.Forms.ListView();
             this.chProductCode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chProductName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chIndex = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chUnitPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.chStock = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chIndex = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.bttnSelect = new System.Windows.Forms.Button();
             this.bttnCancel = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
@@ -75,12 +75,6 @@
             this.chProductName.Text = "NAMA PRODUK";
             this.chProductName.Width = 220;
             // 
-            // chIndex
-            // 
-            this.chIndex.DisplayIndex = 2;
-            this.chIndex.Text = "Index";
-            this.chIndex.Width = 0;
-            // 
             // chUnitPrice
             // 
             this.chUnitPrice.DisplayIndex = 3;
@@ -92,6 +86,12 @@
             this.chStock.DisplayIndex = 4;
             this.chStock.Text = "STOCK";
             this.chStock.Width = 100;
+            // 
+            // chIndex
+            // 
+            this.chIndex.DisplayIndex = 2;
+            this.chIndex.Text = "Index";
+            this.chIndex.Width = 0;
             // 
             // bttnSelect
             // 
@@ -131,9 +131,9 @@
             this.label1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 68);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 13);
+            this.label1.Size = new System.Drawing.Size(39, 13);
             this.label1.TabIndex = 228;
-            this.label1.Text = "PENCARIAN";
+            this.label1.Text = "CARI :";
             // 
             // FormProduct_View
             // 

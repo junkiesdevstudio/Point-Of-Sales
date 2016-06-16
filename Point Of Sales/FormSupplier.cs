@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApplication1;
+using System.Drawing.Printing;
 
 namespace Point_Of_Sales
 {
@@ -37,14 +39,10 @@ namespace Point_Of_Sales
 
         private void FormSupplier_Load(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
-
+            //this.WindowState = FormWindowState.Maximized;
             sFunctions.CreateDirectory("\\@Data\\@Image");
-
             daFormSupplierList = new MySqlDataAdapter("", clsConnection.CN);
-
             LoadSupplier("SELECT tblsupplier.suppliercode, tblsupplier.suppliername, tblsupplier.discription, tblsupplier.bussinessno, tblsupplier.email, tblsupplier.address, tblsupplier.status FROM tblsupplier ORDER BY tblsupplier.autoid ASC");
-
             publicFormSupplier = this;
         }
 
@@ -147,7 +145,6 @@ namespace Point_Of_Sales
         {
             if (clsFunctions.recordExist("SELECT tblusers.usercode, tblusers.usertype FROM tblusers WHERE (tblusers.usertype=1 && tblusers.usercode='" + clsVariables.sUsercode + "') ORDER BY tblusers.autoid ASC", "tblusers") == true)
             {
-
                 if (lvSupplier.Items.Count > 0)
                 {
                     try
@@ -156,7 +153,6 @@ namespace Point_Of_Sales
                         FormSupplier_Modify.sSupplierKode = lvSupplier.Items[lvSupplier.FocusedItem.Index].SubItems[0].Text;
                         FormSupplier_Modify sForm = new FormSupplier_Modify();
                         sForm.ShowDialog();
-
                     }
                     catch (ArgumentOutOfRangeException aooreE) { MessageBox.Show("" + aooreE.Message); }
                     catch (NullReferenceException nreE) { }
@@ -215,5 +211,12 @@ namespace Point_Of_Sales
         {
 
         }
+
+        private void bttnPrint_Click(object sender, EventArgs e)
+        {
+            listViewPrinter printer = new listViewPrinter(lvSupplier, new Point(30, 30),false, lvSupplier.Groups.Count > 0, "DATA SUPPLIER");
+            printer.print();            
+        }
+
     }
 }

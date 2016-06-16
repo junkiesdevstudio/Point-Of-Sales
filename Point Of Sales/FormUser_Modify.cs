@@ -29,14 +29,11 @@ namespace Point_Of_Sales
         }
 
         private void FormUser_Modify_Load(object sender, EventArgs e)
-        {
-            
-
+        {         
             if (ADD_STATE == true)
             {
                 txtUserKode.Text = "USR-" + clsFunctions.GenerateCD("SELECT MAX(autoid) FROM tblusers", "tblusers");
                 txtUserID.Text = txtUserKode.Text;
-
                 cmdAddUsers = new MySqlCommand("INSERT INTO tblusers( usercode , fullname, address, email, telephone, usertype, status, username, password, datemodify, usermodifyby, dateadded, useraddedby)" + 
                                                "VALUES (@getUsercode,@getFullname,@getAddress,@getEmail,@getTelephone,@getUsertype,@getStatus,@getUsername,@getPassword,@getDatemodify,@getUsermodifyby, @getDateadded, @getUseraddedby)", clsConnection.CN);
                 this.Text = "Add New";
@@ -141,8 +138,6 @@ namespace Point_Of_Sales
             }
             else
             {
-
-
                 cmdAddUsers.Parameters["@getUsercode"].Value = txtUserKode.Text;
                 cmdAddUsers.Parameters["@getFullname"].Value = txtFirstName.Text;
                 cmdAddUsers.Parameters["@getAddress"].Value = txtStreetAddress.Text;
@@ -156,9 +151,7 @@ namespace Point_Of_Sales
                 cmdAddUsers.Parameters["@getUsermodifyby"].Value = 1;
                 cmdAddUsers.Parameters["@getDateadded"].Value = DateTime.Now;
                 cmdAddUsers.Parameters["@getUseraddedby"].Value = 1;
-
                 cmdAddUsers.ExecuteNonQuery();
-
                 FormUser.publicFormUser.RemovePic();
                 imgName = sUserKode + ".lms";
 
@@ -182,8 +175,6 @@ namespace Point_Of_Sales
                     FormUser.publicFormUser.LoadUsers("SELECT tblusers.usercode, tblusers.fullname, tblusers.address, tblusers.email, tblusertype.typename, tblusers.status, tblusers.username FROM tblusertype RIGHT JOIN tblusers ON tblusertype.autoid = tblusers.usertype ORDER BY tblusers.autoid ASC");
                     MessageBox.Show("Record has been successfully added.", clsVariables.sMSGBOX, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-
-
                 this.Close();
             }
         }

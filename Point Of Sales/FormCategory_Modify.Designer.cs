@@ -71,7 +71,7 @@
             // 
             // picLOGO
             // 
-            this.picLOGO.BackgroundImage = global::Point_Of_Sales.Properties.Resources._Help;
+            this.picLOGO.BackgroundImage = global::Point_Of_Sales.Properties.Resources.Help;
             this.picLOGO.Location = new System.Drawing.Point(7, 9);
             this.picLOGO.Name = "picLOGO";
             this.picLOGO.Size = new System.Drawing.Size(35, 31);

@@ -9,24 +9,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApplication1;
 
 namespace Point_Of_Sales
 {
     public partial class FormCategory : Form
     {
         clsFunctions sFunctions = new clsFunctions();
-
         public static FormCategory publicFormCategory;
-
         MySqlDataAdapter daFormCategoryList = new MySqlDataAdapter();
         MySqlCommand cmdDelete;
         DataSet dsFormCategoryList = new DataSet();
-
         private static FormCategory sForm = null;
         public static FormCategory Instance()
         {
             if (sForm == null) { sForm = new FormCategory(); }
-
             return sForm;
         }
 
@@ -38,9 +35,7 @@ namespace Point_Of_Sales
         private void FormCategory_Load(object sender, EventArgs e)
         {
             daFormCategoryList = new MySqlDataAdapter("", clsConnection.CN);
-
             LoadCategory("SELECT tblcategory.categorycode, tblcategory.categoryname, tblcategory.description FROM tblcategory ORDER BY tblcategory.autoid ASC");
-
             publicFormCategory = this;
         }
 
@@ -49,9 +44,7 @@ namespace Point_Of_Sales
             try
             {
                 int lvw_pos;
-
                 lvw_pos = lvCategory.FocusedItem.Index;
-
                 LoadCategory("SELECT tblcategory.categorycode, tblcategory.categoryname, tblcategory.description FROM tblcategory ORDER BY tblcategory.autoid ASC");
 
                 if (lvCategory.Items.Count != 0 && lvCategory.Items.Count - 1 >= lvw_pos)
@@ -62,15 +55,12 @@ namespace Point_Of_Sales
                     lvCategory.Items[lvw_pos].Focused = true;
                     lvCategory.Items[lvw_pos].Selected = true;
                     lvCategory.Items[lvw_pos].EnsureVisible();
-
                 }
                 lvw_pos = 0;
 
             }
             catch (ArgumentOutOfRangeException aooreE) { }
-
             catch (NullReferenceException nreE) { }
-
             catch (IOException ioeE) { MessageBox.Show("Error: " + ioeE.Source + ": " + ioeE.Message, clsVariables.sMSGBOX, MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
 
@@ -79,14 +69,10 @@ namespace Point_Of_Sales
             try
             {
                 long totalRow = 0;
-
                 daFormCategoryList.SelectCommand.CommandText = sSQL;
-
                 dsFormCategoryList.Clear();
                 daFormCategoryList.Fill(dsFormCategoryList, "tblcategory");
-
                 totalRow = dsFormCategoryList.Tables["tblcategory"].Rows.Count - 1;
-
                 lvCategory.Items.Clear();
                 for (int i = 0; i <= totalRow; i++)
                 {
@@ -118,7 +104,6 @@ namespace Point_Of_Sales
                 FormCategory_Modify.ADD_STATE = true;
                 FormCategory_Modify sForm = new FormCategory_Modify();
                 sForm.ShowDialog();
-
             }
             else
             {
@@ -138,7 +123,6 @@ namespace Point_Of_Sales
                         FormCategory_Modify.sCategoryKode = lvCategory.Items[lvCategory.FocusedItem.Index].SubItems[0].Text;
                         FormCategory_Modify sForm = new FormCategory_Modify();
                         sForm.ShowDialog();
-
                     }
                     catch (ArgumentOutOfRangeException aooreE) { MessageBox.Show("" + aooreE.Message); }
                     catch (NullReferenceException nreE) { }
@@ -153,7 +137,6 @@ namespace Point_Of_Sales
 
         private void bttnDelete_Click(object sender, EventArgs e)
         {
-
             if (clsFunctions.recordExist("SELECT tblusers.usercode, tblusers.usertype FROM tblusers WHERE (tblusers.usertype=1 && tblusers.usercode='" + clsVariables.sUsercode + "') ORDER BY tblusers.autoid ASC", "tblusers") == true)
             {
                 if (lvCategory.Items.Count > 0)
@@ -203,6 +186,13 @@ namespace Point_Of_Sales
         {
             LoadSearch(txtSearch.Text);
             txtSearch.Focus();
+        }
+
+        private void bttnPrint_Click(object sender, EventArgs e)
+        {
+            //listViewPrinter printer = new listViewPrinter(lvCategory, new Point(10, 10), checkBox1.Checked, lvCategory.Groups.Count > 0, "REKAP SUPPLIER");
+            listViewPrinter printer = new listViewPrinter(lvCategory, new Point(55, 55),false, lvCategory.Groups.Count > 0, "DATA KATEGORI");
+            printer.print();
         }
     }
 }

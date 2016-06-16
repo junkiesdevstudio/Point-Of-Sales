@@ -44,8 +44,6 @@ namespace Point_Of_Sales
             }
             else
             {
-
-
                 cmdAddSupplier.Parameters["@getSupplierCode"].Value = txtSupplierCode.Text;
                 cmdAddSupplier.Parameters["@getSupplierName"].Value = txtSupplierName.Text;
                 cmdAddSupplier.Parameters["@getDiscription"].Value = txtDiscription.Text;
@@ -55,23 +53,18 @@ namespace Point_Of_Sales
                 cmdAddSupplier.Parameters["@getAddress"].Value = txtAddress.Text;
                 cmdAddSupplier.Parameters["@getStatus"].Value = cmbStatus.Text;
                 cmdAddSupplier.Parameters["@getDateAdded"].Value = dtStock.Value;
-
-
                 cmdAddSupplier.ExecuteNonQuery();
-
                 if (ADD_STATE == false)
                 {
                     FormSupplier.publicFormSupplier.ReloadCurrent();
-                    MessageBox.Show("Changes in record has been successfully saved.", clsVariables.sMSGBOX, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Update Data Berhasil...!", clsVariables.sMSGBOX, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
 
                     FormSupplier.publicFormSupplier.LoadSupplier("SELECT tblsupplier.suppliercode, tblsupplier.suppliername, tblsupplier.discription, tblsupplier.bussinessno, tblsupplier.email, tblsupplier.address, tblsupplier.status FROM tblsupplier ORDER BY tblsupplier.autoid ASC");
-                    MessageBox.Show("Record has been successfully added.", clsVariables.sMSGBOX, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Data Tersimpan..!.", clsVariables.sMSGBOX, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-
-
                 this.Close();
             }
         }

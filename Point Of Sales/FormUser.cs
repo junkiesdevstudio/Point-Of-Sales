@@ -9,15 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.IO;
+using WindowsFormsApplication1;
 
 namespace Point_Of_Sales
 {
     public partial class FormUser : Form
     {
         clsFunctions sFunctions = new clsFunctions();
-
         public static FormUser publicFormUser;
-
         MySqlDataAdapter daFormUserList = new MySqlDataAdapter();
         MySqlCommand cmdDelete;
         DataSet dsFormUserList = new DataSet();
@@ -26,10 +25,8 @@ namespace Point_Of_Sales
         public static FormUser Instance()
         {
             if (sForm == null) { sForm = new FormUser(); }
-
             return sForm;
         }
-
 
         public FormUser()
         {
@@ -38,14 +35,10 @@ namespace Point_Of_Sales
 
         private void FormUser_Load(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
-
+            //this.WindowState = FormWindowState.Maximized;
             sFunctions.CreateDirectory("\\@Data\\@Image");
-
             daFormUserList = new MySqlDataAdapter("", clsConnection.CN);
-
             LoadUsers("SELECT tblusers.usercode, tblusers.fullname, tblusers.address, tblusers.email, tblusertype.typename, tblusers.status, tblusers.username FROM tblusertype RIGHT JOIN tblusers ON tblusertype.autoid = tblusers.usertype ORDER BY tblusers.autoid ASC");
-
             publicFormUser = this;
         }
 
@@ -68,10 +61,10 @@ namespace Point_Of_Sales
                     lvUser.Items.Add(new ListViewItem("" + dsFormUserList.Tables["tblusers"].Rows[i].ItemArray.GetValue(0).ToString(), 22));
                     lvUser.Items[i].SubItems.Add("" + dsFormUserList.Tables["tblusers"].Rows[i].ItemArray.GetValue(1).ToString());
                     lvUser.Items[i].SubItems.Add("" + dsFormUserList.Tables["tblusers"].Rows[i].ItemArray.GetValue(2).ToString());
-                    lvUser.Items[i].SubItems.Add("" + dsFormUserList.Tables["tblusers"].Rows[i].ItemArray.GetValue(3).ToString());
-                    lvUser.Items[i].SubItems.Add("" + dsFormUserList.Tables["tblusers"].Rows[i].ItemArray.GetValue(4).ToString());
-                    lvUser.Items[i].SubItems.Add("" + dsFormUserList.Tables["tblusers"].Rows[i].ItemArray.GetValue(5).ToString());
-                    lvUser.Items[i].SubItems.Add("" + dsFormUserList.Tables["tblusers"].Rows[i].ItemArray.GetValue(6).ToString());
+                    //lvUser.Items[i].SubItems.Add("" + dsFormUserList.Tables["tblusers"].Rows[i].ItemArray.GetValue(3).ToString());
+                    //lvUser.Items[i].SubItems.Add("" + dsFormUserList.Tables["tblusers"].Rows[i].ItemArray.GetValue(4).ToString());
+                    //lvUser.Items[i].SubItems.Add("" + dsFormUserList.Tables["tblusers"].Rows[i].ItemArray.GetValue(5).ToString());
+                    //lvUser.Items[i].SubItems.Add("" + dsFormUserList.Tables["tblusers"].Rows[i].ItemArray.GetValue(6).ToString());
                     
                 }
                 if (lvUser.Items.Count > 0)
@@ -250,14 +243,8 @@ namespace Point_Of_Sales
 
         private void bttnPrint_Click(object sender, EventArgs e)
         {
-            if (clsFunctions.recordExist("SELECT tblusers.usercode, tblusers.usertype FROM tblusers WHERE (tblusers.usertype=1 && tblusers.usercode='" + clsVariables.sUsercode + "') ORDER BY tblusers.autoid ASC", "tblusers") == true)
-            {
-
-            }
-            else
-            {
-                MessageBox.Show("Anda perlu hak akses administrator untuk menggunakan fitur ini!", clsVariables.sMSGBOX, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            listViewPrinter printer = new listViewPrinter(lvUser, new Point(15, 15), false, lvUser.Groups.Count > 0, "DATA USER");
+            printer.print();
         }
 
         private void LoadSearch(string sSearch)

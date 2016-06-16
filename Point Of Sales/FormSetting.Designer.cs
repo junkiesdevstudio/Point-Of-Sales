@@ -49,11 +49,11 @@
             this.lblHeader.AutoSize = true;
             this.lblHeader.BackColor = System.Drawing.Color.Transparent;
             this.lblHeader.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblHeader.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeader.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHeader.ForeColor = System.Drawing.Color.Black;
             this.lblHeader.Location = new System.Drawing.Point(38, 13);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(122, 19);
+            this.lblHeader.Size = new System.Drawing.Size(107, 19);
             this.lblHeader.TabIndex = 134;
             this.lblHeader.Text = "PENGATURAN";
             // 

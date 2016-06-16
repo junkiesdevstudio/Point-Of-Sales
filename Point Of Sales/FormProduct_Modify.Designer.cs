@@ -50,6 +50,8 @@
             this.bttnUpdate = new System.Windows.Forms.Button();
             this.bttnReset = new System.Windows.Forms.Button();
             this.bttnCancel = new System.Windows.Forms.Button();
+            this.txtDiskon = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picLOGO)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,6 +65,7 @@
             // 
             // picLOGO
             // 
+            this.picLOGO.Image = global::Point_Of_Sales.Properties.Resources.Help;
             this.picLOGO.Location = new System.Drawing.Point(6, 9);
             this.picLOGO.Name = "picLOGO";
             this.picLOGO.Size = new System.Drawing.Size(35, 31);
@@ -222,7 +225,7 @@
             this.bttnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bttnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.bttnUpdate.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bttnUpdate.Location = new System.Drawing.Point(32, 306);
+            this.bttnUpdate.Location = new System.Drawing.Point(32, 326);
             this.bttnUpdate.Name = "bttnUpdate";
             this.bttnUpdate.Size = new System.Drawing.Size(88, 26);
             this.bttnUpdate.TabIndex = 219;
@@ -234,7 +237,7 @@
             this.bttnReset.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bttnReset.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.bttnReset.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bttnReset.Location = new System.Drawing.Point(127, 306);
+            this.bttnReset.Location = new System.Drawing.Point(127, 326);
             this.bttnReset.Name = "bttnReset";
             this.bttnReset.Size = new System.Drawing.Size(88, 26);
             this.bttnReset.TabIndex = 218;
@@ -246,17 +249,37 @@
             this.bttnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.bttnCancel.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.bttnCancel.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bttnCancel.Location = new System.Drawing.Point(221, 306);
+            this.bttnCancel.Location = new System.Drawing.Point(221, 326);
             this.bttnCancel.Name = "bttnCancel";
             this.bttnCancel.Size = new System.Drawing.Size(88, 26);
             this.bttnCancel.TabIndex = 217;
             this.bttnCancel.Text = "&Batal";
             // 
+            // txtDiskon
+            // 
+            this.txtDiskon.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDiskon.Location = new System.Drawing.Point(89, 278);
+            this.txtDiskon.Name = "txtDiskon";
+            this.txtDiskon.Size = new System.Drawing.Size(185, 20);
+            this.txtDiskon.TabIndex = 220;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(5, 285);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(55, 13);
+            this.label9.TabIndex = 221;
+            this.label9.Text = "&Discount :";
+            // 
             // FormProduct_Modify
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(327, 344);
+            this.ClientSize = new System.Drawing.Size(324, 385);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.txtDiskon);
             this.Controls.Add(this.bttnUpdate);
             this.Controls.Add(this.bttnReset);
             this.Controls.Add(this.bttnCancel);
@@ -315,5 +338,7 @@
         private System.Windows.Forms.Button bttnUpdate;
         private System.Windows.Forms.Button bttnReset;
         private System.Windows.Forms.Button bttnCancel;
+        private System.Windows.Forms.TextBox txtDiskon;
+        private System.Windows.Forms.Label label9;
     }
 }

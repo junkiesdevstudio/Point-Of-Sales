@@ -42,17 +42,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panelBOTTOM = new System.Windows.Forms.Panel();
-            this.lvCategory = new System.Windows.Forms.ListView();
-            this.chCategoryCode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chCategoryName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.chDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.bttnPrint = new System.Windows.Forms.Button();
             this.bttnAddNew = new System.Windows.Forms.Button();
             this.bttnModify = new System.Windows.Forms.Button();
             this.bttnDelete = new System.Windows.Forms.Button();
             this.bttnReload = new System.Windows.Forms.Button();
             this.bttnCancel = new System.Windows.Forms.Button();
+            this.panelBOTTOM = new System.Windows.Forms.Panel();
+            this.lvCategory = new System.Windows.Forms.ListView();
+            this.chCategoryCode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chCategoryName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.chDescription = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.picLOGO = new System.Windows.Forms.PictureBox();
             this.picHeader = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
@@ -64,17 +64,19 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(300, 18);
+            this.label10.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(302, 13);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(75, 13);
+            this.label10.Size = new System.Drawing.Size(57, 19);
             this.label10.TabIndex = 143;
-            this.label10.Text = "PENCARIAN :";
+            this.label10.Text = "CARI :";
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(381, 15);
+            this.txtSearch.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(371, 10);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(207, 20);
+            this.txtSearch.Size = new System.Drawing.Size(258, 26);
             this.txtSearch.TabIndex = 142;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
@@ -83,13 +85,13 @@
             this.lblHeader.AutoSize = true;
             this.lblHeader.BackColor = System.Drawing.Color.Transparent;
             this.lblHeader.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblHeader.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeader.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHeader.ForeColor = System.Drawing.Color.Black;
-            this.lblHeader.Location = new System.Drawing.Point(39, 14);
+            this.lblHeader.Location = new System.Drawing.Point(39, 10);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(139, 19);
+            this.lblHeader.Size = new System.Drawing.Size(147, 23);
             this.lblHeader.TabIndex = 140;
-            this.lblHeader.Text = "ITEM CATEGORY";
+            this.lblHeader.Text = "KATEGORI BATIK";
             // 
             // label7
             // 
@@ -100,9 +102,9 @@
             this.label7.ForeColor = System.Drawing.Color.Firebrick;
             this.label7.Location = new System.Drawing.Point(6, 10);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(135, 16);
+            this.label7.Size = new System.Drawing.Size(80, 16);
             this.label7.TabIndex = 132;
-            this.label7.Text = "CATEGORY RECORD:";
+            this.label7.Text = "KATEGORI :";
             // 
             // lblContains
             // 
@@ -111,9 +113,9 @@
             this.lblContains.ForeColor = System.Drawing.Color.Black;
             this.lblContains.Location = new System.Drawing.Point(5, 30);
             this.lblContains.Name = "lblContains";
-            this.lblContains.Size = new System.Drawing.Size(284, 13);
+            this.lblContains.Size = new System.Drawing.Size(180, 13);
             this.lblContains.TabIndex = 119;
-            this.lblContains.Text = "Ini berisi semua informasi tentang kategori item.";
+            this.lblContains.Text = "Berisi tentang jenis-jenis batik";
             // 
             // label8
             // 
@@ -189,60 +191,10 @@
             this.panel1.Controls.Add(this.bttnReload);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.bttnCancel);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(303, 0);
+            this.panel1.Location = new System.Drawing.Point(328, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(297, 64);
+            this.panel1.Size = new System.Drawing.Size(301, 64);
             this.panel1.TabIndex = 133;
-            // 
-            // panelBOTTOM
-            // 
-            this.panelBOTTOM.Controls.Add(this.panel1);
-            this.panelBOTTOM.Controls.Add(this.label7);
-            this.panelBOTTOM.Controls.Add(this.lblContains);
-            this.panelBOTTOM.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelBOTTOM.Location = new System.Drawing.Point(0, 314);
-            this.panelBOTTOM.Name = "panelBOTTOM";
-            this.panelBOTTOM.Size = new System.Drawing.Size(600, 64);
-            this.panelBOTTOM.TabIndex = 144;
-            // 
-            // lvCategory
-            // 
-            this.lvCategory.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lvCategory.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.chCategoryCode,
-            this.chCategoryName,
-            this.chDescription});
-            this.lvCategory.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lvCategory.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvCategory.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lvCategory.FullRowSelect = true;
-            this.lvCategory.GridLines = true;
-            this.lvCategory.HideSelection = false;
-            this.lvCategory.HoverSelection = true;
-            this.lvCategory.Location = new System.Drawing.Point(0, 42);
-            this.lvCategory.MultiSelect = false;
-            this.lvCategory.Name = "lvCategory";
-            this.lvCategory.Size = new System.Drawing.Size(600, 272);
-            this.lvCategory.TabIndex = 145;
-            this.lvCategory.UseCompatibleStateImageBehavior = false;
-            this.lvCategory.View = System.Windows.Forms.View.Details;
-            // 
-            // chCategoryCode
-            // 
-            this.chCategoryCode.Text = "KODE";
-            this.chCategoryCode.Width = 100;
-            // 
-            // chCategoryName
-            // 
-            this.chCategoryName.Text = "NAMA KATEGORI";
-            this.chCategoryName.Width = 200;
-            // 
-            // chDescription
-            // 
-            this.chDescription.Text = "KETERANGAN";
-            this.chDescription.Width = 300;
             // 
             // bttnPrint
             // 
@@ -250,13 +202,14 @@
             this.bttnPrint.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.bttnPrint.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttnPrint.ForeColor = System.Drawing.Color.Black;
-            this.bttnPrint.Image = global::Point_Of_Sales.Properties.Resources.@__Print;
+            this.bttnPrint.Image = global::Point_Of_Sales.Properties.Resources._Print;
             this.bttnPrint.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.bttnPrint.Location = new System.Drawing.Point(109, 12);
             this.bttnPrint.Name = "bttnPrint";
             this.bttnPrint.Size = new System.Drawing.Size(40, 40);
             this.bttnPrint.TabIndex = 147;
             this.bttnPrint.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.bttnPrint.Click += new System.EventHandler(this.bttnPrint_Click);
             // 
             // bttnAddNew
             // 
@@ -264,7 +217,7 @@
             this.bttnAddNew.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.bttnAddNew.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttnAddNew.ForeColor = System.Drawing.Color.Black;
-            this.bttnAddNew.Image = global::Point_Of_Sales.Properties.Resources._New_file;
+            this.bttnAddNew.Image = global::Point_Of_Sales.Properties.Resources.New_file;
             this.bttnAddNew.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.bttnAddNew.Location = new System.Drawing.Point(15, 12);
             this.bttnAddNew.Name = "bttnAddNew";
@@ -279,7 +232,7 @@
             this.bttnModify.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.bttnModify.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttnModify.ForeColor = System.Drawing.Color.Black;
-            this.bttnModify.Image = global::Point_Of_Sales.Properties.Resources._Pencil;
+            this.bttnModify.Image = global::Point_Of_Sales.Properties.Resources.Pencil;
             this.bttnModify.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.bttnModify.Location = new System.Drawing.Point(63, 12);
             this.bttnModify.Name = "bttnModify";
@@ -294,7 +247,7 @@
             this.bttnDelete.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.bttnDelete.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttnDelete.ForeColor = System.Drawing.Color.Black;
-            this.bttnDelete.Image = global::Point_Of_Sales.Properties.Resources._Delete;
+            this.bttnDelete.Image = global::Point_Of_Sales.Properties.Resources.Delete;
             this.bttnDelete.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.bttnDelete.Location = new System.Drawing.Point(155, 12);
             this.bttnDelete.Name = "bttnDelete";
@@ -324,7 +277,7 @@
             this.bttnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.bttnCancel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttnCancel.ForeColor = System.Drawing.Color.Black;
-            this.bttnCancel.Image = global::Point_Of_Sales.Properties.Resources._Cancel;
+            this.bttnCancel.Image = global::Point_Of_Sales.Properties.Resources.Cancel;
             this.bttnCancel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.bttnCancel.Location = new System.Drawing.Point(251, 12);
             this.bttnCancel.Name = "bttnCancel";
@@ -332,6 +285,54 @@
             this.bttnCancel.TabIndex = 135;
             this.bttnCancel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.bttnCancel.Click += new System.EventHandler(this.bttnCancel_Click);
+            // 
+            // panelBOTTOM
+            // 
+            this.panelBOTTOM.Controls.Add(this.panel1);
+            this.panelBOTTOM.Controls.Add(this.label7);
+            this.panelBOTTOM.Controls.Add(this.lblContains);
+            this.panelBOTTOM.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelBOTTOM.Location = new System.Drawing.Point(0, 366);
+            this.panelBOTTOM.Name = "panelBOTTOM";
+            this.panelBOTTOM.Size = new System.Drawing.Size(641, 64);
+            this.panelBOTTOM.TabIndex = 144;
+            // 
+            // lvCategory
+            // 
+            this.lvCategory.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lvCategory.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.chCategoryCode,
+            this.chCategoryName,
+            this.chDescription});
+            this.lvCategory.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lvCategory.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lvCategory.FullRowSelect = true;
+            this.lvCategory.GridLines = true;
+            this.lvCategory.HideSelection = false;
+            this.lvCategory.HoverSelection = true;
+            this.lvCategory.Location = new System.Drawing.Point(0, 42);
+            this.lvCategory.MultiSelect = false;
+            this.lvCategory.Name = "lvCategory";
+            this.lvCategory.Size = new System.Drawing.Size(629, 324);
+            this.lvCategory.TabIndex = 145;
+            this.lvCategory.UseCompatibleStateImageBehavior = false;
+            this.lvCategory.View = System.Windows.Forms.View.Details;
+            // 
+            // chCategoryCode
+            // 
+            this.chCategoryCode.Text = "KODE";
+            this.chCategoryCode.Width = 120;
+            // 
+            // chCategoryName
+            // 
+            this.chCategoryName.Text = "NAMA KATEGORI";
+            this.chCategoryName.Width = 200;
+            // 
+            // chDescription
+            // 
+            this.chDescription.Text = "KETERANGAN";
+            this.chDescription.Width = 300;
             // 
             // picLOGO
             // 
@@ -348,15 +349,16 @@
             this.picHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.picHeader.Location = new System.Drawing.Point(0, 0);
             this.picHeader.Name = "picHeader";
-            this.picHeader.Size = new System.Drawing.Size(600, 42);
+            this.picHeader.Size = new System.Drawing.Size(641, 42);
             this.picHeader.TabIndex = 139;
             this.picHeader.TabStop = false;
             // 
             // FormCategory
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 378);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(641, 430);
+            this.ControlBox = false;
             this.Controls.Add(this.lvCategory);
             this.Controls.Add(this.panelBOTTOM);
             this.Controls.Add(this.label10);
@@ -365,8 +367,9 @@
             this.Controls.Add(this.picLOGO);
             this.Controls.Add(this.picHeader);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormCategory";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCategory";
             this.Load += new System.EventHandler(this.FormCategory_Load);

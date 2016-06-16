@@ -9,15 +9,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApplication1;
 
 namespace Point_Of_Sales
 {
     public partial class FormMember : Form
     {
         clsFunctions sFunctions = new clsFunctions();
-
         public static FormMember publicFormMember;
-
         MySqlDataAdapter daFormMemberList = new MySqlDataAdapter();
         MySqlCommand cmdDelete;
         DataSet dsFormMemberList = new DataSet();
@@ -44,9 +43,7 @@ namespace Point_Of_Sales
         private void FormMember_Load(object sender, EventArgs e)
         {
             daFormMemberList = new MySqlDataAdapter("", clsConnection.CN);
-
             LoadMember("SELECT tblmember.membercode, tblmember.fullname, tblmember.address, tblmember.telephone, tblmember.status, tblmember.discount, tbldiscount.percent  FROM tbldiscount RIGHT JOIN tblmember ON tbldiscount.autoid = tblmember.discount ORDER BY tblmember.autoid ASC");
-
             publicFormMember = this;
         }
 
@@ -192,6 +189,12 @@ namespace Point_Of_Sales
         private void bttnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void bttnPrint_Click(object sender, EventArgs e)
+        {
+            listViewPrinter printer = new listViewPrinter(lvMember, new Point(10, 10), false, lvMember.Groups.Count > 0, "DATA MEMBER");
+            printer.print();
         }
     }
 }

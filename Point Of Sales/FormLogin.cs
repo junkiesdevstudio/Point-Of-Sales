@@ -1,5 +1,4 @@
-﻿using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Point_Of_Sales
 {
@@ -18,48 +18,29 @@ namespace Point_Of_Sales
             InitializeComponent();
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
-            String txtPWDHash = clsSecurity.EncryptionMD5(txtPassword.Text);
-
-            if (clsFunctions.recordExist("SELECT autoid, fullname FROM tblusers WHERE username LIKE '" + txtUsername.Text + "' AND password LIKE '" + txtPWDHash + "' ", "tblusers") == true)
+            if ((e.KeyCode == Keys.Enter) || (e.KeyCode == Keys.Return))
             {
-                //clsVariables.sTimeLogin = DateTime.Now.ToLongTimeString();
+                this.SelectNextControl((Control)sender, true, true, true, true);
+            }
+        }
 
-                long totalRow = 0;
-
-                //Set the Data Adapter
-                MySqlDataAdapter da = new MySqlDataAdapter("SELECT tblusers.autoid, tblusers.fullname , tblusers.username, tblusers.usertype, tblusers.usercode FROM tblusers WHERE tblusers.username LIKE '" + txtUsername.Text + "' ", clsConnection.CN);
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //String Teks_enkripsi = clsSecurity.EncryptionMD5(textBox2.Text);
+            String Teks_enkripsi = textBox2.Text;
+            if (clsFunctions.recordExist("SELECT * FROM tblusers WHERE username LIKE '" + textBox1.Text + "' AND password LIKE '" + Teks_enkripsi + "' ", "tblusers") == true)
+            {
+                long total_baris = 0;
+                MySqlDataAdapter da = new MySqlDataAdapter("SELECT tblusers.autoid, tblusers.fullname , tblusers.username, tblusers.usertype, tblusers.usercode FROM tblusers WHERE tblusers.username LIKE '" + textBox1.Text + "' ", clsConnection.CN);
                 DataSet ds = new DataSet();
                 da.Fill(ds, "tblusers");
-
-                totalRow = ds.Tables["tblusers"].Rows.Count - 1;
-
-                //clsVariables.sIdKasir = ds.Tables["tbluser"].Rows[0].ItemArray.GetValue(0).ToString();
+                total_baris = ds.Tables["tblusers"].Rows.Count - 1;
                 clsVariables.sFullname = ds.Tables["tblusers"].Rows[0].ItemArray.GetValue(1).ToString();
                 clsVariables.sUsercode = ds.Tables["tblusers"].Rows[0].ItemArray.GetValue(4).ToString();
-                
-                //clsVariables.sIsAdmin = ds.Tables["tbluser"].Rows[0].ItemArray.GetValue(3).ToString() == "1" ? true : false;
-
-                //clsUserLogs.record_login(clsVariables.sTimeLogin, clsVariables.sLibrarianID);
                 clsApp.APP_CONNECTED = true;
-                this.Close();
-            }
-            else
-            {
-                if (lblAttempt.Text == "1")
-                {
-                    MessageBox.Show("You already used all the attempts.\nThis will terminate the application.", clsVariables.sMSGBOX, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    this.Close();
-                }
-                else
-                {
-                    int iAttempt;
-
-                    iAttempt = Convert.ToInt32(lblAttempt.Text) - 1;
-                    lblAttempt.Text = iAttempt.ToString();
-                    MessageBox.Show("Username/password Salah!. Mohon coba kembali.\n\nPeringatan: kamu masih mempunyai " + lblAttempt.Text + "kesempatan lagi.", clsVariables.sMSGBOX, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                this.Close();               
             }
         }
 
@@ -72,18 +53,32 @@ namespace Point_Of_Sales
         {
             clsConnection conn = new clsConnection();
             conn.setConnection(clsVariables.sIPAddress, clsVariables.sDbUser, clsVariables.sDbName, clsVariables.sDbPassword);
-
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void textBox2_KeyDown(object sender, KeyEventArgs e)
         {
-            this.Close();
+            if ((e.KeyCode == Keys.Enter) || (e.KeyCode == Keys.Return))
+            {
+                //String Teks_enkripsi = clsSecurity.EncryptionMD5(textBox2.Text);
+                String Teks_enkripsi = textBox2.Text;
+                if (clsFunctions.recordExist("SELECT * FROM tblusers WHERE username LIKE '" + textBox1.Text + "' AND password LIKE '" + Teks_enkripsi + "' ", "tblusers") == true)
+                {
+                    long total_baris = 0;
+                    MySqlDataAdapter da = new MySqlDataAdapter("SELECT tblusers.autoid, tblusers.fullname , tblusers.username, tblusers.usertype, tblusers.usercode FROM tblusers WHERE tblusers.username LIKE '" + textBox1.Text + "' ", clsConnection.CN);
+                    DataSet ds = new DataSet();
+                    da.Fill(ds, "tblusers");
+                    total_baris = ds.Tables["tblusers"].Rows.Count - 1;
+                    clsVariables.sFullname = ds.Tables["tblusers"].Rows[0].ItemArray.GetValue(1).ToString();
+                    clsVariables.sUsercode = ds.Tables["tblusers"].Rows[0].ItemArray.GetValue(4).ToString();
+                    clsApp.APP_CONNECTED = true;
+                    this.Close();
+                }
+            }
         }
 
-        private void chkUnmask_CheckedChanged(object sender, EventArgs e)
+        private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            if (chkUnmask.Checked == true) { this.txtPassword.PasswordChar = Convert.ToChar(0); }
-            else { this.txtPassword.PasswordChar = '•'; }
+
         }
     }
 }

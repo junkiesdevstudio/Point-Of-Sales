@@ -12,18 +12,14 @@ namespace Point_Of_Sales
 {
     public class clsFunctions : clsConnection
     {
-
         public void setOleDbCommand(MySqlCommand cmd, string sCommand, string sParameters, string sMatch)
         {
             //Set the delete command
             cmd = new MySqlCommand(sCommand, CN);
             cmd.Parameters.Add(sParameters, MySqlDbType.VarChar);
-
             cmd.Parameters[sParameters].Value = sMatch;
-
             cmd.ExecuteNonQuery();
         }
-
         public static bool recordExist(string sSQL, string sTable)
         {
             long totalRow = 0;
@@ -119,7 +115,7 @@ namespace Point_Of_Sales
 
         public static void BackupDatabase(string sPath)
         {
-            string sProvider = "server=" + clsVariables.sIPAddress + ";uid=" + clsVariables.sDbUser + ";" + "pwd=" + clsVariables.sDbPassword + ";database=" + clsVariables.sDbName;
+            string sProvider = "server=" + clsVariables.sIPAddress + ";uid=" + clsVariables.sDbUser + ";" + "pwd=" + clsVariables.sDbPassword + ";database=" + clsVariables.sDbName + ";Convert Zero Datetime=True";
             using (MySqlConnection conn = new MySqlConnection(sProvider))
             {
                 using (MySqlCommand cmd = new MySqlCommand())

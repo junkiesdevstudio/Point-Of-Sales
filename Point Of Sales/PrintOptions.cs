@@ -22,7 +22,7 @@ namespace Point_Of_Sales
             InitializeComponent();
 
             foreach (string field in availableFields)
-                chklst.Items.Add(field, true);
+                Pilih.Items.Add(field, true);
         }
 
         private void PrintOptions_Load(object sender, EventArgs e)
@@ -47,7 +47,7 @@ namespace Point_Of_Sales
         public List<string> GetSelectedColumns()
         {
             List<string> lst = new List<string>();
-            foreach (object item in chklst.CheckedItems)
+            foreach (object item in Pilih.CheckedItems)
                 lst.Add(item.ToString());
             return lst;
         }

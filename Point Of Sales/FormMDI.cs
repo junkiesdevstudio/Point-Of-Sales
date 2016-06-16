@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,7 +13,6 @@ namespace Point_Of_Sales
 {
     public partial class FormMDI : Form
     {
-
         private clsFunctions sFunctions = new clsFunctions();
         private bool isAdmin;
 
@@ -25,25 +23,23 @@ namespace Point_Of_Sales
 
         private void FormMDI_Load(object sender, EventArgs e)
         {
-            //lblWelcome.Text = "Selamat Datang! " + clsVariables.sFullname;
-
+            lblWelcome.Text = "Selamat Datang ! : " + clsVariables.sFullname;
             //FormSplashScreen SplashScreen = new FormSplashScreen();
             //SplashScreen.ShowDialog();
-
             clsConnection conn = new clsConnection();
             conn.setConnection(clsVariables.sIPAddress, clsVariables.sDbUser, clsVariables.sDbName, clsVariables.sDbPassword);
-
             isAdmin = clsFunctions.recordExist("SELECT tblusers.usercode, tblusers.usertype FROM tblusers WHERE (tblusers.usertype=1 && tblusers.usercode='" + clsVariables.sUsercode + "') ORDER BY tblusers.autoid ASC", "tblusers");
-
             usersToolStripMenuItem.Enabled = isAdmin;
             supplierToolStripMenuItem.Enabled = isAdmin;
+            rEPORTPENJUALANToolStripMenuItem.Enabled = isAdmin;
+            rEPORTPEMBELIANToolStripMenuItem.Enabled = isAdmin;
         }
 
         void CloseAllChild()
         {
             foreach (Form child in this.MdiChildren)
             {
-                if(!child.Focused)
+                if (!child.Focused)
                 {
                     child.Close();
                 }
@@ -62,16 +58,14 @@ namespace Point_Of_Sales
 
         private void FormMDI_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("Ini akan menutup aplikasi. Apakah Anda ingin melanjutkan?", clsVariables.sMSGBOX, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
+            if (MessageBox.Show("Tutup Aplikasi?", clsVariables.sMSGBOX, MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
             { e.Cancel = true; }
             else
             {
                 e.Cancel = false;
                 //clsUserLogs.record_logout(DateTime.Now.ToString(), clsVariables.sLibrarianID);
                 clsConnection.CN.Close();
-
-                MessageBox.Show(clsVariables.sFullname + " telah berhasil logout.", "Waktu Logout: " + DateTime.Now.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                MessageBox.Show(clsVariables.sFullname + "Exit..!", "Waktu: " + DateTime.Now.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -108,7 +102,6 @@ namespace Point_Of_Sales
         private void usersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CloseAllChild();
-
             Form sForm = FormUser.Instance();
             sForm.MdiParent = this;
             sForm.Show();
@@ -118,7 +111,6 @@ namespace Point_Of_Sales
         private void toolBtnSetting_Click(object sender, EventArgs e)
         {
             CloseAllChild();
-
             Form sForm = FormSetting.Instance();
             sForm.MdiParent = this;
             sForm.Show();
@@ -136,23 +128,23 @@ namespace Point_Of_Sales
         }
 
         private void supplierToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        {           
             CloseAllChild();
-
             Form sForm = FormSupplier.Instance();
             sForm.MdiParent = this;
             sForm.Show();
             sForm.Activate();
+            //sForm.WindowState = FormWindowState.Normal;
         }
 
         private void itemCategoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CloseAllChild();
-
             Form sForm = FormCategory.Instance();
             sForm.MdiParent = this;
             sForm.Show();
             sForm.Activate();
+            //sForm.WindowState = FormWindowState.Maximized;
         }
 
         private void toolBtnCategory_Click(object sender, EventArgs e)
@@ -211,30 +203,71 @@ namespace Point_Of_Sales
 
         private void barcodePrinterToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Process.Start("C:\\Program Files (x86)\\Labeljoy 5\\Labeljoy5.exe");          
+            //Process.Start("C:\\Program Files (x86)\\Labeljoy 5\\Labeljoy5.exe");          
         }
 
-        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        private void rEPORTPENJUALANToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void memberToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Form sForm = FormReportMember.Instance();
+            CloseAllChild();                   
+            Form sForm = ReportPenjualan.Instance();
             sForm.MdiParent = this;
-            FormReportMember.mType = "Member";
             sForm.Show();
             sForm.Activate();
+        }
+
+        private void rEPORTPEMBELIANToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CloseAllChild();
+            Form sForm = ReportPembelian.Instance();
+            sForm.MdiParent = this;
+            sForm.Show();
+            sForm.Activate();
+        }
+
+        private void penjualanToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            rEPORTPENJUALANToolStripMenuItem.PerformClick();
+        }
+
+        private void pembelianToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            rEPORTPEMBELIANToolStripMenuItem.PerformClick();
+        }
+
+        private void produkToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CloseAllChild();
+            Form sForm = FormProduct.Instance();
+            sForm.MdiParent = this;
+            sForm.Show();
+            sForm.Activate();
+        }
+
+        private void userToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CloseAllChild();
+            Form sForm = FormMember.Instance();
+            sForm.MdiParent = this;
+            sForm.Show();
+            sForm.Activate();          
         }
 
         private void supplierToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Form sForm = FormReportSupplier.Instance();
+            CloseAllChild();
+            Form sForm = FormSupplier.Instance();
             sForm.MdiParent = this;
-            FormReportSupplier.mType2 = "Supplier";
             sForm.Show();
             sForm.Activate();
+        }
+
+        private void memberToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CloseAllChild();
+            Form sForm = FormMember.Instance();
+            sForm.MdiParent = this;
+            sForm.Show();
+            sForm.Activate();          
         }
     }
 }

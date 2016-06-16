@@ -47,7 +47,6 @@
             this.inventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inventoryAdjustmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.masterToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.produkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.supplierToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.memberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -78,7 +77,8 @@
             this.toolBtnPOS = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripBtnReport = new System.Windows.Forms.ToolStripSplitButton();
-            this.toolManuBtnReportProduct = new System.Windows.Forms.ToolStripMenuItem();
+            this.rEPORTPENJUALANToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rEPORTPEMBELIANToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.toolBtnHelp = new System.Windows.Forms.ToolStripButton();
             this.lblDate = new System.Windows.Forms.Label();
@@ -238,7 +238,6 @@
             // reportToolStripMenuItem
             // 
             this.reportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.masterToolStripMenuItem1,
             this.produkToolStripMenuItem,
             this.supplierToolStripMenuItem1,
             this.memberToolStripMenuItem,
@@ -249,17 +248,12 @@
             this.reportToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.reportToolStripMenuItem.Text = "&Laporan";
             // 
-            // masterToolStripMenuItem1
-            // 
-            this.masterToolStripMenuItem1.Name = "masterToolStripMenuItem1";
-            this.masterToolStripMenuItem1.Size = new System.Drawing.Size(130, 22);
-            this.masterToolStripMenuItem1.Text = "Master";
-            // 
             // produkToolStripMenuItem
             // 
             this.produkToolStripMenuItem.Name = "produkToolStripMenuItem";
             this.produkToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.produkToolStripMenuItem.Text = "Produk";
+            this.produkToolStripMenuItem.Click += new System.EventHandler(this.produkToolStripMenuItem_Click);
             // 
             // supplierToolStripMenuItem1
             // 
@@ -280,18 +274,21 @@
             this.userToolStripMenuItem.Name = "userToolStripMenuItem";
             this.userToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.userToolStripMenuItem.Text = "User";
+            this.userToolStripMenuItem.Click += new System.EventHandler(this.userToolStripMenuItem_Click);
             // 
             // penjualanToolStripMenuItem1
             // 
             this.penjualanToolStripMenuItem1.Name = "penjualanToolStripMenuItem1";
             this.penjualanToolStripMenuItem1.Size = new System.Drawing.Size(130, 22);
             this.penjualanToolStripMenuItem1.Text = "Penjualan";
+            this.penjualanToolStripMenuItem1.Click += new System.EventHandler(this.penjualanToolStripMenuItem1_Click);
             // 
             // pembelianToolStripMenuItem1
             // 
             this.pembelianToolStripMenuItem1.Name = "pembelianToolStripMenuItem1";
             this.pembelianToolStripMenuItem1.Size = new System.Drawing.Size(130, 22);
             this.pembelianToolStripMenuItem1.Text = "Pembelian";
+            this.pembelianToolStripMenuItem1.Click += new System.EventHandler(this.pembelianToolStripMenuItem1_Click);
             // 
             // viewToolStripMenuItem
             // 
@@ -405,7 +402,7 @@
             // toolBtnLogout
             // 
             this.toolBtnLogout.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolBtnLogout.Image = global::Point_Of_Sales.Properties.Resources._lock;
+            this.toolBtnLogout.Image = global::Point_Of_Sales.Properties.Resources.logout;
             this.toolBtnLogout.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolBtnLogout.Margin = new System.Windows.Forms.Padding(2, 1, 2, 2);
             this.toolBtnLogout.Name = "toolBtnLogout";
@@ -422,7 +419,7 @@
             // toolBtnSupplier
             // 
             this.toolBtnSupplier.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolBtnSupplier.Image = global::Point_Of_Sales.Properties.Resources.cart;
+            this.toolBtnSupplier.Image = global::Point_Of_Sales.Properties.Resources._0_0_shipping;
             this.toolBtnSupplier.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolBtnSupplier.Margin = new System.Windows.Forms.Padding(2, 1, 2, 2);
             this.toolBtnSupplier.Name = "toolBtnSupplier";
@@ -434,7 +431,7 @@
             // toolBtnUsers
             // 
             this.toolBtnUsers.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolBtnUsers.Image = global::Point_Of_Sales.Properties.Resources.team;
+            this.toolBtnUsers.Image = global::Point_Of_Sales.Properties.Resources.user;
             this.toolBtnUsers.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolBtnUsers.Margin = new System.Windows.Forms.Padding(2, 1, 2, 2);
             this.toolBtnUsers.Name = "toolBtnUsers";
@@ -451,7 +448,7 @@
             // toolBtnCategory
             // 
             this.toolBtnCategory.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolBtnCategory.Image = global::Point_Of_Sales.Properties.Resources.notepad;
+            this.toolBtnCategory.Image = global::Point_Of_Sales.Properties.Resources.sitemap;
             this.toolBtnCategory.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolBtnCategory.Margin = new System.Windows.Forms.Padding(2, 1, 2, 2);
             this.toolBtnCategory.Name = "toolBtnCategory";
@@ -463,7 +460,7 @@
             // toolBtnProduct
             // 
             this.toolBtnProduct.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolBtnProduct.Image = global::Point_Of_Sales.Properties.Resources.Synchronize;
+            this.toolBtnProduct.Image = global::Point_Of_Sales.Properties.Resources.product_design;
             this.toolBtnProduct.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolBtnProduct.Margin = new System.Windows.Forms.Padding(2, 1, 2, 2);
             this.toolBtnProduct.Name = "toolBtnProduct";
@@ -481,7 +478,7 @@
             // toolBtnPOS
             // 
             this.toolBtnPOS.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolBtnPOS.Image = global::Point_Of_Sales.Properties.Resources.cashier;
+            this.toolBtnPOS.Image = global::Point_Of_Sales.Properties.Resources._1464503183_calculator;
             this.toolBtnPOS.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolBtnPOS.Margin = new System.Windows.Forms.Padding(2, 1, 2, 2);
             this.toolBtnPOS.Name = "toolBtnPOS";
@@ -498,8 +495,9 @@
             // 
             this.toolStripBtnReport.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.toolStripBtnReport.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolManuBtnReportProduct});
-            this.toolStripBtnReport.Image = global::Point_Of_Sales.Properties.Resources.newspaper;
+            this.rEPORTPENJUALANToolStripMenuItem,
+            this.rEPORTPEMBELIANToolStripMenuItem});
+            this.toolStripBtnReport.Image = global::Point_Of_Sales.Properties.Resources.archives;
             this.toolStripBtnReport.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripBtnReport.Margin = new System.Windows.Forms.Padding(2, 1, 2, 2);
             this.toolStripBtnReport.Name = "toolStripBtnReport";
@@ -507,11 +505,19 @@
             this.toolStripBtnReport.Size = new System.Drawing.Size(56, 44);
             this.toolStripBtnReport.ToolTipText = "Report";
             // 
-            // toolManuBtnReportProduct
+            // rEPORTPENJUALANToolStripMenuItem
             // 
-            this.toolManuBtnReportProduct.Name = "toolManuBtnReportProduct";
-            this.toolManuBtnReportProduct.Size = new System.Drawing.Size(154, 22);
-            this.toolManuBtnReportProduct.Text = "Report Product";
+            this.rEPORTPENJUALANToolStripMenuItem.Name = "rEPORTPENJUALANToolStripMenuItem";
+            this.rEPORTPENJUALANToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.rEPORTPENJUALANToolStripMenuItem.Text = "REPORT PENJUALAN";
+            this.rEPORTPENJUALANToolStripMenuItem.Click += new System.EventHandler(this.rEPORTPENJUALANToolStripMenuItem_Click);
+            // 
+            // rEPORTPEMBELIANToolStripMenuItem
+            // 
+            this.rEPORTPEMBELIANToolStripMenuItem.Name = "rEPORTPEMBELIANToolStripMenuItem";
+            this.rEPORTPEMBELIANToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.rEPORTPEMBELIANToolStripMenuItem.Text = "REPORT PEMBELIAN";
+            this.rEPORTPEMBELIANToolStripMenuItem.Click += new System.EventHandler(this.rEPORTPEMBELIANToolStripMenuItem_Click);
             // 
             // toolStripSeparator7
             // 
@@ -651,11 +657,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackgroundImage = global::Point_Of_Sales.Properties.Resources.Artwork_F9Themes_Shoowa_shoowa_background_v3_1c;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(811, 383);
             this.Controls.Add(this.toolStripBottom);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStripTop);
             this.Controls.Add(this.menuStrip);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
@@ -696,7 +706,6 @@
         private System.Windows.Forms.ToolStripMenuItem inventoryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inventoryAdjustmentToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem masterToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hideShowToolbarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cricticalStockCheckerToolStripMenuItem;
@@ -720,7 +729,6 @@
         private System.Windows.Forms.ToolStripButton toolBtnPOS;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripSplitButton toolStripBtnReport;
-        private System.Windows.Forms.ToolStripMenuItem toolManuBtnReportProduct;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripButton toolBtnHelp;
         private System.Windows.Forms.Label lblDate;
@@ -745,6 +753,8 @@
         private System.Windows.Forms.ToolStripMenuItem userToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem penjualanToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem pembelianToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem rEPORTPENJUALANToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rEPORTPEMBELIANToolStripMenuItem;
     }
 }
 

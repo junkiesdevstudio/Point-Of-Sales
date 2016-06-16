@@ -11,6 +11,21 @@
     <AssemblyName>Point Of Sales</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -21,6 +36,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>ExtendedDesignGuidelineRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -72,6 +88,8 @@
     <Compile Include="CLASS\clsSecurity.cs" />
     <Compile Include="CLASS\clsStart.cs" />
     <Compile Include="CLASS\clsVariables.cs" />
+    <Compile Include="CLASS\groupSorter.cs" />
+    <Compile Include="CLASS\listViewPrinter.cs" />
     <Compile Include="CLASS\PrintDGV.cs" />
     <Compile Include="FormAbout.cs">
       <SubType>Form</SubType>
@@ -157,18 +175,6 @@
     <Compile Include="FormProduct_View.Designer.cs">
       <DependentUpon>FormProduct_View.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormReportMember.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormReportMember.Designer.cs">
-      <DependentUpon>FormReportMember.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormReportSupplier.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormReportSupplier.Designer.cs">
-      <DependentUpon>FormReportSupplier.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormSetting.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,10 +217,24 @@
     <Compile Include="FormUser_Modify.Designer.cs">
       <DependentUpon>FormUser_Modify.cs</DependentUpon>
     </Compile>
+    <Compile Include="PenjualanDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PenjualanDetail.Designer.cs">
+      <DependentUpon>PenjualanDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pointofsalesDataSet.cs">
+      <DependentUpon>pointofsalesDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="pointofsalesDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>pointofsalesDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="pointofsalesDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pointofsalesDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="PrintOptions.cs">
       <SubType>Form</SubType>
@@ -223,11 +243,17 @@
       <DependentUpon>PrintOptions.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Testing.cs">
+    <Compile Include="ReportPembelian.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Testing.Designer.cs">
-      <DependentUpon>Testing.cs</DependentUpon>
+    <Compile Include="ReportPembelian.Designer.cs">
+      <DependentUpon>ReportPembelian.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPenjualan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportPenjualan.Designer.cs">
+      <DependentUpon>ReportPenjualan.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FormAbout.resx">
       <DependentUpon>FormAbout.cs</DependentUpon>
@@ -271,12 +297,6 @@
     <EmbeddedResource Include="FormProduct_View.resx">
       <DependentUpon>FormProduct_View.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormReportMember.resx">
-      <DependentUpon>FormReportMember.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormReportSupplier.resx">
-      <DependentUpon>FormReportSupplier.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormSetting.resx">
       <DependentUpon>FormSetting.cs</DependentUpon>
     </EmbeddedResource>
@@ -298,6 +318,9 @@
     <EmbeddedResource Include="FormUser_Modify.resx">
       <DependentUpon>FormUser_Modify.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PenjualanDetail.resx">
+      <DependentUpon>PenjualanDetail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PrintOptions.resx">
       <DependentUpon>PrintOptions.cs</DependentUpon>
     </EmbeddedResource>
@@ -311,10 +334,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Testing.resx">
-      <DependentUpon>Testing.cs</DependentUpon>
+    <EmbeddedResource Include="ReportPembelian.resx">
+      <DependentUpon>ReportPembelian.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="packages.config" />
+    <EmbeddedResource Include="ReportPenjualan.resx">
+      <DependentUpon>ReportPenjualan.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="pointofsalesDataSet.xsc">
       <DependentUpon>pointofsalesDataSet.xsd</DependentUpon>
     </None>
@@ -325,6 +350,17 @@
     </None>
     <None Include="pointofsalesDataSet.xss">
       <DependentUpon>pointofsalesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="pointofsalesDataSet1.xsc">
+      <DependentUpon>pointofsalesDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="pointofsalesDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>pointofsalesDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="pointofsalesDataSet1.xss">
+      <DependentUpon>pointofsalesDataSet1.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -340,101 +376,74 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\lock.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cart.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\team.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cashier human.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\notepad.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cashier.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\newspaper.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Help-48.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="DATASET\" />
     <Folder Include="REPORT\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cogwheel.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\calculator.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ Add.png" />
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ Cancel.png" />
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ Close.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ Delete.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ Erase.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ Exit.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ Help.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ Home.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ Info.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ New file.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ Ok.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ Pencil.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ Preview.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ Save.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ Warning.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Synchronize.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ _Print.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Refresh.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ _Edit_page.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ Preview1.png" />
+    <Content Include="Resources\0 0 shipping.png" />
+    <Content Include="Resources\1464503183_calculator.png" />
+    <Content Include="Resources\Add.png" />
+    <Content Include="Resources\archives.png" />
+    <None Include="Resources\Artwork_F9Themes_Shoowa_shoowa-background-v3_1c.png" />
+    <Content Include="Resources\batik21.jpg" />
+    <Content Include="Resources\calculator.png" />
+    <Content Include="Resources\Cancel.png" />
+    <Content Include="Resources\cart.png" />
+    <Content Include="Resources\cashier human.png" />
+    <Content Include="Resources\cashier.png" />
+    <Content Include="Resources\Close.png" />
+    <Content Include="Resources\cogwheel.png" />
+    <Content Include="Resources\Copy of loginbox.png" />
+    <Content Include="Resources\CustomLoginForms_03.jpg" />
+    <Content Include="Resources\Delete.png" />
+    <None Include="Resources\detail.png" />
+    <None Include="Resources\detail1.png" />
+    <Content Include="Resources\Erase.png" />
+    <Content Include="Resources\Exit.png" />
+    <Content Include="Resources\Help-48.png" />
+    <Content Include="Resources\Help.png" />
+    <Content Include="Resources\Home.png" />
+    <Content Include="Resources\Info.png" />
+    <Content Include="Resources\lock.png" />
+    <Content Include="Resources\login-box-backg.png" />
+    <Content Include="Resources\login.PNG" />
+    <Content Include="Resources\login_page.jpg" />
+    <Content Include="Resources\logout.png" />
+    <Content Include="Resources\New file.png" />
+    <Content Include="Resources\newspaper.png" />
+    <Content Include="Resources\notepad.png" />
+    <Content Include="Resources\Ok.png" />
+    <Content Include="Resources\Pencil.png" />
+    <Content Include="Resources\Preview.png" />
+    <Content Include="Resources\Preview1.png" />
+    <Content Include="Resources\product-design.png" />
+    <Content Include="Resources\Refresh.png" />
+    <Content Include="Resources\Save.png" />
+    <Content Include="Resources\sitemap.png" />
+    <Content Include="Resources\Synchronize.png" />
+    <Content Include="Resources\team.png" />
+    <Content Include="Resources\user.png" />
+    <Content Include="Resources\Warning.png" />
+    <Content Include="Resources\_Edit_page.png" />
+    <Content Include="Resources\_Print.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

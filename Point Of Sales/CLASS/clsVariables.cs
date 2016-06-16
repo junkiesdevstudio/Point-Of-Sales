@@ -17,6 +17,6 @@ namespace Point_Of_Sales
         public static string sIPAddress = "127.0.0.1";
         public static string sDbName = "pointofsales";
         public static string sDbUser = "root";
-        public static string sDbPassword = "abc123abc";
+        public static string sDbPassword = "";
     }
 }

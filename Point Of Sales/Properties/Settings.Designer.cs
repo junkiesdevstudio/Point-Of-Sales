@@ -33,5 +33,15 @@ namespace Point_Of_Sales.Properties {
                 return ((string)(this["pointofsalesConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=Localhost;user id=root;database=pointofsales")]
+        public string pointofsalesConnectionString1 {
+            get {
+                return ((string)(this["pointofsalesConnectionString1"]));
+            }
+        }
     }
 }
